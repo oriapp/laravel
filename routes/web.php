@@ -1,0 +1,24 @@
+<?php
+
+// use Illuminate\Support\Facades\Route;
+
+Route::get('/', 'PagesController@home');
+Route::get('about', 'PagesController@about');
+
+# Shop
+Route::prefix('shop')->group(function(){
+    Route::get('/', 'ShopController@categories');
+    Route::get('add-to-cart', 'ShopController@addToCart');
+    Route::get('clear-cart', 'ShopController@clearCart');
+    Route::get('update-cart', 'ShopController@updateCart');
+    Route::get('cart', 'ShopController@cart');
+    Route::get('{curl}', 'ShopController@products');
+    Route::get('{curl}/{purl}', 'ShopController@productDetailes');
+});
+
+
+# User
+Route::prefix('user')->group(function(){
+    Route::get('signup', 'UserController@signUp');
+    Route::post('signup', 'UserController@postSignUp');
+});
