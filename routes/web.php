@@ -21,4 +21,7 @@ Route::prefix('shop')->group(function(){
 Route::prefix('user')->group(function(){
     Route::get('signup', 'UserController@signUp');
     Route::post('signup', 'UserController@postSignUp');
+    Route::post('signin', 'UserController@postSignin');
+    Route::get('logout', 'UserController@logout');
+    Route::get('signin', 'UserController@signin');
 });
