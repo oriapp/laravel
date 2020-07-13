@@ -38,12 +38,21 @@
               </li>
           </ul>
           <ul class="navbar-nav ml-auto">
+            @if(!Session::has('user_id'))
             <li class="nav-item">
               <a class="nav-link text-white" href="{{url('user/signin')}}">Signin</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{url('user/signup')}}">Signup</a>
               </li>
+              @else
+              <li class="nav-item">
+                <a style="cursor: no-drop;" class="nav-link text-white disabled" href="{{url('user/profile')}}">{{Session::get('user_name')}}</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="{{url('user/logout')}}">Logout</a>
+                </li>
+              @endif
           </ul>
         </div>
     </div>
