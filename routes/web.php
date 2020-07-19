@@ -3,11 +3,24 @@
 // use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@home');
-Route::get('about', 'PagesController@about');
+
+
+#CMS 
+Route::middleware(['cmsguard'])->group(function(){
+ 
+    Route::prefix('cms')->group(function(){
+        Route::get('dashboard', 'CmsController@dashboard');
+        Route::resource('menu', 'MenuController');
+    }); 
+
+});
+
+
 
 # Shop
 Route::prefix('shop')->group(function(){
     Route::get('/', 'ShopController@categories');
+    Route::get('checkout', 'ShopController@checkOut');
     Route::get('add-to-cart', 'ShopController@addToCart');
     Route::get('clear-cart', 'ShopController@clearCart');
     Route::get('update-cart', 'ShopController@updateCart');
@@ -25,3 +38,8 @@ Route::prefix('user')->group(function(){
     Route::get('logout', 'UserController@logout');
     Route::get('signin', 'UserController@signin');
 });
+
+
+
+
+Route::get('{menu_url}', 'PagesController@content');

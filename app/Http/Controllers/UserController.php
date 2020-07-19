@@ -10,6 +10,13 @@ use Session;
 
 class UserController extends MainController
 {
+
+    public function __construct(){
+        parent::__construct();
+        $this->middleware('userauth', ['except' => ['logout' /* profile */]]);
+    }
+
+
     public function signUp(){
         self::$dtv['page_title'] .= "Sign Up page";
         return view('signup', self::$dtv);
@@ -17,10 +24,12 @@ class UserController extends MainController
 
     public function postSignUp(SignUpRequest $request){
         User::saveNew($request);
-        return redirect('');
+        $to = !empty($request['backTo']) ? $request['backTo'] : '';
+        return redirect($to);
     }
 
     public function postSignin(SigninRequest $request){
+        //dd(User::verify($request['email'], $request['password']));
         if(User::verify($request['email'], $request['password'])){
             return redirect('');
         } else {

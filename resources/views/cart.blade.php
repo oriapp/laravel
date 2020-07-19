@@ -44,7 +44,7 @@
                 </span>
             </p>
             <p>
-                <a href="#" class="btn btn-primary btn-lg">Buy Now!</a>
+            <a href="{{url('shop/checkout')}}" class="btn btn-primary btn-lg">Buy Now!</a>
             </p>
         </div>
         @else

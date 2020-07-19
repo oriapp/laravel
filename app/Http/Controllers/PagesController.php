@@ -15,6 +15,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
+use App\Content;
 
 class PagesController extends MainController
 {
@@ -23,8 +24,10 @@ class PagesController extends MainController
         return view('home', self::$dtv);
     }
 
-    public function about(){
-        self::$dtv['page_title'] .= "About Us";
-        return view('about',  self::$dtv);
+    public function content($menu_url){
+        self::$dtv['contents'] = Content::getAll($menu_url);
+        if(!self::$dtv['contents']->count()) \abort(404);
+        self::$dtv['page_title'] .= self::$dtv['contents'][0]->title;
+        return view('content', self::$dtv);
     }
 }

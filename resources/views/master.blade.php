@@ -30,12 +30,17 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{{url('about')}}">About</a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{url('shop')}}">Shop</a>
               </li>
+              @if(!empty($menu))
+              @foreach($menu as $menu_item)
+              <li class="nav-item">
+              <a class="nav-link text-white" href="{{url($menu_item->url)}}">{{$menu_item->link}}</a>
+              </li>
+              @endforeach
+              @endif
           </ul>
           <ul class="navbar-nav ml-auto">
             @if(!Session::has('user_id'))
@@ -46,6 +51,11 @@
                 <a class="nav-link text-white" href="{{url('user/signup')}}">Signup</a>
               </li>
               @else
+              @if(Session::get('is_admin'))
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{{url('cms/dashboard')}}">Cms Dashboard</a>
+              </li>
+              @endif
               <li class="nav-item">
                 <a style="cursor: no-drop;" class="nav-link text-white disabled" href="{{url('user/profile')}}">{{Session::get('user_name')}}</a>
               </li>

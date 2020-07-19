@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categorie;
-use DB, Cart;
+use DB, Cart, Session;
+use App\Order;
 
 use App\Product;
 
@@ -59,5 +60,12 @@ class ShopController extends MainController
     public function updateCart(Request $request){
         Product::updateCart($request);
 
+    }
+
+    public function checkOut(){
+        if(Cart::isEmpty()) return redirect('shop/cart');
+        if(!Session::has('user_id')) return redirect('user/signup?backTo=shop/cart');
+        Order::saveNew();
+        return redirect('shop');
     }
 }

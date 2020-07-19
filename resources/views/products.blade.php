@@ -37,6 +37,11 @@
         </div>
         @endforeach
     </div>
+    <div class="row">
+      <div class="col-12 my-4 ">
+        {{$products->links()}}
+      </div>
+    </div>
     </div>
 </div>
 @endsection

@@ -13,7 +13,7 @@ class Product extends Model
         ->select('p.*', 'c.title', 'c.url')
         ->where('c.url', '=', $curl)
         ->orderBy('p.price')
-        ->get();
+        ->paginate(3);
     }
 
     static public function addToCart($pid){

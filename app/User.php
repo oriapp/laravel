@@ -11,14 +11,14 @@ class User extends Model
         $user = new self();
         $user->name = $request['name'];
         $user->email = $request['email'];
-        $user->password = bcrypt($request['passowrd']);
+        $user->password = bcrypt($request['password']);
         $user->save();
-        // rid => role_id || role-num 6 means not admin 7 => ownrer perms
+        // rid => role_id || role-num 6 means not admin 7 => owner perms
         DB::table('user_roles')->insert(['uid' => $user->id, 'rid' => 6]);
         Session::put([
             'user_id' => $user->id,
             'user_name' => $user->name,
-            'is_admin' => false,
+            'is_admin' => $user->rid == 7 ? true : false,
         ]);
         Session::flash('sm', __('text.welcome_signup', ['username' => $user->name]));
     }
