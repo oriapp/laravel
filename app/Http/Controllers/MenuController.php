@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\MenuRequest;
 
 use App\Menu;
-use Session;
+use Session, Exception;
 
 class MenuController extends MainController
 {
@@ -47,8 +47,13 @@ class MenuController extends MainController
 
     public function destroy($id)
     {
-        Menu::destroy($id);
-        Session::flash('sm', "Item $id has been deleted");
+        try {
+            Menu::destroy($id);
+            Session::flash('sm', "Item $id has been deleted");
+        } catch (Exception $ex){
+            Session::flash('em', 'Item can not be deleted!');
+        }
+
         return redirect('cms/menu');
     }
 }

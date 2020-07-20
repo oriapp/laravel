@@ -8,11 +8,11 @@
               
 <div class="row">
     <div class="col-lg-6">
-    <form action="{{url('cms/menu/'.$item_id)}}" method="POST" autocomplete="off" novalidate="novalidate">
+    <form action="{{url('cms/content/'.$item_id)}}" method="POST" autocomplete="off" novalidate="novalidate">
           @csrf
           {{ method_field('DELETE') }}
           <input type="submit" name="submit" value="DELETE" id="submit" class="btn btn-danger">
-          <a href="{{url('cms/menu')}}" class="btn btn-light ml-3">Cancel</a>
+          <a href="{{url('cms/content')}}" class="btn btn-light ml-3">Cancel</a>
 
         </form>
     </div>

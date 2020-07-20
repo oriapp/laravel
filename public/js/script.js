@@ -47,3 +47,7 @@ $('.update-cart-btn').on('click', function () {
 $('.origin-filed').on('focusout '/*input*/, function () {
     $('.target-filed').val($(this).val().permalink());
 })
+
+$('#article').summernote({
+    height: 350,
+});
