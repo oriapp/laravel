@@ -37,8 +37,8 @@
           <td>{{$item->title}}</td>
           <td>{{ date('d/m/Y', strtotime($item->updated_at)) }}</td>
           <td class="text-center">
-            <a href="#" title="Edit Menu"><i class="far fa-edit"></i></a>
-            <a class="ml-3 text-danger" href="#" title="Delete Menu"><i class="fas fa-trash-alt"></i></a>
+          <a href="{{url('cms/menu/'.$item->id.'/edit')}}" title="Edit Menu"><i class="far fa-edit"></i></a>
+            <a class="ml-3 text-danger" href="{{url('cms/menu/'.$item->id)}}" title="Delete Menu"><i class="fas fa-trash-alt"></i></a>
           </td>
           </tr>
         @endforeach

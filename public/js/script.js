@@ -1,3 +1,8 @@
+String.prototype.permalink = function () {
+    return this.toString().trim().toLowerCase().replace(/\s/g, '-');
+};
+
+
 $(".add-to-cart-btn").on("click", function () {
     var pid = $(this).data("pid");
     $.ajax({
@@ -36,4 +41,9 @@ $('.update-cart-btn').on('click', function () {
             window.location.reload();
         }
     })
+})
+
+
+$('.origin-filed').on('focusout '/*input*/, function () {
+    $('.target-filed').val($(this).val().permalink());
 })
