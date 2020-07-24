@@ -12,6 +12,7 @@ Route::middleware(['cmsguard'])->group(function(){
         Route::get('dashboard', 'CmsController@dashboard');
         Route::resource('content', 'ContentController');
         Route::resource('menu', 'MenuController');
+        Route::resource('categories', 'CategoriesController');
     }); 
 
 });

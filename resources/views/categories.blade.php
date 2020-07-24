@@ -13,7 +13,7 @@
             <img height="150" src="{{asset('images/' . $category->image)}}" class="card-img-top">
                 <div class="card-body">
                   <h5 class="card-title">{{$category->title}}</h5>
-                <p class="card-text">{{$category->description}}</p>
+                <p class="card-text">{!!$category->description!!}</p>
                   <p class="text-center">
                     <a href="{{url('shop/'.$category->url)}}" class="btn btn-primary">{{__('text.view_products_btn')}}</a>
                   </p>

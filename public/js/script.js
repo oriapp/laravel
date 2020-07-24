@@ -51,3 +51,9 @@ $('.origin-filed').on('focusout '/*input*/, function () {
 $('#article').summernote({
     height: 350,
 });
+
+
+$('.image-file-upload').change(function (e) {
+    let fileName = e.target.files[0].name;
+    $(".custom-file-label").html(fileName);
+});
