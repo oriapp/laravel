@@ -15,3 +15,4 @@ class MainController extends Controller
 
     public static $dtv = ['page_title' => 'iCARS -'];
 }
+
