@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2020 at 08:33 PM
+-- Generation Time: Jul 28, 2020 at 06:13 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -45,7 +45,8 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `title`, `description`, `image`, `url`, `updated_at`, `created_at`) VALUES
 (1, 'SUV Cars', 'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'car-1.jpg', 'suv-cars', '2020-07-08 00:00:00', '2020-07-08 00:00:00'),
 (2, 'saloon cars', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, ', 'car-2.jpg', 'saloon-cars', '2020-07-08 00:00:00', '2020-07-08 00:00:00'),
-(3, 'sports', 'an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.', 'car-3.jpg', 'sports', '2020-07-08 00:00:00', '2020-07-08 00:00:00');
+(3, 'sports', 'an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.', 'car-3.jpg', 'sports', '2020-07-08 00:00:00', '2020-07-08 00:00:00'),
+(4, 'Popeye', '<p>Popeye Cars is<font color=\"#efc631\"> </font><font color=\"#6ba54a\">the </font><font color=\"#424242\">best</font><br></p>', '2020.07.24.14.16.55-Km8qY-0jlOFIM.jpg', 'popeye', '2020-07-24 14:17:39', '2020-07-24 13:43:17');
 
 -- --------------------------------------------------------
 
@@ -263,7 +264,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contents`

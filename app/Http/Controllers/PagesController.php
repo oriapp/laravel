@@ -14,13 +14,14 @@ _______________________________
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App;
+use App, Session;
 use App\Content;
 
 class PagesController extends MainController
 {
     public function home(){
         self::$dtv['page_title'] .= "Home Page";
+        // dd(Session::get('locale'));
         return view('home', self::$dtv);
     }
 

@@ -13,7 +13,7 @@
             </div>
           <img src="{{asset('images/'.$product->pimage)}}" class="card-img-top">
             <div class="card-body">
-            <p>{{$product->particle}}</p>
+            <p>{!! $product->particle !!}</p>
             <p><b>{{__('text.price_on_site')}} <b>$</b>{{$product->price}}</b></p>
             <p class="{{__('btn.float')}}">
               

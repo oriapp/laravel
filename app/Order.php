@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Cart, Session;
+use Cart, Session, DB;
 
 class Order extends Model
 {
@@ -16,5 +16,13 @@ class Order extends Model
         $order->save();
         Cart::clear();
         Session::flash('sm', 'Your order has been placed');
+    }
+
+    static public function getAll(){
+        return DB::table('orders as o')
+        ->join('users as u', 'u.id', '=', 'o.user_id')
+        ->select('u.name', 'o.*')
+        ->orderBy('o.created_at', 'desc')
+        ->get();
     }
 }

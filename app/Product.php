@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use DB, Cart, Session;
+use DB, Cart, Session, FileManager;
 
 class Product extends Model
 {
@@ -33,5 +33,29 @@ class Product extends Model
                 Cart::update($request['pid'], ['quantity' => -1]);
             }
         }
+    }
+
+    static public function saveNew($request){
+        $product = new self();
+        $product->categorie_id = $request['category'];
+        $product->ptitle = $request['title'];
+        $product->particle = $request['description'];
+        $product->pimage = FileManager::loadImage($request);
+        $product->price = $request['price'];
+        $product->purl = $request['url'];
+        $product->save();
+        Session::flash('sm', 'Product has been saved!');
+    }
+
+    static public function updateItem($request, $id){
+        $product = self::find($id);
+        $product->categorie_id = $request['category'];
+        $product->ptitle = $request['title'];
+        $product->particle = $request['description'];
+        $product->pimage = FileManager::loadImage($request, $product->pimage);
+        $product->price = $request['price'];
+        $product->purl = $request['url'];
+        $product->save();
+        Session::flash('sm', 'Product has been updated!');
     }
 }

@@ -10,9 +10,11 @@ Route::middleware(['cmsguard'])->group(function(){
  
     Route::prefix('cms')->group(function(){
         Route::get('dashboard', 'CmsController@dashboard');
+        Route::get('orders', 'CmsController@orders');
         Route::resource('content', 'ContentController');
         Route::resource('menu', 'MenuController');
         Route::resource('categories', 'CategoriesController');
+        Route::resource('products', 'ProductsController');
     }); 
 
 });

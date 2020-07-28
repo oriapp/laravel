@@ -16,5 +16,4 @@ return [
     'float' => 'float-right',
     'go_to_cart' => 'לך לסל',
     'welcome_signup' => 'ברוכה הבאה :username לאתר!',
-    ''
 ];
