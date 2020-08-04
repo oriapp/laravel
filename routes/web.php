@@ -4,6 +4,14 @@
 
 Route::get('/', 'PagesController@home');
 
+Route::get('/debug-sentry', function () {
+    throw new Exception('My first Sentry error!');
+});
+
+# language
+Route::get('language', 'PagesController@languages');
+Route::post('language', 'LanguageController@postLanguages');
+
 
 #CMS 
 Route::middleware(['cmsguard'])->group(function(){

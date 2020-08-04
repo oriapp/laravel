@@ -23,6 +23,6 @@ class Order extends Model
         ->join('users as u', 'u.id', '=', 'o.user_id')
         ->select('u.name', 'o.*')
         ->orderBy('o.created_at', 'desc')
-        ->get();
+        ->paginate(2);
     }
 }

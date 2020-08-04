@@ -41,5 +41,6 @@
     </table>
   </div>
 </div>
+<span>{{$orders->links()}}</span>
 
 @endsection

@@ -28,6 +28,10 @@ class SignUpRequest extends FormRequest
             'name' => 'required|min:2|max:70',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6|max:30',
+            'address' => 'required|min:2|max:255',
+            'city' => 'required|min:2|max:255',
+            'state' => 'required|min:2|max:255',
+            'zip' => 'required|min:2|numeric',
         ];
     }
 

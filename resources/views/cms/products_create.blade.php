@@ -7,7 +7,7 @@
 
               
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-6 mb-4">
     <form id="add-menu-form" action="{{url('cms/products')}}" method="POST" autocomplete="off" novalidate="novalidate" enctype="multipart/form-data">
           @csrf
 
@@ -68,6 +68,38 @@
           <div class="form-group">
             <span class="text-danger">{{$errors->first('image')}}</span>
           </div>
+
+
+
+          <div class="form-row mb-2">
+            <div class="form-group col-md-6">
+            <label for="brand"><code>*</code> Brand</label>
+            <input value="{{old('brand')}}" type="brand" name="brand" id="brand" class="form-control">
+            <span class="text-danger"> {{$errors->first('brand')}} </span>
+            </div>
+
+
+            <div class="form-group col-md-4">
+            <label for="weight"><code>*</code> Weight <i>(In Kilograms)</i></label>
+            <input value="{{old('weight')}}" type="weight" name="weight" id="weight" class="form-control">
+            <span class="text-danger"> {{$errors->first('weight')}} </span>
+            </div>
+
+
+            <div class="form-group col-md-4">
+              <label for="amount"><code>*</code> Amount</label>
+              <input value="{{old('amount')}}" type="amount" name="amount" id="amount" class="form-control">
+              <span class="text-danger"> {{$errors->first('weight')}} </span>
+              </div>
+
+
+        <div class="form-group col-md-4">
+            <label for="sku">SKU</label>
+        <input disabled="disabled" value="itemID-brandID-color-size" type="sku" name="sku" id="sku" class="form-control">
+        </div>
+        </div>
+
+
 
           <input type="submit" name="submit" value="Save Product" id="submit" class="btn btn-primary mb-2">
           <a href="{{url('cms/products')}}" class="btn btn-light ml-3">Cancel</a>

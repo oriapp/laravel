@@ -15,14 +15,17 @@ class ShopController extends MainController
 
     public function categories(){
         self::$dtv['page_title'] .= 'Categories Page';
-        self::$dtv['categories'] = Categorie::all();
+        
         return view('categories', self::$dtv);
     }
 
     public function products($curl){
         $producs = Product::getProducts($curl);
+        $categorie = Categorie::all();
         if(!$producs->count()) abort(404);
+
         self::$dtv['products'] = $producs;
+        self::$dtv['categories'] = $categorie;
         self::$dtv['page_title'] .= $producs[0]->title . ' Products';
         return view('products', self::$dtv);
     }
@@ -43,8 +46,11 @@ class ShopController extends MainController
         if(!empty($request['removeItem'])) return $this->removeItem($request['removeItem']);
         self::$dtv['page_title'] .= ' Cart Page';
         $cart = Cart::getContent()->toArray();
+
         sort($cart);
         self::$dtv['cart'] = $cart;
+        // self::$dtv['products'] = DB::table('products')->get();
+
         return view('cart', self::$dtv);
     }
 
@@ -58,7 +64,24 @@ class ShopController extends MainController
     }
 
     public function updateCart(Request $request){
+        $am = DB::table('products as p')
+         ->where('p.id', '=', $request['pid'])
+         ->select('p.id', 'p.ptitle', 'p.amount')
+         ->get();
+         
         Product::updateCart($request);
+
+        // Session::flash('amount', DB::table('products as p')
+        // ->where('p.id', '=', $request['pid'])
+        // ->select('p.id', 'p.ptitle', 'p.amount')
+        // ->get());
+
+        // $amount = DB::table('products as p')
+        // ->select('p.id', 'p.title', 'p.amount')
+        // ->where('p.amount', '<', '0')
+        // ->all();
+
+        // Session::flash('amount', $amount);
 
     }
 

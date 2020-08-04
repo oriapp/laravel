@@ -1,3 +1,8 @@
+@php
+    use App\Categorie;
+    $caregories = Categorie::all();
+@endphp
+
 <!doctype html>
 <html lang="he">
   <head>
@@ -13,9 +18,9 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-            <a class="navbar-brand text-white" href="{{url('')}}">i<i class="fas fa-car"></i>CARS</a>
+            <a class="navbar-brand text-white" href="{{url('')}}"><i class="fas fa-wind"></i> Soft</a>
             
             <a class="nav-link text-white" href="{{url('shop/cart')}}">
             @if (! Cart::isEmpty())
@@ -43,24 +48,33 @@
               @endif
           </ul>
           <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-flag"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{url('language')}}"> {{__('text.language')}} </a>
+            </li>
+
             @if(!Session::has('user_id'))
             <li class="nav-item">
-              <a class="nav-link text-white" href="{{url('user/signin')}}">Signin</a>
+              <a class="nav-link text-white" href="{{url('user/signin')}}"> {{__('text.signin')}} </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{url('user/signup')}}">Signup</a>
+                <a class="nav-link text-white" href="{{url('user/signup')}}"> {{__('text.signup')}} </a>
               </li>
               @else
               @if(Session::get('is_admin'))
               <li class="nav-item">
-                <a class="nav-link text-white" href="{{url('cms/dashboard')}}">Cms Dashboard</a>
+                <a class="nav-link text-white" href="{{url('cms/dashboard')}}"> {{__('text.admin_dashboard')}} </a>
               </li>
               @endif
               <li class="nav-item">
                 <a style="cursor: no-drop;" class="nav-link text-white disabled" href="{{url('user/profile')}}">{{Session::get('user_name')}}</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white" href="{{url('user/logout')}}">Logout</a>
+                  <a class="nav-link text-white" href="{{url('user/logout')}}"> {{__('text.logout')}} </a>
                 </li>
               @endif
           </ul>
@@ -71,16 +85,115 @@
     <main style="min-height: 850px;">
     @yield('content')
     </main>
-    <footer class="bg-primary p-2">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <p class="text-center text-white mb-0">
-              iCARS &copy; {{date('Y')}}
-            </p>
-          </div>
-        </div>
+    <footer class="bg-dark p-2 text-white">
+    <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mb-4">idfgear</h5>
+        <p>Here you can use rows and columns to organize your footer content.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
+          esse
+          quasi, veritatis totam voluptas nostrum.</p>
+
       </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Categories <i class="fas fa-link"></i> </h5>
+
+        <ul class="list-unstyled">
+        @foreach ($caregories as $categorie)
+        <li>
+          <p>
+            <a class="text-white" href="#!">{{$categorie->title}}</a>
+          </p>
+        </li>
+        @endforeach
+
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Contact details -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Address <i class="fas fa-map-marker-alt"></i> </h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+          </li>
+          <li>
+        </ul>
+
+      </div>
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+        <!-- Social buttons -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+        <!-- Facebook -->
+        <a type="button" class="btn-floating btn-fb">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <!-- Twitter -->
+        <a type="button" class="btn-floating btn-tw">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <!-- Google +-->
+        <a type="button" class="btn-floating btn-gplus">
+          <i class="fab fa-google-plus-g"></i>
+        </a>
+        <!-- Dribbble -->
+        <a type="button" class="btn-floating btn-dribbble">
+          <i class="fab fa-dribbble"></i>
+        </a>
+
+      </div>
+      <a class="btn-floating btn-dribbble">
+      <img style="max-width: 40% !important; height: auto;" class="rounded mx-auto d-block float-left" src="{{asset('images/Powered-By-PayPal-Logo.png')}}">
+      </a>
+    </div>
+
+
+  </div>
+
+  <div class="footer-copyright text-center py-3">&copy; {{date('Y')}} Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+
+</footer>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -92,6 +205,15 @@
     toastr.success("{{Session::get('sm')}}");
     </script>
     @endif
+
+    @if(Session::has('em'))
+    <script>
+      toastr.options.positionClass = 'toast-bottom-center'
+    toastr.error("{{Session::get('em')}}");
+    </script>
+    @endif
+
+    
   <script src="{{asset('js/script.js')}}"></script>
   </body>
 </html>

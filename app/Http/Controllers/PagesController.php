@@ -16,12 +16,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App, Session;
 use App\Content;
+use App\Categorie;
 
 class PagesController extends MainController
 {
     public function home(){
         self::$dtv['page_title'] .= "Home Page";
         // dd(Session::get('locale'));
+        self::$dtv['caregories'] = Categorie::all();
         return view('home', self::$dtv);
     }
 
@@ -30,5 +32,10 @@ class PagesController extends MainController
         if(!self::$dtv['contents']->count()) \abort(404);
         self::$dtv['page_title'] .= self::$dtv['contents'][0]->title;
         return view('content', self::$dtv);
+    }
+
+    public function languages(){
+        self::$dtv['page_title'] .= "language select";
+        return view('language', self::$dtv);
     }
 }

@@ -57,3 +57,16 @@ $('.image-file-upload').change(function (e) {
     let fileName = e.target.files[0].name;
     $(".custom-file-label").html(fileName);
 });
+
+
+
+
+
+$(document).ready(function() {
+	
+	$('.card').delay(1800).queue(function(next) {
+		$(this).removeClass('hover');
+		$('a.hover').removeClass('hover');
+		next();
+	});
+});

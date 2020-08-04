@@ -73,6 +73,38 @@
             <span class="text-danger">{{$errors->first('image')}}</span>
           </div>
 
+          
+
+          <div class="form-row mb-2">
+            <div class="form-group col-md-6">
+            <label for="brand"><code>*</code> Brand</label>
+            <input value="{{$item->brand}}" type="brand" name="brand" id="brand" class="form-control">
+            <span class="text-danger"> {{$errors->first('brand')}} </span>
+            </div>
+
+
+            <div class="form-group col-md-4">
+            <label for="weight"><code>*</code> Weight <i>(In Kilograms)</i></label>
+            <input value="{{$item->weight}}" type="weight" name="weight" id="weight" class="form-control">
+            <span class="text-danger"> {{$errors->first('weight')}} </span>
+            </div>
+
+
+            <div class="form-group col-md-4">
+              <label for="amount"><code>*</code> Amount</label>
+              <input value="{{$item->amount}}" type="amount" name="amount" id="amount" class="form-control">
+              <span class="text-danger"> {{$errors->first('weight')}} </span>
+              </div>
+
+
+        <div class="form-group col-md-4">
+            <label for="sku">SKU</label>
+        <input disabled="disabled" value="itemID-brandID-color-size" type="sku" name="sku" id="sku" class="form-control">
+        </div>
+        </div>
+
+
+
           <input type="submit" name="submit" value="Update Product" id="submit" class="btn btn-primary mb-2">
           <a href="{{url('cms/products')}}" class="btn btn-light ml-3">Cancel</a>
 

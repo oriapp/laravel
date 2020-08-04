@@ -43,6 +43,9 @@ class Product extends Model
         $product->pimage = FileManager::loadImage($request);
         $product->price = $request['price'];
         $product->purl = $request['url'];
+        $product->brand = $request['brand'];
+        $product->weight = $request['weight'];
+        $product->amount = $request['amount'];
         $product->save();
         Session::flash('sm', 'Product has been saved!');
     }
@@ -55,6 +58,9 @@ class Product extends Model
         $product->pimage = FileManager::loadImage($request, $product->pimage);
         $product->price = $request['price'];
         $product->purl = $request['url'];
+        $product->brand = $request['brand'];
+        $product->weight = $request['weight'];
+        $product->amount = $request['amount'];
         $product->save();
         Session::flash('sm', 'Product has been updated!');
     }

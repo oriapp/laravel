@@ -1,3 +1,15 @@
+@php
+
+         function amount($id){
+           $pro = DB::table('products as p')
+         ->where('p.id', '=', $id)
+         ->select('p.amount')
+         ->get();
+         
+         return (int) filter_var($pro, FILTER_SANITIZE_NUMBER_INT);
+         }
+@endphp
+
 @extends('master')
 @section('content')
 <div class="container">
@@ -15,6 +27,7 @@
                         <th class="text-center">Quantity:</th>
                         <th>Price:</th>
                         <th>Sub Total:</th>
+                        <th>In our stock:</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -24,11 +37,13 @@
                             <td>{{$item['name']}}</td>
                             <td class="text-center">
                             <button data-pid="{{$item['id']}}" data-op="minus" type="button" href="#" class="update-cart-btn btn btn-outline-primary btn-sm"><i class="fas fa-minus-circle"></i></button>
-                            <input size="1" class="text-center" type="text" value="{{$item['quantity']}}">
-                                <button data-pid="{{$item['id']}}" data-op="plus" type="button" href="#" class="update-cart-btn btn btn-outline-primary btn-sm"><i class="fas fa-plus-circle"></i></button>
+                            <input size="1" id="quantity" class="text-center" type="text" value="{{$item['quantity']}}">
+                                <button data-pid="{{$item['id']}}" data-qu="{{amount($item['id'])}}" data-op="plus" type="button" href="#" class="update-cart-btn btn btn-outline-primary btn-sm"><i class="fas fa-plus-circle"></i></button>
                             </td>
                             <td>{{$item['price']}}</td>
                             <td>${{$item['quantity'] * $item['price']}}</td>
+                            <td id="{{$item['id']}}-instock">{{amount($item['id'])}}</td>
+                            
                         <td><a class="text-danger remove-from-cart-btn" href="{{url('shop/cart?removeItem='.$item['id'])}}"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                     @endforeach
@@ -46,6 +61,7 @@
             <p>
             <a href="{{url('shop/checkout')}}" class="btn btn-primary btn-lg">Buy Now!</a>
             </p>
+            
         </div>
         @else
         <div class="col-12 text-center">
@@ -53,5 +69,6 @@
         </div>
         @endif
     </div>
+
 </div>
 @endsection
