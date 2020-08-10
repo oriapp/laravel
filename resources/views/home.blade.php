@@ -69,7 +69,6 @@
     float:left !important;
     flex-direction: column !important !important;
 }
-
 .cardd {
     position: relative;
     display: -ms-flexbox;

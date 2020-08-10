@@ -89,6 +89,10 @@ class ShopController extends MainController
         if(Cart::isEmpty()) return redirect('shop/cart');
         if(!Session::has('user_id')) return redirect('user/signup?backTo=shop/cart');
         Order::saveNew();
+        if(!Session::has('em')){
         return redirect('shop');
+        } else {
+            return redirect('shop/cart');
+        }
     }
 }

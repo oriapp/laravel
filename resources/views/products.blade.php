@@ -35,17 +35,20 @@
 
     <div class="row">
         @foreach($products as $product)
-        <div class="col-lg-5 mt-3">
+        <div class="col-lg-6 mt-3">
           <div class="card">
             <div class="header">
-            <h3>{{$product->ptitle}} | {{$product->amount}}</h3>
+            <h3>{{$product->ptitle}}</h3>
             </div>
           <img height="250" src="{{asset('images/'.$product->pimage)}}" class="card-img-top">
             <div class="card-body">
             <p>{!! $product->particle !!}</p>
             <p><b>{{__('text.price_on_site')}} <b>$</b>{{$product->price}}</b></p>
+            <div class="container">
+              <span class="mb-2 badge badge-pill badge-secondary">{{$product->amount}} in stock</span>
+            </div>
             <p class="{{__('btn.float')}}">
-
+              
               @if (!Cart::get($product->id))
             @if($product->amount)
             <button data-pid="{{$product->id}}" class="btn btn-success add-to-cart-btn">
@@ -66,8 +69,6 @@
                 <i class="fas fa-eye"></i> {{__('text.more_detailes')}}
               </a>
             </p>
-
-            <span class="badge badge-pill badge-secondary">{{$product->amount}} in stock</span>
 
             </div>
           </div>

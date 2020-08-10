@@ -55,3 +55,6 @@ Route::prefix('user')->group(function(){
 
 
 Route::get('{menu_url}', 'PagesController@content');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -17,6 +17,7 @@
         "ip2location/ip2location-laravel": "^1.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.1",
         "m6web/firewall": "^1.0",
         "pragmarx/firewall": "^2.3",
         "renatomarinho/laravel-page-speed": "^1.8",
