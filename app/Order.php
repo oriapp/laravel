@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Cart, Session, DB;
+use Cart, Session, DB, Str;
 use App\Product;
 
 class Order extends Model
@@ -32,7 +32,8 @@ class Order extends Model
 
             if(Cart::get($item['id'])->quantity > (int)self::getProductsByTitle($item['name'])->first()->amount){
                 $validation = false;
-                Session::flash('em', 'Can\'t place your order! we have only '.(int)self::getProductsByTitle($item['name'])->first()->amount. ' '. $item['name'] .'\'s In stock!');
+                Session::flash('notify');
+                notify()->error('Can\'t place your order! we have only '.(int)self::getProductsByTitle($item['name'])->first()->amount. ' '. $item['name'] .'\'s In stock!');
             }
 
         }
@@ -40,14 +41,16 @@ class Order extends Model
         if($validation){
             // If we have those items in stock!
             $order = new self();
+            $order->order_id = Str::random(32);
             $order->user_id = Session::get('user_id');
             $order->data = serialize(Cart::getContent()->toArray());
             $order->total = Cart::getTotal();
             $order->save();
             Cart::clear();
-            Session::flash('sm', 'Your order has been placed');
+            notify()->success('Your order has been placed.');
+            //Session::flash('sm', 'Your order has been placed');
         }
-        
+
     }
 
     static public function getAll(){

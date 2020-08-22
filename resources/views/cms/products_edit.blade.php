@@ -45,6 +45,14 @@
           <span class="text-danger">{{$errors->first('price')}}</span>
           </div>
 
+
+          <div class="form-group">
+            <label for="old-price">Old Product Price
+            </label>
+          <input value="{{$item->old_price}}" type="text" name="old-price" id="old-price" class="form-control">
+          <span class="text-danger">{{$errors->first('old-price')}}</span>
+          </div>
+
           <div class="form-group">
             <label for="article"><code>*</code> Product Description
             </label>
@@ -73,6 +81,12 @@
             <span class="text-danger">{{$errors->first('image')}}</span>
           </div>
 
+            <div class="form-group">
+              <label for="short"><code>*</code> Short Description
+              </label>
+            <input value="{{$item->in_short}}" type="text" name="short" id="short" class="form-control">
+            <span class="text-danger">{{$errors->first('short')}}</span>
+            </div>
           
 
           <div class="form-row mb-2">
@@ -101,6 +115,24 @@
             <label for="sku">SKU</label>
         <input disabled="disabled" value="itemID-brandID-color-size" type="sku" name="sku" id="sku" class="form-control">
         </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="visibility">* Item visibility</label>
+          <select class="form-control" name="visibility" id="visibility">
+            @php
+                if($item->visibility == '1'){
+                  $itemvisibilityname = 'On';
+                } else {
+                  $itemvisibilityname = 'off';
+                }
+            @endphp
+            <option selected="selected" value="{{$item->visibility}}">{{$itemvisibilityname}} (default)</option>
+          <option value="1">On</option>
+          <option value="0">Off</option>
+          </select>
+          <span class="text-danger">{{$errors->first('visibility')}}</span>
         </div>
 
 

@@ -10,12 +10,12 @@
             <form action="" method="POST" novalidate="novalidate" autocomplete="off">
                 @csrf
                 <div class="form-group">
-                    <label for="email">* {{__('text.email')}}</label>
+                    <label for="email"><code>*</code> {{__('text.email')}}</label>
                     <input type="email" name="email" id="email" class="form-control">
                     <span class="text-danger"> {{$errors->first('email')}} </span>
                 </div>
                 <div class="form-group">
-                    <label for="password">* {{__('text.password')}}</label>
+                    <label for="password"><code>*</code> {{__('text.password')}}</label>
                     <input type="password" name="password" id="password" class="form-control">
                     <span class="text-danger"> {{$errors->first('password')}} </span>
                 </div>

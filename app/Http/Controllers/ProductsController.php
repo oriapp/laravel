@@ -30,6 +30,7 @@ class ProductsController extends MainController
     public function store(ProductRequest $request)
     {
         Product::saveNew($request);
+        
         return redirect('cms/products');
     }
 

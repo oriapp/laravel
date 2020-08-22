@@ -15,6 +15,7 @@
           <th>User</th>
           <th>Total</th>
           <th>Oder Details</th>
+          <th>Oder Uniq ID</th>
           <th>Order Date</th>
         </tr>
       </thead>
@@ -34,6 +35,7 @@
           @endforeach
         </ul>
       </td>
+      <td>{{$order->order_id}}</td>
       <td>{{date('d/m/y H:i:s', strtotime($order->created_at))}}</td>
       </tr>
         @endforeach

@@ -7,20 +7,52 @@ use DB, Cart, Session, FileManager;
 
 class Product extends Model
 {
-    static public function getProducts($curl){
+    static public function getProducts($curl, $uri){
+        //dd($uri->sort);
+        // if($uri->sort){
+        //     $by = "p.$uri->sort";
+        //     return DB::table('products as p')
+        // ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        // ->select('p.*', 'c.title', 'c.url', 'p.visibility')
+        // ->where('c.url', '=', $curl)
+        // ->where('p.visibility', '=', '1')
+        // ->orderBy($by)
+        // ->paginate(1);
+        // } else {
+        // return DB::table('products as p')
+        // ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        // ->select('p.*', 'c.title', 'c.url', 'p.visibility')
+        // ->where('c.url', '=', $curl)
+        // ->where('p.visibility', '=', '1')
+        // ->orderBy('p.price')
+        // ->paginate(1);
+        // }
+
+
         return DB::table('products as p')
         ->join('categories as c', 'c.id', '=', 'p.categorie_id')
-        ->select('p.*', 'c.title', 'c.url')
+        ->select('p.*', 'c.title', 'c.url', 'p.visibility')
         ->where('c.url', '=', $curl)
+        ->where('p.visibility', '=', '1')
         ->orderBy('p.price')
-        ->paginate(3);
+        ->paginate(1);
+    }
+
+    static public function searchProduct($query){
+        return DB::table('products as p')
+        ->select('p.*')
+        ->where('ptitle', 'LIKE', "%$query%")
+        ->orWhere('purl', 'LIKE', "%$query%")
+        ->orWhere('particle', 'LIKE', "%$query%")
+        ->orWhere('brand', 'LIKE', "%$query%")
+        ->paginate(9);
     }
 
     static public function addToCart($pid){
         if(is_numeric($pid) && $product = self::find($pid)){
             if(!Cart::get($pid)){
             Cart::add($pid, $product->ptitle, $product->price, 1, []);
-            Session::flash('sm', $product->ptitle . ' added to cart');
+            notify()->success('awesome! ' . $product->ptitle . ' has been added to the cart!');
             }
         }
     }
@@ -42,10 +74,13 @@ class Product extends Model
         $product->particle = $request['description'];
         $product->pimage = FileManager::loadImage($request);
         $product->price = $request['price'];
+        $product->old_price = $request['old-price'];
         $product->purl = $request['url'];
         $product->brand = $request['brand'];
         $product->weight = $request['weight'];
         $product->amount = $request['amount'];
+        $product->visibility = $request['visibility'];
+        $product->in_short = $request['short'];
         $product->save();
         Session::flash('sm', 'Product has been saved!');
     }
@@ -57,10 +92,13 @@ class Product extends Model
         $product->particle = $request['description'];
         $product->pimage = FileManager::loadImage($request, $product->pimage);
         $product->price = $request['price'];
+        $product->old_price = $request['old-price'];
         $product->purl = $request['url'];
         $product->brand = $request['brand'];
         $product->weight = $request['weight'];
         $product->amount = $request['amount'];
+        $product->visibility = $request['visibility'];
+        $product->in_short = $request['short'];
         $product->save();
         Session::flash('sm', 'Product has been updated!');
     }

@@ -22,11 +22,14 @@ class ProductRequest extends FormRequest
             'title' => 'required|min:2|max:255',
             'url' => 'required|min:2|max:255|regex:/^[a-z\d-]+$/|unique:products,purl' . $item_id,
             'price' => 'required|numeric',
+            'old-price' => 'numeric',
             'description' => 'required|min:2',
             'image' => 'image',
             'brand' => 'required|min:2|max:255',
             'weight' => 'required|numeric',
             'amount' => 'required|numeric',
+            'visibility' => 'required',
+            'short' => 'required|min:5|max:35',
         ];
     }
 }

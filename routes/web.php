@@ -1,16 +1,50 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SearchController;
+
+
+# Home
 
 Route::get('/', 'PagesController@home');
 
+# Payments
+
+Route::get('/payment', 'PaymentController@chackOut');
+Route::post('/payment', 'PaymentController@postChackOut');
+
+# Sentry.io
 Route::get('/debug-sentry', function () {
     throw new Exception('My first Sentry error!');
 });
 
 # language
+Route::prefix('flag')->group(function(){
 Route::get('language', 'PagesController@languages');
 Route::post('language', 'LanguageController@postLanguages');
+}); 
+
+
+Route::get('search/{search}', function ($search) {
+    
+    //return $search;
+    return SearchController::search($search);
+}); 
+// })->where('search', '.*');
+
+
+
+
+# Email
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
+Route::get('/email', function(){
+    Mail::to('email@email.com')->send(new WelcomeMail());
+});
+
+
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 #CMS 
@@ -49,12 +83,11 @@ Route::prefix('user')->group(function(){
     Route::post('signin', 'UserController@postSignin');
     Route::get('logout', 'UserController@logout');
     Route::get('signin', 'UserController@signin');
+    Route::get('profile', 'UserController@profile');
+    //Route::post('profile', 'UserController@postProfile');
 });
 
 
 
-
+# Custom Pages
 Route::get('{menu_url}', 'PagesController@content');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

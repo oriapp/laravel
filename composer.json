@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "beyondcode/laravel-websockets": "^1.6",
         "darryldecode/cart": "^4.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
@@ -19,11 +20,16 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "m6web/firewall": "^1.0",
+        "mckenziearts/laravel-notify": "^1.1",
+        "nexmo/client": "^2.0",
+        "nexmo/laravel": "dev-master as 1.0",
         "pragmarx/firewall": "^2.3",
+        "predis/predis": "^1.1",
         "renatomarinho/laravel-page-speed": "^1.8",
         "sentry/sentry-laravel": "^1.8",
         "srmklive/paypal": "^1.7",
-        "stichoza/google-translate-php": "^4.1"
+        "stichoza/google-translate-php": "^4.1",
+        "amsgames/laravel-shop-gateway-paypal": "v1.0.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

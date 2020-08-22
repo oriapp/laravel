@@ -2,9 +2,9 @@
 
 return [
     'introduction' => 'Welcome!',
-    'home_title' => 'AirSoft | Home Page',
+    'home_title' => 'Idfgear',
     'home_description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    'categories_title' => 'iCARS Category Page',
+    'categories_title' => 'Idfgear Category Page',
     'categories_description' => 'Lorem ipsum dolor sit amet.',
     'aobut_title' => 'About Us',
     'about_description' => 'Lorem ipsum dolor sit amet.',
@@ -31,6 +31,7 @@ return [
     'zip' => 'Zip',
     'select_language' => 'Select Language',
     'signup_warning' => 'Make sure you have typed the right information! <b>You may not be able to change this information in the future</b>',
+    'editp_title' => 'Edit Profile Form',
 
     'language' => 'languages',
     'languages_select' => 'Languages Select',
@@ -38,6 +39,10 @@ return [
     'logout' => 'logout',
     'partners' => 'Partners',
     'signup' => 'Signup',
+    'phone' => 'Phone',
+    'edit_profile' => 'Edit Profile',
+    'language_updated' => 'language has been updated!',
+    'brands' => 'Brands',
     
 
     'admin_dashboard' => 'Cms Dashboard',

@@ -1,3 +1,54 @@
+@php
+    $dataPoints = array(
+	array("x" => 946665000000, "y" => 3289000),
+	array("x" => 978287400000, "y" => 3830000),
+	array("x" => 1009823400000, "y" => 2009000),
+	array("x" => 1041359400000, "y" => 2840000),
+	array("x" => 1072895400000, "y" => 2396000),
+	array("x" => 1104517800000, "y" => 1613000),
+	array("x" => 1136053800000, "y" => 1821000),
+	array("x" => 1167589800000, "y" => 2000000),
+	array("x" => 1199125800000, "y" => 1397000),
+	array("x" => 1230748200000, "y" => 2506000),
+	array("x" => 1262284200000, "y" => 6704000),
+	array("x" => 1293820200000, "y" => 5704000),
+	array("x" => 1325356200000, "y" => 4009000),
+	array("x" => 1356978600000, "y" => 3026000),
+	array("x" => 1388514600000, "y" => 2394000),
+	array("x" => 1420050600000, "y" => 1872000),
+	array("x" => 1451586600000, "y" => 2140000)
+ );
+@endphp
+
+<script>
+  window.onload = function () {
+   
+  var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    title:{
+      text: "Company Revenue by Year"
+    },
+    axisY: {
+      title: "Revenue in USD",
+      valueFormatString: "#0,,.",
+      suffix: "mn",
+      prefix: "$"
+    },
+    data: [{
+      type: "spline",
+      markerSize: 5,
+      xValueFormatString: "YYYY",
+      yValueFormatString: "$#,##0.##",
+      xValueType: "dateTime",
+      dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+    }]
+  });
+   
+  chart.render();
+   
+  }
+  </script>
+
 @extends('cms.cms_master')
 
 @section('cms_content')
@@ -8,131 +59,8 @@
               
 <div class="row">
     <div class="col-12">
-        <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>sit</td>
-              </tr>
-              <tr>
-                <td>1,002</td>
-                <td>amet</td>
-                <td>consectetur</td>
-                <td>adipiscing</td>
-                <td>elit</td>
-              </tr>
-              <tr>
-                <td>1,003</td>
-                <td>Integer</td>
-                <td>nec</td>
-                <td>odio</td>
-                <td>Praesent</td>
-              </tr>
-              <tr>
-                <td>1,003</td>
-                <td>libero</td>
-                <td>Sed</td>
-                <td>cursus</td>
-                <td>ante</td>
-              </tr>
-              <tr>
-                <td>1,004</td>
-                <td>dapibus</td>
-                <td>diam</td>
-                <td>Sed</td>
-                <td>nisi</td>
-              </tr>
-              <tr>
-                <td>1,005</td>
-                <td>Nulla</td>
-                <td>quis</td>
-                <td>sem</td>
-                <td>at</td>
-              </tr>
-              <tr>
-                <td>1,006</td>
-                <td>nibh</td>
-                <td>elementum</td>
-                <td>imperdiet</td>
-                <td>Duis</td>
-              </tr>
-              <tr>
-                <td>1,007</td>
-                <td>sagittis</td>
-                <td>ipsum</td>
-                <td>Praesent</td>
-                <td>mauris</td>
-              </tr>
-              <tr>
-                <td>1,008</td>
-                <td>Fusce</td>
-                <td>nec</td>
-                <td>tellus</td>
-                <td>sed</td>
-              </tr>
-              <tr>
-                <td>1,009</td>
-                <td>augue</td>
-                <td>semper</td>
-                <td>porta</td>
-                <td>Mauris</td>
-              </tr>
-              <tr>
-                <td>1,010</td>
-                <td>massa</td>
-                <td>Vestibulum</td>
-                <td>lacinia</td>
-                <td>arcu</td>
-              </tr>
-              <tr>
-                <td>1,011</td>
-                <td>eget</td>
-                <td>nulla</td>
-                <td>Class</td>
-                <td>aptent</td>
-              </tr>
-              <tr>
-                <td>1,012</td>
-                <td>taciti</td>
-                <td>sociosqu</td>
-                <td>ad</td>
-                <td>litora</td>
-              </tr>
-              <tr>
-                <td>1,013</td>
-                <td>torquent</td>
-                <td>per</td>
-                <td>conubia</td>
-                <td>nostra</td>
-              </tr>
-              <tr>
-                <td>1,014</td>
-                <td>per</td>
-                <td>inceptos</td>
-                <td>himenaeos</td>
-                <td>Curabitur</td>
-              </tr>
-              <tr>
-                <td>1,015</td>
-                <td>sodales</td>
-                <td>ligula</td>
-                <td>in</td>
-                <td>libero</td>
-              </tr>
-            </tbody>
-          </table>
+      <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     </div>
 </div>
 

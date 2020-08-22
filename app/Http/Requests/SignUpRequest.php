@@ -32,6 +32,7 @@ class SignUpRequest extends FormRequest
             'city' => 'required|min:2|max:255',
             'state' => 'required|min:2|max:255',
             'zip' => 'required|min:2|numeric',
+            'phone' => 'required|numeric|min:9',
         ];
     }
 

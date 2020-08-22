@@ -30,8 +30,30 @@
 // console.log(funki([10, 2, 1], 2))
 
 
-const cool = (sign, ...rest) => {
-    return `${sign}${rest}`;
+// const cool = (sign, ...rest) => {
+//     return `${sign}${rest}`;
+// }
+
+// console.log(cool("!", "a", "b", "c", "d", "u"));
+
+
+class Controller {
+    view;
+
+    constructor(sa) {
+        this.view = sa;
+    }
+
+    getView() {
+        return this.view;
+    }
 }
 
-console.log(cool("!", "a", "b", "c", "d", "u"));
+class UserController extends Controller {
+    constructor(sa) {
+        super(sa)
+    }
+}
+
+const na = new UserController('hola');
+console.log(na.getView());

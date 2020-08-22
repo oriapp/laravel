@@ -45,6 +45,13 @@
           </div>
 
           <div class="form-group">
+            <label for="old-price">Old Product Price
+            </label>
+          <input value="{{old('old-price')}}" type="text" name="old-price" id="old-price" class="form-control">
+          <span class="text-danger">{{$errors->first('old-price')}}</span>
+          </div>
+
+          <div class="form-group">
             <label for="article"><code>*</code> Product Description
             </label>
           <textarea name="description" id="article" cols="30" rows="10" class="form-control">{{old('description')}}</textarea>
@@ -71,12 +78,19 @@
 
 
 
-          <div class="form-row mb-2">
-            <div class="form-group col-md-6">
-            <label for="brand"><code>*</code> Brand</label>
-            <input value="{{old('brand')}}" type="brand" name="brand" id="brand" class="form-control">
-            <span class="text-danger"> {{$errors->first('brand')}} </span>
+          <div class="form-group">
+            <label for="short"><code>*</code> Short Description</label>
+            <input value="{{old('short')}}" type="short" name="short" id="short" class="form-control">
+            <span class="text-danger"> {{$errors->first('short')}} </span>
             </div>
+
+
+            <div class="form-row mb-2">
+              <div class="form-group col-md-6">
+              <label for="brand"><code>*</code> Brand</label>
+              <input value="{{old('brand')}}" type="brand" name="brand" id="brand" class="form-control">
+              <span class="text-danger"> {{$errors->first('brand')}} </span>
+              </div>
 
 
             <div class="form-group col-md-4">
@@ -99,6 +113,16 @@
         </div>
         </div>
 
+
+        <div class="form-group">
+          <label for="visibility">* Item visibility</label>
+          <select class="form-control" name="visibility" id="visibility">
+          <option selected="selected" value="1">On</option>
+          <option value="0">Off</option>
+          </select>
+          <span class="text-danger">{{$errors->first('visibility')}}</span>
+        </div>
+        
 
 
           <input type="submit" name="submit" value="Save Product" id="submit" class="btn btn-primary mb-2">

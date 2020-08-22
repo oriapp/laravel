@@ -19,8 +19,9 @@ class ShopController extends MainController
         return view('categories', self::$dtv);
     }
 
-    public function products($curl){
-        $producs = Product::getProducts($curl);
+    public function products(Request $uri, $curl){
+        //dd($uri->request);
+        $producs = Product::getProducts($curl, $uri);
         $categorie = Categorie::all();
         if(!$producs->count()) abort(404);
 
@@ -35,6 +36,18 @@ class ShopController extends MainController
         if(!$product) abort(404);
         self::$dtv['page_title'] .= $product->ptitle . ' Products';
         self::$dtv['product'] = $product;
+
+
+        // LAST VISIT PRODUCTS START
+        $valid = true;
+        if(Session::get("product_view")){
+        foreach(Session::get("product_view") as $pro){
+            if($pro[0]['id'] == $product->id) $valid = false;
+            }
+        }
+        if($valid) Session::push("product_view", [$product]);
+        // LAST VISIT PRODUCTS END
+
         return view('product_detailes', self::$dtv);
     }
 
@@ -89,7 +102,7 @@ class ShopController extends MainController
         if(Cart::isEmpty()) return redirect('shop/cart');
         if(!Session::has('user_id')) return redirect('user/signup?backTo=shop/cart');
         Order::saveNew();
-        if(!Session::has('em')){
+        if(!Session::has('notify')){
         return redirect('shop');
         } else {
             return redirect('shop/cart');

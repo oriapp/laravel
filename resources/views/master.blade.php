@@ -13,10 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
-  <title>{{"$page_title" ?? ''}}</title>
+  <title>{{$page_title ?? ''}}</title>
   <script>let BASE_URL = "{{ url('') }}/";</script>
+
+  {{-- React Include START --}}
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+
+  {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+
+  {{-- React Include END --}}
+
   </head>
   <body>
+    @include('notify::messages')
+        @notifyJs
+        @notifyCss
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -54,7 +67,16 @@
                 <i class="far fa-flag"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{url('language')}}"> {{__('text.language')}} </a>
+                <a class="dropdown-item" href="{{url('flag/language')}}"> {{__('text.language')}} </a>
+                @if(Session::has('user_id'))
+                {{--
+                  TO DO ONCE OPENING THE PROJECT AT MORNING
+                  EDIT PROFILE
+                  ALL THE INFO OF THE USER
+                  ONCE USER CLICKS HIS NAME NAVIGATE HIM TO HIS PROFILE IT SELF
+                  ONLY THE SAME USER CAN SEE HIS OWN PROFILE--}}
+                  <a class="dropdown-item" href="{{url('user/profile')}}"> {{__('text.edit_profile')}} </a>
+                @endif
             </li>
 
             @if(!Session::has('user_id'))
@@ -71,7 +93,8 @@
               </li>
               @endif
               <li class="nav-item">
-                <a style="cursor: no-drop;" class="nav-link text-white disabled" href="{{url('user/profile')}}">{{Session::get('user_name')}}</a>
+                <a class="nav-link text-white" href="{{url('user/profile')}}">{{Session::get('user_name')}}</a>
+                {{-- style="cursor: no-drop;" --}}
               </li>
               <li class="nav-item">
                   <a class="nav-link text-white" href="{{url('user/logout')}}"> {{__('text.logout')}} </a>
@@ -99,8 +122,8 @@
 
         <!-- Content -->
         <h5 class="font-weight-bold text-uppercase mb-4">idfgear</h5>
-        <p>Here you can use rows and columns to organize your footer content.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
+        <p class="p-footer">Here you can use rows and columns to organize your footer content.</p>
+        <p class="p-footer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
           esse
           quasi, veritatis totam voluptas nostrum.</p>
 
@@ -190,7 +213,7 @@
   </div>
 
   <div class="footer-copyright text-center py-3">&copy; {{date('Y')}} Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <a href="http://about-rcn.me/"> Ori Applebaum</a>
   </div>
 
 </footer>
