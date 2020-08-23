@@ -43,6 +43,7 @@ return [
     'edit_profile' => 'Edit Profile',
     'language_updated' => 'language has been updated!',
     'brands' => 'Brands',
+    'rhf-container' => 'Inspired by your browsing history',
     
 
     'admin_dashboard' => 'Cms Dashboard',

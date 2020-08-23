@@ -43,6 +43,7 @@ return [
     'edit_profile' => 'ערוך משתמש',
     'language_updated' => 'שפת מקור האתר שונתה בהצלחה',
     'brands' => 'מותגים',
+    'rhf-container' => 'בהשראת היסטוריית הגלישה שלך',
 
 
 

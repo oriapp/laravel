@@ -35,16 +35,16 @@ class Product extends Model
         ->where('c.url', '=', $curl)
         ->where('p.visibility', '=', '1')
         ->orderBy('p.price')
-        ->paginate(1);
+        ->paginate(3);
     }
 
     static public function searchProduct($query){
         return DB::table('products as p')
         ->select('p.*')
-        ->where('ptitle', 'LIKE', "%$query%")
+        ->where('ptitle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
         ->orWhere('purl', 'LIKE', "%$query%")
-        ->orWhere('particle', 'LIKE', "%$query%")
         ->orWhere('brand', 'LIKE', "%$query%")
+        ->orWhere('particle', 'LIKE', "%$query%")
         ->paginate(9);
     }
 

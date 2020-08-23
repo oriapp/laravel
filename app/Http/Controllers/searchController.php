@@ -13,6 +13,7 @@ class SearchController extends MainController
         self::$dtv['page_title'] .= "Search";
         self::$dtv['menu'] = Menu::all();
         self::$dtv['res'] = Product::searchProduct($query);
+        self::$dtv['categoriess'] = DB::select('select * from categories');
         return view('search', self::$dtv);
         //return Product::searchProduct($query);
     }

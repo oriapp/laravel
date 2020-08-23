@@ -164,12 +164,16 @@
 </div> <!-- row.// -->
 
 
-<?php echo $products->appends(['sort' => 'title'])->render(); ?>
-
-
 
 </div> 
 <!--container.//-->
+
+
+<div class="d-flex justify-content-center">
+<div class="mt-4">
+  {{$products->appends(['sort' => 'title'])->render()}}
+</div>
+</div>
 
 
 @endsection

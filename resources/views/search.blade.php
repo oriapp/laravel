@@ -1,8 +1,9 @@
+
 @extends('master')
 @section('content')
 <div class="container">
 @component('components.page_hader')
-    @slot('title') search form @endslot
+    @slot('title') {{$res->count()}} search results found @endslot
     @slot('description') {{null}} @endslot
     @endcomponent
 
@@ -52,10 +53,14 @@
 <div class="container">
 
 
-
-
 <div class="row">
 @foreach ($res as $product)
+
+@php
+    if($product->visibility == "0"){
+      continue;
+    }
+@endphp
   
 <div class="col-md-4">
 	<figure class="card card-product">
@@ -69,7 +74,17 @@
 				</div> <!-- rating-wrap.// --> --}}
 		</figcaption>
 		<div class="bottom-wrap">
-    <a href="{{url('shop/'.$product->purl)}}" class="disabled btn btn-sm btn-primary float-right">View Product</a>	
+
+      @foreach ($categoriess as $item)
+          @php
+          $direct = null;
+              if($item->id == $product->categorie_id){
+              $direct = $item->url;
+            }
+          @endphp	
+      @endforeach
+      <a href="{{url('shop/' .$direct . '/' .$product->purl)}}" class="btn btn-sm btn-primary float-right">View Product</a>
+      
 			<div class="price-wrap h5">
       <span class="price-new">${{$product->price}}</span> <del class="price-old">{{$product->old_price}}</del>
 			</div> <!-- price-wrap.// -->
