@@ -33,6 +33,13 @@ Route::get('search/{search}', function ($search) {
 // })->where('search', '.*');
 
 
+# Thanks Pages
+
+Route::get('thanks', function () {
+    //return $search;
+    return view('thanks');
+}); 
+
 
 
 # Email
@@ -52,11 +59,13 @@ Route::middleware(['cmsguard'])->group(function(){
  
     Route::prefix('cms')->group(function(){
         Route::get('dashboard', 'CmsController@dashboard');
-        Route::get('orders', 'CmsController@orders');
+        //Route::get('orders', 'CmsController@orders');
+        Route::resource('orders', 'OrdersController');
         Route::resource('content', 'ContentController');
         Route::resource('menu', 'MenuController');
         Route::resource('categories', 'CategoriesController');
         Route::resource('products', 'ProductsController');
+        
     }); 
 
 });
@@ -71,6 +80,12 @@ Route::prefix('shop')->group(function(){
     Route::get('clear-cart', 'ShopController@clearCart');
     Route::get('update-cart', 'ShopController@updateCart');
     Route::get('cart', 'ShopController@cart');
+
+    Route::get('check-out', 'ShopController@checkOut');
+    Route::post('check-out', 'ShopController@checkOutPost');
+
+    //Route::get('check-out', 'CheckOutSysController@index');
+    //Route::post('cart', 'CheckOutSysController@post');
     Route::get('{curl}', 'ShopController@products');
     Route::get('{curl}/{purl}', 'ShopController@productDetailes');
 });
@@ -86,6 +101,13 @@ Route::prefix('user')->group(function(){
     Route::get('profile', 'UserController@profile');
     //Route::post('profile', 'UserController@postProfile');
 });
+
+
+#Payments 
+
+Route::view('/checkout', 'checkout-page');
+Route::post('/checkout', 'PaymentController@createPayment')->name('create-payment');
+Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-payment');
 
 
 

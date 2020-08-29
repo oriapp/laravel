@@ -1,192 +1,30 @@
+@php
+    use App\Product;
+@endphp
+
 @extends('master')
 @section('content')
 <div class="container">
-    @component('components.page_hader')
+    {{-- @component('components.page_hader')
     @slot('title') {{__('text.home_title')}} @endslot
     @slot('description') {{__('text.home_description')}} @endslot
-    @endcomponent
+    @endcomponent --}}
 </div>
-
 
 <!-- index css -->
 <link rel="stylesheet" href="{{asset('css/indexPage.css')}}">
 
-<div class="container">
-<div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half img-fluid" data-ride="carousel">
-  <!--Indicators-->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-2" data-slide-to="1"></li>
-    <li data-target="#carousel-example-2" data-slide-to="2"></li>
-  </ol>
-
-  <div class="carousel-inner" role="listbox" style="width: 100%; height: 500px; object-fit: cover; ">
-    <div class="carousel-item active">
-      <div class="view">
-        <img class="d-block w-100" style="object-fit: cover" src="{{asset('/images/rsz_banner2.jpg')}}" alt="First slide">
-        <div class="mask rgba-black-light"></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">This is the first title</h3>
-        <p class="p-responsive">First text</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <!--Mask color-->
-      <div class="view">
-        <img class="d-block w-100" style="width: 100%;" style="object-fit: cover" src="{{asset('/images/rsz_1banner1.png')}}" alt="Second slide">
-        <div class="mask rgba-black-light"></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">Thir is the second title</h3>
-        <p class="p-responsive">Secondary text</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      
-      <div class="view">
-        <img class="d-block w-100" style="width: 100%;" style="background-size: contain, cover; background-repeat: no-repeat;" src="https://mdbootstrap.com/img/Photos/Slides/img%20(108).jpg" alt="Third slide">
-        <div class="mask rgba-black-light"></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">This is the third title</h3>
-        <p class="p-responsive">Third text</p>
-      </div>
-    </div>
-  </div>
-
-  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  <!--/.Controls-->
-</div>
-</div>
 
 
-<div class="mt-4 mb-4">
-  <div class="container mt-4">
-    <blockquote class="blockquote text-center">
-      <p class="mb-0"> {{__('text.partners')}} </p>
-      <footer class="blockquote-footer">Provider <cite title="Source Title">And Companies</cite></footer>
-    </blockquote>
-    <div class="card mt-4">
-
-      {{-- <div class="imgContainer">
-      <img src="{{asset('/images/home/police.png')}}"height="200" width="200"/>
-    </div>
-    <div class="imgContainer">
-      <img src="{{asset('/images/home/airplane.jpg')}}"height="200" width="200"/>
-    </div>
-    </div> --}}
-
-    <div class="container">
-      <div class="row align-items-stretch justify-content-start card-deck">
-       <div class="card text-center border-0">
-         <div class="card-body">
-          <div class="card-text">
-            <img style="max-height: 150px;" src="{{asset('/images/home/police.png')}}" alt="">
-          </div>
-         </div>
-       </div>
-       <div class="card text-center border-0">
-         <div class="card-body">
-          <div class="card-text">
-            <img style="max-height: 150px;" src="{{asset('/images/home/Israel_Army-logo-615F4A31D8-seeklogo.com.png')}}" alt="">
-          </div>
-         </div>
-       </div>
-       <div class="card text-center border-0">
-         <div class="card-body">
-          <div class="card-text">
-            <img style="max-height: 150px;" src="{{asset('/images/home/משרד-הביטחון.png')}}" alt="">
-          </div>
-         </div>
-       </div>
-       <div class="w-100">
-    
-       </div>
-       <div class="card text-center border-0">
-         <div class="card-body">
-          <div class="card-text">
-            <img style="max-height: 150px;" src="{{asset('/images/home/1200px-FireDepIsrael.svg.png')}}" alt="">
-          </div>
-         </div>
-       </div>
-       <div class="card text-center border-0">
-         <div class="card-body">
-          <div class="card-text">
-            <img style="max-height: 150px;" src="{{asset('/images/home/1200px-Israel_prison_service_Icon_2018.svg.png')}}" alt="">
-          </div>
-         </div>
-       </div>
-       <div class="card text-center border-0">
-        <div class="card-body">
-         <div class="card-text">
-           <img style="max-height: 150px;" src="{{asset('/images/home/airplane.jpg')}}" alt="">
-         </div>
-        </div>
-      </div>
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+@component('components.indexBanner')
+@slot('title_one') Idfgear @endslot
+@slot('title_two') Professional equipment @endslot
+@slot('title_tree') AirSoft and tool @endslot
+@endcomponent
 
 
 
-
-
-
-@if (Session::get("product_view"))
-<div class="container mt-3">
-<h1 class="mb-3 text-center">{{__('text.rhf-container')}}</h1>
-  <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "autoPlay": 1500, "pauseAutoPlayOnHover": false}'>
-    @foreach ($last_view as $item)
-   
-    {{-- onclick="window.open('{{asset('search/' .$item[0]->purl .'')}}', '_blank');" --}}
-    <div class="carousel-cell">
-    <h3>{{$item[0]->ptitle}}:&nbsp;&nbsp;&nbsp;  </h3>
-    <img class="carousel-cell-image" 
-        data-flickity-lazyload="{{asset('/images/'.$item[0]->pimage)}}" />
-    </div>
-    @endforeach
-  </div>
-</div>
-<br><br>
-    
-{{-- @else
-
-@php
-use App\Product;
-    // dd((Product::all()->random(4)));
-    $last_view = Product::all()->random(4);
-@endphp
-    
-<div class="container mt-3">
-  <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1 }'>
-    @foreach ($last_view as $item)
-    <div class="carousel-cell">
-      <img class="carousel-cell-image"
-        data-flickity-lazyload="{{asset('/images/'.$item['pimage'])}}" />
-    </div>
-    @endforeach
-  </div>
-</div>
-<br> --}}
-
-@endif
-
-
-
+<hr>
 
 
 <div class="container body mt-3">
@@ -198,12 +36,12 @@ use App\Product;
 
     <article id="3685" class="location-listing">
 
-      <a class="location-title" href="{{asset('search/caa')}}">
+      <a class="location-title" href="{{asset('search/masada')}}">
                     <!--San Francisco-->                       </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="https://cdn.shopify.com/s/files/1/0228/2169/9620/files/DT_brands-08_2_2048x.jpg?v=1589454609" alt="san francisco">      </a>
+        <img class="img" width="300" height="169" src="{{asset('/images/home/masada .png')}}" alt="masada">      </a>
 
       </div>
 
@@ -211,12 +49,12 @@ use App\Product;
 
     <article id="3688" class="location-listing">
 
-      <a class="location-title" href="#">
+      <a class="location-title" href="{{asset('search/Lior-pig')}}">
                     <!--San Francisco-->                      </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="https://cdn.shopify.com/s/files/1/0228/2169/9620/files/DT_brands-02_2_2048x.jpg?v=1589454668" alt="london">    </a>
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/Lior-pig.png')}}" alt="london">    </a>
 
       </div>
 
@@ -224,12 +62,12 @@ use App\Product;
 
     <article id="3691" class="location-listing">
 
-      <a class="location-title" href="#">
+      <a class="location-title" href="{{asset('search/511')}}">
                     <!--San Francisco-->                        </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="https://cdn.shopify.com/s/files/1/0228/2169/9620/files/DT_brands-06_3_2048x.jpg?v=1589454827" alt="new york">    </a>
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/Logo-511_Tactical.svg.png')}}" alt="new york">    </a>
 
       </div>
 
@@ -280,9 +118,96 @@ use App\Product;
 </div>
 </div>
 
+<style>
+  /* position dots up a bit */
+.flickity-page-dots {
+  bottom: -22px;
+}
+/* dots are lines */
+.flickity-page-dots .dot {
+  height: 4px;
+  width: 40px;
+  margin: 0;
+  border-radius: 0;
+}
+</style>
+
+
+<hr>
+
+@if (Session::get("product_view"))
+<div class="container mt-3">
+<h1 class="mb-3 text-center">{{__('text.rhf-container')}}</h1>
+  <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "autoPlay": 3000, "pauseAutoPlayOnHover": false, "selectedAttraction": 0.01, "friction": 0.40, "wrapAround": true}'>
+    @foreach ($last_view as $item)
+   
+    {{-- onclick="window.open('{{asset('search/' .$item[0]->purl .'')}}', '_blank');" --}}
+    <div class="carousel-cell">
+    <h3 onclick="window.location.href =('{{asset('search/' .$item[0]->purl .'')}}');">{{$item[0]->ptitle}}:&nbsp;&nbsp;&nbsp;  </h3>
+    <img class="carousel-cell-image" 
+        data-flickity-lazyload="{{asset('/images/'.$item[0]->pimage)}}" />
+    </div>
+    @endforeach
+  </div>
+</div>
+<br><br>
+    
+@else
+
+<div class="container mt-3">
+
+  @php
+    $last_view = Product::fiveItems();
+  @endphp
+
+  <h1 class="mb-3 text-center">{{__('text.products_you_may_like')}}</h1>
+    <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "autoPlay": 3000, "pauseAutoPlayOnHover": false, "selectedAttraction": 0.01, "friction": 0.40, "wrapAround": true}'>
+      @foreach ($last_view as $item)
+     
+      {{-- onclick="window.open('{{asset('search/' .$item[0]->purl .'')}}', '_blank');" --}}
+      <div class="carousel-cell">
+      <h3>{{$item->ptitle}}:&nbsp;&nbsp;&nbsp;  </h3>
+      <img class="carousel-cell-image" 
+          data-flickity-lazyload="{{asset('/images/'.$item->pimage)}}" />
+      </div>
+      @endforeach
+    </div>
+  </div>
+  <br><br>
+
+@endif
 
 
 
+<link rel="stylesheet" href="{{asset('css/card.css')}}">
+<div class="container">
+  <hr>
+  <br><br>
+  <h1 class="{{__('btn.text_align')}}">{{__('text.new_products')}}</h1>
+  @if(Product::newItems() )
+  
+          @foreach(Product::newItems() as $item)
+  <div class="card">
+    <div class="card-img" style="background-image:url({{asset('images/' . $item->pimage)}});">
+      <div class="overlay">
+        <div class="overlay-content">
+          <a href="{{url('shop/'.$item->url . '/'. $item->purl)}}">{{__('text.view_product')}}</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-content">
+      <a href="{{url('shop/'.$item->url . '/'. $item->purl)}}">
+        <h2>{{$item->ptitle ?? 'Error'}}</h2>
+        <p>{!!$item->in_short ?? null!!}</p>
+      <h7 class="float-right">{{date('d/m/y H:i:s', strtotime($item->updated_at))}}</h7>
+      </a>
+    </div>
+  </div>
+  @endforeach
+  @endif
+  <br><br>
+  </div>
 
 
 @endsection

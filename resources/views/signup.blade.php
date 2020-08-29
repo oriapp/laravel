@@ -28,7 +28,7 @@
                     <span class="text-danger"> {{$errors->first('password')}} </span>
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="address"><code>*</code> {{__('text.address')}}</label>
                     <input value="{{old('address')}}" type="address" name="address" id="address" class="form-control">
                     <span class="text-danger"> {{$errors->first('address')}} </span>
@@ -54,7 +54,7 @@
                 <input value="{{old('zip')}}" type="zip" name="zip" id="zip" class="form-control">
                     <span class="text-danger"> {{$errors->first('zip')}} </span>
                 </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                 <label for="phone"><code>*</code> {{__('text.phone')}}</label>

@@ -68,6 +68,8 @@ class Product extends Model
     }
 
     static public function saveNew($request){
+        $request['colors'] = ($request['colors'] == null) ? $request['colors'] = null : serialize($request['colors']);
+
         $product = new self();
         $product->categorie_id = $request['category'];
         $product->ptitle = $request['title'];
@@ -76,16 +78,20 @@ class Product extends Model
         $product->price = $request['price'];
         $product->old_price = $request['old-price'];
         $product->purl = $request['url'];
+        $product->producer = $request['pru'];
         $product->brand = $request['brand'];
         $product->weight = $request['weight'];
         $product->amount = $request['amount'];
         $product->visibility = $request['visibility'];
         $product->in_short = $request['short'];
+        $product->colors = $request['colors'];
         $product->save();
         Session::flash('sm', 'Product has been saved!');
     }
 
     static public function updateItem($request, $id){
+        $request['colors'] = ($request['colors'] == null) ? $request['colors'] = null : serialize($request['colors']);
+
         $product = self::find($id);
         $product->categorie_id = $request['category'];
         $product->ptitle = $request['title'];
@@ -94,12 +100,34 @@ class Product extends Model
         $product->price = $request['price'];
         $product->old_price = $request['old-price'];
         $product->purl = $request['url'];
+        $product->producer = $request['pru'];
         $product->brand = $request['brand'];
         $product->weight = $request['weight'];
         $product->amount = $request['amount'];
         $product->visibility = $request['visibility'];
         $product->in_short = $request['short'];
+        $product->colors = $request['colors'];
         $product->save();
         Session::flash('sm', 'Product has been updated!');
+    }
+
+
+    static public function fiveItems(){
+        return DB::table('products as p')
+        ->select('p.*')
+        ->orderByRaw("RAND()", "ASC")
+        ->limit(7)
+        ->get();
+    }
+
+
+    static public function newItems(){
+        return DB::table('products as p')
+        ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        ->where('p.visibility', '=', '1')
+        ->select('p.*', 'c.url')
+        ->orderBy('p.created_at', 'DESC')
+        ->limit(4)
+        ->get();
     }
 }

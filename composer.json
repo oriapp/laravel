@@ -13,7 +13,7 @@
         "darryldecode/cart": "^4.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "~6.0",
         "intervention/image": "^2.5",
         "ip2location/ip2location-laravel": "^1.0",
         "laravel/framework": "^7.0",
@@ -23,13 +23,13 @@
         "mckenziearts/laravel-notify": "^1.1",
         "nexmo/client": "^2.0",
         "nexmo/laravel": "dev-master as 1.0",
-        "pragmarx/firewall": "^2.3",
+        "paypal/rest-api-sdk-php": "^1.14",
+        "pragmarx/countries": "^0.7.0",
         "predis/predis": "^1.1",
         "renatomarinho/laravel-page-speed": "^1.8",
         "sentry/sentry-laravel": "^1.8",
         "srmklive/paypal": "^1.7",
-        "stichoza/google-translate-php": "^4.1",
-        "amsgames/laravel-shop-gateway-paypal": "v1.0.0"
+        "stichoza/google-translate-php": "^4.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

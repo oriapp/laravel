@@ -1,3 +1,10 @@
+@php
+    $colors_added = ['Black', 'Red', 'Blue', 'White', 'Green'];
+@endphp
+
+
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
+
 @extends('cms.cms_master')
 
 @section('cms_content')
@@ -112,8 +119,9 @@
 
 
         <div class="form-group col-md-4">
-            <label for="sku">SKU</label>
-        <input disabled="disabled" value="itemID-brandID-color-size" type="sku" name="sku" id="sku" class="form-control">
+            <label for="pru">producer</label>
+        <input value="{{$item->producer}}" type="pru" name="pru" id="pru" class="form-control">
+        <span class="text-danger"> {{$errors->first('pru')}} </span>
         </div>
         </div>
 
@@ -137,6 +145,34 @@
 
 
 
+        <div class="form-group">
+          <label for="colors">* Item color</label>
+          <select multiple="multiple" name="colors[]" multiple data-placeholder="Add tools" name="colors" id="colors">
+
+            @if ($item->colors != null)
+            @foreach (unserialize($item->colors) as $cat)
+            <option @if($cat) selected="selected" @endif value="{{$cat}}">{{$cat}}</option>
+
+            <?php
+            unset($colors_added[array_flip($colors_added)[$cat]]);
+            ?>
+            
+              @endforeach
+              @endif
+
+            @foreach ($colors_added as $itm)
+            <option value="{{$itm}}">{{$itm}}</option>
+            @endforeach
+            
+        </select>
+        
+        <!-- dribbble -->
+        <a class="dribbble" ><img src="https://www.payvision.com/assets/img/logos/visa-secure.png" alt=""></a>
+        </div>
+
+
+
+        <br>
           <input type="submit" name="submit" value="Update Product" id="submit" class="btn btn-primary mb-2">
           <a href="{{url('cms/products')}}" class="btn btn-light ml-3">Cancel</a>
 
@@ -144,5 +180,5 @@
     </div>
 </div>
 
-
+<br><br><br>
 @endsection

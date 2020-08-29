@@ -11,7 +11,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="language">* Select Language</label>
+                    <label for="language">{{__('text.select_language')}}</label>
                     <select class="form-control" name="Language" id="language">
                       <option @if(Session::get('language') == "en") selected="selected" @endif value="en" name="en" id="en">English</option>
                       <option @if(Session::get('language') == "he") selected="selected" @endif value="he" name="he" id="he">Hebrew</option>
@@ -19,7 +19,7 @@
                     <span class="text-danger">{{$errors->first('language')}}</span>
                   </div>
 
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">{{__('text.save')}}</button>
             </form>
         </div>
     </div>

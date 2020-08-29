@@ -15,10 +15,7 @@ class User extends Model
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->password = bcrypt($request['password']);
-        $user->address = $request['address'];
-        $user->city = $request['city'];
-        $user->state = $request['state'];
-        $user->zip = $request['zip'];
+        
         $user->language = $request['Language'];
         $user->ip = \Request::getClientIp();
         $user->last_visit = date('l jS \of F Y h:i:s A');

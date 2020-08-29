@@ -14,7 +14,8 @@ return [
     |
     */
 
-    'theme' => env('NOTIFY_THEME', null),
+    // 'theme' => env('NOTIFY_THEME', null),
+    'theme' => env('NOTIFY_THEME', 'dark'),
 
     /*
     |--------------------------------------------------------------------------

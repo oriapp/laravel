@@ -44,6 +44,12 @@ return [
     'language_updated' => 'שפת מקור האתר שונתה בהצלחה',
     'brands' => 'מותגים',
     'rhf-container' => 'בהשראת היסטוריית הגלישה שלך',
+    'save' => 'עדכן',
+    'products_you_may_like' => 'מוצרים שאולי תתעניין בהם',
+    'new_products' => 'מוצרים חדשים',
+    'view_product' => 'ראה מוצר',
+    'view_simillarProducts' => 'ראה מוצרים דומים',
+    'left_in_stock' => ':amount במלאי',
 
 
 

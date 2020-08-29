@@ -44,6 +44,13 @@ return [
     'language_updated' => 'language has been updated!',
     'brands' => 'Brands',
     'rhf-container' => 'Inspired by your browsing history',
+    'save' => 'Save',
+    'new_products' => 'New Products',
+    'view_product' => 'View Product',
+    'view_simillarProducts' => '',
+
+    'products_you_may_like' => 'Products you might be interested in',
+    'left_in_stock' => ':amount Left in stock',
     
 
     'admin_dashboard' => 'Cms Dashboard',

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
+
 @extends('cms.cms_master')
 
 @section('cms_content')
@@ -47,7 +49,7 @@
           <div class="form-group">
             <label for="old-price">Old Product Price
             </label>
-          <input value="{{old('old-price')}}" type="text" name="old-price" id="old-price" class="form-control">
+          <input value="{{old('old-price', '0.00')}}" type="text" name="old-price" id="old-price" class="form-control">
           <span class="text-danger">{{$errors->first('old-price')}}</span>
           </div>
 
@@ -108,8 +110,9 @@
 
 
         <div class="form-group col-md-4">
-            <label for="sku">SKU</label>
-        <input disabled="disabled" value="itemID-brandID-color-size" type="sku" name="sku" id="sku" class="form-control">
+          <label for="pru">producer</label>
+          <input value="{{old('amount')}}" type="pru" name="pru" id="pru" class="form-control">
+          <span class="text-danger"> {{$errors->first('pru')}} </span>
         </div>
         </div>
 
@@ -122,9 +125,26 @@
           </select>
           <span class="text-danger">{{$errors->first('visibility')}}</span>
         </div>
+
         
 
+        <div class="form-group">
+          <label for="colors">* Item color</label>
+          <select multiple="multiple" name="colors[]" multiple data-placeholder="Add tools" name="colors" id="colors">
+            <option value="#000000">Black</option>
+            <option value="#E30022">Red</option>
+            <option value="#246BCE">Blue</option>
+            <option value="#FFFFFF">White</option>
+            <option value="#4B5320">Army green</option>
+        </select>
+        
+        <!-- dribbble -->
+        <a class="dribbble" ><img src="https://www.payvision.com/assets/img/logos/visa-secure.png" alt=""></a>
+        </div>
+        
+        
 
+        <br>
           <input type="submit" name="submit" value="Save Product" id="submit" class="btn btn-primary mb-2">
           <a href="{{url('cms/products')}}" class="btn btn-light ml-3">Cancel</a>
 
@@ -132,5 +152,5 @@
     </div>
 </div>
 
-
+<br><br><br>
 @endsection

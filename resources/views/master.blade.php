@@ -44,7 +44,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-            <a class="navbar-brand text-white" href="{{url('')}}"><i class="fas fa-wind"></i> Soft</a>
+            <a class="navbar-brand text-white" href="{{url('')}}">IdfGear.Net</a>
             
             <a class="nav-link text-white" href="{{url('shop/cart')}}">
             @if (! Cart::isEmpty())
@@ -89,6 +89,7 @@
                   <a class="dropdown-item" href="{{url('user/profile')}}"> {{__('text.edit_profile')}} </a>
                 @endif
             </li>
+            
 
             @if(!Session::has('user_id'))
             <li class="nav-item">
@@ -115,6 +116,7 @@
         </div>
     </div>
       </nav>
+
     </header>
     <main style="min-height: 850px;">
     @yield('content')
@@ -153,7 +155,7 @@
         @foreach ($caregories as $categorie)
         <li>
           <p>
-            <a class="text-white" href="#!">{{$categorie->title}}</a>
+            <a class="text-white" href="{{asset('shop/'.$categorie->url)}}">{{$categorie->title}}</a>
           </p>
         </li>
         @endforeach
@@ -215,9 +217,11 @@
         </a>
 
       </div>
+      <div class="paypal">
       <a class="btn-floating btn-dribbble">
       <img style="max-width: 40% !important; height: auto;" class="rounded mx-auto d-block float-left" src="{{asset('images/Powered-By-PayPal-Logo.png')}}">
       </a>
+    </div>
     </div>
 
 

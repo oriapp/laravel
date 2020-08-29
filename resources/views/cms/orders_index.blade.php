@@ -17,6 +17,7 @@
           <th>Oder Details</th>
           <th>Oder Uniq ID</th>
           <th>Order Date</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -37,6 +38,13 @@
       </td>
       <td>{{$order->order_id}}</td>
       <td>{{date('d/m/y H:i:s', strtotime($order->created_at))}}</td>
+
+      <td class="text-center">
+        <a href="{{url('cms/orders/'.$order->id.'/edit')}}" title="Edit Order"><i class="far fa-edit"></i></a>
+          
+        {{-- <a class="ml-3 text-danger" href="{{url('cms/orders/'.$order->id)}}" title="Delete Order"><i class="fas fa-trash-alt"></i></a> --}}
+        </td>
+
       </tr>
         @endforeach
       </tbody>

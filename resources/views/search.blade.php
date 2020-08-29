@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 @component('components.page_hader')
-    @slot('title') {{$res->count()}} search results found @endslot
+    @slot('title') <div>{{$res->count()}} search results found</div> @endslot
     @slot('description') {{null}} @endslot
     @endcomponent
 

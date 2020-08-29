@@ -38,6 +38,7 @@ class UserController extends MainController
         } else {
         self::$dtv['page_title'] .= "Sign In page";
         self::$dtv['verify_error'] = 'Wrong email and password combination';
+        connectify('error', 'Connection Faild', 'Wrong email and password combination');
         return view('signin', self::$dtv);
         }
     }
@@ -49,7 +50,7 @@ class UserController extends MainController
         //     'is_admin' => false,
         // ]);
         Session::flush();
-        emotify('error', 'successfully logged out. see you in the next round');
+        connectify('error', 'Connection Closed', 'successfully logged out. see you in the next round');
         return redirect('user/signin');
     }
 

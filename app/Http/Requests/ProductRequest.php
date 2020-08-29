@@ -28,6 +28,7 @@ class ProductRequest extends FormRequest
             'brand' => 'required|min:2|max:255',
             'weight' => 'required|numeric',
             'amount' => 'required|numeric',
+            'pru' => 'required|min:2|max:30',
             'visibility' => 'required',
             'short' => 'required|min:5|max:35',
         ];

@@ -138,15 +138,17 @@
 	<figure class="card card-product">
 		<div class="img-wrap"><img src="{{asset('images/'.$product->pimage)}}"></div>
 		<figcaption class="info-wrap">
-				<h4 class="title">{{$product->ptitle}}</h4>
-				<p class="desc">{{$product->in_short}}</p>
+				<h4 class="title {{__('btn.text_align')}}">{{$product->ptitle}}</h4>
+				<p class="desc {{__('btn.text_align')}}">{{$product->in_short}}</p>
 				{{-- <div class="rating-wrap">
 					<div class="label-rating">132 reviews</div>
 					<div class="label-rating">154 orders </div>
 				</div> <!-- rating-wrap.// --> --}}
 		</figcaption>
 		<div class="bottom-wrap">
-    <a href="{{url('shop/'.$product->url.'/'.$product->purl)}}" class="btn btn-sm btn-primary float-right">View Product</a>	
+    <h6 class="{{__('btn.text_align')}}">{{__('text.left_in_stock', ['amount' => $product->amount])}}</h6>
+        <hr>
+    <a href="{{url('shop/'.$product->url.'/'.$product->purl)}}" class="btn btn-sm btn-primary float-right">{{__('text.view_product')}}</a>	
 			<div class="price-wrap h5">
         @php
             if($product->old_price == "0.00"){

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Categorie;
 use DB, Cart, Session;
 use App\Order;
+use App\Http\Requests\CheckOutRequest;
 
 use App\Product;
 
@@ -85,7 +86,6 @@ class ShopController extends MainController
          ->get();
          
         Product::updateCart($request);
-
         // Session::flash('amount', DB::table('products as p')
         // ->where('p.id', '=', $request['pid'])
         // ->select('p.id', 'p.ptitle', 'p.amount')
@@ -102,12 +102,29 @@ class ShopController extends MainController
 
     public function checkOut(){
         if(Cart::isEmpty()) return redirect('shop/cart');
-        if(!Session::has('user_id')) return redirect('user/signup?backTo=shop/cart');
-        Order::saveNew();
+        if(!Session::has('user_id')) return redirect('user/signup?backTo=shop/check-out');
+        self::$dtv['page_title'] .= "Check Out";
+        return view('pay', self::$dtv);
+        // Order::saveNew();
+        // if(!Session::has('notify')){
+        // return redirect('shop');
+        // } else {
+        //     return redirect('shop/pay');
+        // }
+    }
+
+
+    public function checkOutPost(CheckOutRequest $request){
+        if(Cart::isEmpty()) return redirect('shop/cart');
+        if(!Session::has('user_id')) return redirect('user/signup?backTo=shop/check-out');
+        Order::saveNew($request);
         if(!Session::has('notify')){
         return redirect('shop');
         } else {
-            return redirect('shop/cart');
+            return redirect('thanks');
         }
     }
+
+
+
 }

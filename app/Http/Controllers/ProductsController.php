@@ -29,6 +29,7 @@ class ProductsController extends MainController
 
     public function store(ProductRequest $request)
     {
+        //dd(($request->colors));
         Product::saveNew($request);
         
         return redirect('cms/products');

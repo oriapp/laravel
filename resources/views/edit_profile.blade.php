@@ -33,7 +33,7 @@
               <ul class="container details">
                 <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone: {{$user->phone ?? 'Could not find'}}</p></li>
                 <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>Email: {{$user->email}}</p></li>
-              <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Address: {{$user->address}} {{$user->city}} {{$user->state}}</p></li>
+              
               <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Primary Language: {{$user->language}}</p></li>
               <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Created At: {{$user->created_at}}</p></li>
               </ul>

@@ -18,8 +18,11 @@ class Order extends Model
         ->orderBy('p.price')
         ->paginate(3);
     }
+
+
+
     
-    static public function saveNew(){
+    static public function saveNew($request){
 
         $validation = true;
         
@@ -38,6 +41,20 @@ class Order extends Model
 
         }
 
+
+        if($validation == true){
+            foreach(Cart::getContent()->toArray() as $item){
+                //dd($item['quantity']);
+                $id = $item['id'];
+                $page = Product::find($id);
+                $amount = (Product::where('id', '=', $id)->get()->first()->amount) - $item['quantity'];
+                Product::where('id', $id)->update(array('amount' => $amount));
+            }
+        }
+
+
+        $order_data = ("$request->address %space$ $request->city %space$ $request->state %space$ $request->zip %space$ $request->phone %space$ $request->email");
+
         if($validation){
             // If we have those items in stock!
             $order = new self();
@@ -45,6 +62,7 @@ class Order extends Model
             $order->user_id = Session::get('user_id');
             $order->data = serialize(Cart::getContent()->toArray());
             $order->total = Cart::getTotal();
+            $order->details = $order_data;
             $order->save();
             Cart::clear();
             notify()->success('Your order has been placed.');
@@ -57,7 +75,15 @@ class Order extends Model
         return DB::table('orders as o')
         ->join('users as u', 'u.id', '=', 'o.user_id')
         ->select('u.name', 'o.*')
-        ->orderBy('o.created_at', 'desc')
         ->paginate(5);
+    }
+
+
+    static public function getAllId($id){
+        return DB::table('orders as o')
+        ->join('users as u', 'u.id', '=', 'o.user_id')
+        ->where('o.id', '=', "$id")
+        ->select('u.name', 'o.*')
+        ->get();
     }
 }
