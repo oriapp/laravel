@@ -41,11 +41,13 @@ class Product extends Model
     static public function searchProduct($query){
         return DB::table('products as p')
         ->select('p.*')
-        ->where('ptitle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
+        ->where('p.visibility', '=', '1')
+        ->orWhere('ptitle', 'LIKE', "%$query%")
+        //->where('ptitle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
         ->orWhere('purl', 'LIKE', "%$query%")
         ->orWhere('brand', 'LIKE', "%$query%")
         ->orWhere('particle', 'LIKE', "%$query%")
-        ->paginate(9);
+        ->paginate(8);
     }
 
     static public function addToCart($pid){
@@ -70,6 +72,8 @@ class Product extends Model
     static public function saveNew($request){
         $request['colors'] = ($request['colors'] == null) ? $request['colors'] = null : serialize($request['colors']);
 
+        $request['size'] = ($request['size'] == null) ? $request['size'] = null : serialize($request['size']);
+
         $product = new self();
         $product->categorie_id = $request['category'];
         $product->ptitle = $request['title'];
@@ -85,12 +89,17 @@ class Product extends Model
         $product->visibility = $request['visibility'];
         $product->in_short = $request['short'];
         $product->colors = $request['colors'];
+        $product->size = $request['size'];
         $product->save();
         Session::flash('sm', 'Product has been saved!');
     }
 
     static public function updateItem($request, $id){
         $request['colors'] = ($request['colors'] == null) ? $request['colors'] = null : serialize($request['colors']);
+
+        $request['size'] = ($request['size'] == null) ? $request['size'] = null : serialize($request['size']);
+
+        //dd($request['colors']);
 
         $product = self::find($id);
         $product->categorie_id = $request['category'];
@@ -107,6 +116,7 @@ class Product extends Model
         $product->visibility = $request['visibility'];
         $product->in_short = $request['short'];
         $product->colors = $request['colors'];
+        $product->size = $request['size'];
         $product->save();
         Session::flash('sm', 'Product has been updated!');
     }

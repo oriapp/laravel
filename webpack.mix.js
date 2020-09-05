@@ -12,4 +12,4 @@ const mix = require('laravel-mix');
  */
 
 mix.react('resources/js/app.js', 'public/js')
-    .sass('resources/sass/main.scss', 'public/css');
+    .sass('resources/sass/selectoption.scss', 'public/css');

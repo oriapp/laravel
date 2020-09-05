@@ -363,11 +363,19 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  min-height: 100vh;
+  font-family: Roboto, Arial;
+  color: #ADAFB6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
 
-
-/* body .selectMultiple {
+body .selectMultiple {
   margin-top: -12%;
-} */
+}
 
 body .dribbble {
   position: fixed;

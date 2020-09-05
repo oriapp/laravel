@@ -61,9 +61,23 @@ class User extends Model
     static public function saveVisitDate(){
         $user = self::find(Session::get('user_id'));
         $user->last_visit = date('l jS \of F Y h:i:s A');
-        // $user->ip = \Request::getClientIp();
+        $user->ip = \Request::getClientIp();
         $user->save();
     }
+
+    static public function saveVisit(){
+        //dd(\Request::all());
+        $find = DB::table('visitors')->where('ip', \Request::getClientIp())->first();
+        
+        if($find == null){
+        DB::table('visitors')
+        ->update(['ip' => \Request::getClientIp(), 'date' => date('l jS \of F Y h:i:s A'), 'blacklist' => 0]);
+        } else {
+            DB::table('visitors')
+            ->update(['date' => date('l jS \of F Y h:i:s A')]);
+        }
+    }
+
 
     static public function verify($email, $password){
         $verify = false;

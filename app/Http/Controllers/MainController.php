@@ -41,6 +41,8 @@ class MainController extends Controller
                     dd(User::isBlackListed(Session::get('user_id')));
                 };
                 User::saveVisitDate();
+            } else {
+                User::saveVisit();
             }
             
             return $next($request);

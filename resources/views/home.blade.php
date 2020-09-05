@@ -19,7 +19,8 @@
 @component('components.indexBanner')
 @slot('title_one') Idfgear @endslot
 @slot('title_two') Professional equipment @endslot
-@slot('title_tree') AirSoft and tool @endslot
+@slot('title_tree') AirSoft And Tools @endslot
+@slot('title_four') Israeli tactical outdoor gear @endslot
 @endcomponent
 
 

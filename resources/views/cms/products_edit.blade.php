@@ -145,30 +145,111 @@
 
 
 
+        <link rel="stylesheet" href="{{'/css/cmsSize.css'}}">
+
+        <hr>
+
         <div class="form-group">
-          <label for="colors">* Item color</label>
-          <select multiple="multiple" name="colors[]" multiple data-placeholder="Add tools" name="colors" id="colors">
+          <label class="col-md-2 control-label" for="colors">Colors</label>
+          <div class="col-md-2">
+              <select name="colors[]" id="dates-field2" class="multiselect-ui form-control" multiple="multiple" name="colors">
+                <optgroup label="Colors">
+                  <option>black</option>
+                  <option>desert</option>
+                  <option>coyote</option>
+                  <option>Coyote Brown</option>
+                  <option>Ranger Green </option>
+                  <option>Od Green</option>
+                  <option>Grey</option>
+                  <option>Khaki</option>
+                  <option>Navy Blue</option>
+                </optgroup>
+                </optgroup>
+              </select>
+          </div>
+      </div>
 
-            @if ($item->colors != null)
-            @foreach (unserialize($item->colors) as $cat)
-            <option @if($cat) selected="selected" @endif value="{{$cat}}">{{$cat}}</option>
 
-            <?php
-            unset($colors_added[array_flip($colors_added)[$cat]]);
-            ?>
-            
-              @endforeach
-              @endif
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="size">Trouser, Shirts and Shoose sizes</label>
+          <div class="col-md-2">
+              <select name="size[]" id="dates-field2" class="multiselect-ui form-control" multiple="multiple" name="size">
+                <optgroup label="Trouser">
+                  <option>trouser</option>
+                  <option>S-30 </option>
+                  <option>M-32</option>
+                  <option>L-34</option>
+                  <option>XL-36</option>
+                  <option >XXL-38</option>
+                </optgroup>
 
-            @foreach ($colors_added as $itm)
-            <option value="{{$itm}}">{{$itm}}</option>
-            @endforeach
-            
-        </select>
-        
-        <!-- dribbble -->
-        <a class="dribbble" ><img src="https://www.payvision.com/assets/img/logos/visa-secure.png" alt=""></a>
+                <optgroup label="Shirts">
+                  <option>XS</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                  <option>XXL</option>
+                  <option>XXXL</option>
+                  <option>XXXXL</option>
+                </optgroup>
+
+
+
+                  <optgroup label="Shoes">
+                  <option>37</option>
+                  <option>37.5</option>
+                  <option>38</option>
+                  <option>38.5</option>
+                  <option>39</option>
+                  <option>39.5</option>
+                  <option>40</option>
+                  <option>40.5</option>
+                  <option>41</option>
+                  <option>41.5</option>
+                  <option>42</option>
+                  <option>42.5</option>
+                  <option>43</option>
+                  <option>43.5</option>
+                  <option>44</option>
+                  <option>44.5</option>
+                  <option>45</option>
+                  <option>45.5</option>
+                  <option>46</option>
+                  <option>46.5</option>
+                  <option>47</option>
+                  <option>48</option>
+                  <option>49</option>
+
+
+                </optgroup>
+              </select>
+          </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="size">Hats And Gloves</label>
+        <div class="col-md-4">
+            <select name="size[]" id="dates-field2" class="multiselect-ui form-control" multiple="multiple" name="size">
+              <optgroup label="Gloves">
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+              </optgroup>
+              <optgroup label="Hats">
+                <option>OSFA</option>
+                <option>S/M</option>
+                <option>M/L</option>
+                <option>L/XL</option>
+              </optgroup>
+            </select>
         </div>
+    </div>
 
 
 

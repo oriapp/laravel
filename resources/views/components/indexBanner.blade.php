@@ -201,7 +201,7 @@
         </div>
 
         <div class="swiper-slide slide">
-            <div class="slide-image" style="background-image: url({{asset('/images/car-1.jpg')}})"></div>
+            <div class="slide-image" style="background-image: url({{asset('/images/home/banner-airsoft-v12.jpg')}})"></div>
             <span class="slide-title">{{$title_four ?? null}}</span>
           </div>
   

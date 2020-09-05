@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 @component('components.page_hader')
-    @slot('title') <div>{{$res->count()}} search results found</div> @endslot
+    @slot('title') <div>{{$res->total()}} search results found</div> @endslot
     @slot('description') {{null}} @endslot
     @endcomponent
 
@@ -86,7 +86,12 @@
       <a href="{{url('shop/' .$direct . '/' .$product->purl)}}" class="btn btn-sm btn-primary float-right">View Product</a>
       
 			<div class="price-wrap h5">
-      <span class="price-new">${{$product->price}}</span> <del class="price-old">{{$product->old_price}}</del>
+        @if ($product->old_price != null && $product->old_price != "0.00")
+        <span class="price-new">${{$product->price}}</span> <del class="price-old">{{$product->old_price}}</del>
+        @else
+        <span class="price-new">${{$product->price}}</span>
+        @endif
+      
 			</div> <!-- price-wrap.// -->
 		</div> <!-- bottom-wrap.// -->
 	</figure>
