@@ -30,7 +30,8 @@ class ProductRequest extends FormRequest
             'amount' => 'required|numeric',
             'pru' => 'required|min:2|max:30',
             'visibility' => 'required',
-            'short' => 'required|min:5|max:35',
+            'short' => 'required|min:5|max:55',
+            //'size' => 'required|min:1|max:255',
         ];
     }
 }

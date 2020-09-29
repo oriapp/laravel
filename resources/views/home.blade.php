@@ -37,12 +37,12 @@
 
     <article id="3685" class="location-listing">
 
-      <a class="location-title" href="{{asset('search/masada')}}">
+      <a class="location-title" href="{{asset('search/caa')}}">
                     <!--San Francisco-->                       </a>
 
       <div class="location-image">
         <a href="#">
-        <img class="img" width="300" height="169" src="{{asset('/images/home/masada .png')}}" alt="masada">      </a>
+        <img class="img" width="300" height="169" src="{{asset('/images/home/images/caa.jpg')}}" alt="caa">      </a>
 
       </div>
 
@@ -50,12 +50,12 @@
 
     <article id="3688" class="location-listing">
 
-      <a class="location-title" href="{{asset('search/Lior-pig')}}">
+      <a class="location-title" href="{{asset('search/crispi')}}">
                     <!--San Francisco-->                      </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/Lior-pig.png')}}" alt="london">    </a>
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/crispi.jpg')}}" alt="crispi">    </a>
 
       </div>
 
@@ -63,12 +63,12 @@
 
     <article id="3691" class="location-listing">
 
-      <a class="location-title" href="{{asset('search/511')}}">
+      <a class="location-title" href="{{asset('search/masada')}}">
                     <!--San Francisco-->                        </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/Logo-511_Tactical.svg.png')}}" alt="new york">    </a>
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/masada.jpg')}}" alt="masada">    </a>
 
       </div>
 
@@ -76,12 +76,12 @@
 
     <article id="3694" class="location-listing">
 
-      <a class="location-title" href="#">
+      <a class="location-title" href="{{asset('search/fab')}}">
                     <!--San Francisco-->                       </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="https://cdn.shopify.com/s/files/1/0228/2169/9620/files/DT_brands-01_2_1_2048x.jpg?v=1589454910" alt="cape town">  </a>
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/fab.jpg')}}" alt="fab">  </a>
 
       </div>
 
@@ -89,12 +89,12 @@
 
     <article id="3697" class="location-listing">
 
-      <a class="location-title" href="#">
+      <a class="location-title" href="{{asset('search/lalo')}}">
                     <!--San Francisco-->                     </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="https://cdn.shopify.com/s/files/1/0228/2169/9620/files/DT_brands-06_4_1_2048x.jpg?v=1590048913" alt="beijing">      </a>
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/lalo.jpg')}}" alt="lalo">      </a>
 
       </div>
 
@@ -102,16 +102,116 @@
 
     <article id="3700" class="location-listing">
 
-      <a class="location-title" href="#">
+      <a class="location-title" href="{{asset('search/imi')}}">
                     <!--San Francisco-->                       </a>
 
       <div class="location-image">
         <a href="#">
-                        <img class="img" width="300" height="169" src="https://cdn.shopify.com/s/files/1/0228/2169/9620/files/DT_brands-04_2_2048x.jpg?v=1589454996" alt="paris">                  
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/imi.jpg')}}" alt="imi">                  
                     </a>
       </div>
 
     </article>
+
+
+
+    <article id="3700" class="location-listing">
+
+      <a class="location-title" href="{{asset('search/511')}}">
+                    <!--San Francisco-->                       </a>
+
+      <div class="location-image">
+        <a href="#">
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/511.jpg')}}" alt="511">                  
+                    </a>
+      </div>
+
+    </article>
+
+
+    <article id="3700" class="location-listing">
+
+      <a class="location-title" href="{{asset('search/nitecore')}}">
+                    <!--San Francisco-->                       </a>
+
+      <div class="location-image">
+        <a href="#">
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/nitecore.jpg')}}" alt="nitecore">                  
+                    </a>
+      </div>
+
+    </article>
+
+
+
+    <article id="3700" class="location-listing">
+
+      <a class="location-title" href="{{asset('search/oakley')}}">
+                    <!--San Francisco-->                       </a>
+
+      <div class="location-image">
+        <a href="#">
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/oakley.jpg')}}" alt="oakley">                  
+                    </a>
+      </div>
+
+    </article>
+
+
+    <article id="3700" class="location-listing">
+
+      <a class="location-title" href="{{asset('search/olight')}}">
+                    <!--San Francisco-->                       </a>
+
+      <div class="location-image">
+        <a href="#">
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/olight.jpg')}}" alt="olight">                  
+                    </a>
+      </div>
+
+    </article>
+
+
+    <article id="3700" class="location-listing">
+
+      <a class="location-title" href="{{asset('search/pi9')}}">
+                    <!--San Francisco-->                       </a>
+
+      <div class="location-image">
+        <a href="#">
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/pi9.jpg')}}" alt="pi9">                  
+                    </a>
+      </div>
+
+    </article>
+
+
+    <article id="3700" class="location-listing">
+
+      <a class="location-title" href="{{asset('search/lior')}}">
+                    <!--San Francisco-->                       </a>
+
+      <div class="location-image">
+        <a href="#">
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/lior.jpg')}}" alt="lior">                  
+                    </a>
+      </div>
+
+    </article>
+
+
+    {{-- <article id="3700" class="location-listing">
+
+      <a class="location-title" href="{{asset('search/lior')}}">
+                    <!--San Francisco-->                       </a>
+
+      <div class="location-image">
+        <a href="#">
+                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/lior.jpg')}}" alt="lior">                  
+                    </a>
+      </div>
+
+    </article> --}}
 
   </div>
   <!-- end grid container -->

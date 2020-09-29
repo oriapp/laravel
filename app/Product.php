@@ -35,19 +35,20 @@ class Product extends Model
         ->where('c.url', '=', $curl)
         ->where('p.visibility', '=', '1')
         ->orderBy('p.price')
-        ->paginate(3);
+        ->paginate(12);
     }
 
     static public function searchProduct($query){
         return DB::table('products as p')
         ->select('p.*')
-        ->where('p.visibility', '=', '1')
-        ->orWhere('ptitle', 'LIKE', "%$query%")
+        //->where('p.visibility', '=', '1')
+        ->where('ptitle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
         //->where('ptitle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
-        ->orWhere('purl', 'LIKE', "%$query%")
-        ->orWhere('brand', 'LIKE', "%$query%")
-        ->orWhere('particle', 'LIKE', "%$query%")
-        ->paginate(8);
+        ->orWhere('purl', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
+        ->orWhere('brand', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
+        ->orWhere('producer', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
+        ->orWhere('particle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
+        ->paginate(9);
     }
 
     static public function addToCart($pid){
@@ -70,9 +71,11 @@ class Product extends Model
     }
 
     static public function saveNew($request){
-        $request['colors'] = ($request['colors'] == null) ? $request['colors'] = null : serialize($request['colors']);
+        $request['color'] = ($request['color'] == null) ? $request['color'] = null : serialize($request['color']);
 
         $request['size'] = ($request['size'] == null) ? $request['size'] = null : serialize($request['size']);
+
+        //$request['size'] = serialize($request['size']);
 
         $product = new self();
         $product->categorie_id = $request['category'];
@@ -88,18 +91,19 @@ class Product extends Model
         $product->amount = $request['amount'];
         $product->visibility = $request['visibility'];
         $product->in_short = $request['short'];
-        $product->colors = $request['colors'];
-        $product->size = $request['size'];
+        $product->colors = $request['color'];
+        $product->size = serialize($request['size']);
         $product->save();
         Session::flash('sm', 'Product has been saved!');
     }
 
     static public function updateItem($request, $id){
-        $request['colors'] = ($request['colors'] == null) ? $request['colors'] = null : serialize($request['colors']);
+        $request['color'] = ($request['color'] == null) ? $request['color'] = null : serialize($request['color']);
 
         $request['size'] = ($request['size'] == null) ? $request['size'] = null : serialize($request['size']);
-
-        //dd($request['colors']);
+        // if($request['size'] != null){
+        //     $request['size'] = serialize($request['size']);
+        // }
 
         $product = self::find($id);
         $product->categorie_id = $request['category'];
@@ -115,7 +119,7 @@ class Product extends Model
         $product->amount = $request['amount'];
         $product->visibility = $request['visibility'];
         $product->in_short = $request['short'];
-        $product->colors = $request['colors'];
+        $product->colors = $request['color'];
         $product->size = $request['size'];
         $product->save();
         Session::flash('sm', 'Product has been updated!');
@@ -137,7 +141,30 @@ class Product extends Model
         ->where('p.visibility', '=', '1')
         ->select('p.*', 'c.url')
         ->orderBy('p.created_at', 'DESC')
-        ->limit(4)
+        ->limit(6)
         ->get();
+    }
+
+    static public function similarProducts($title, $article, $brand, $producer){
+        return DB::table('products as p')
+        ->select('p.*')
+        ->where('ptitle', 'LIKE', "%$article%")
+        ->orWhere('purl', 'LIKE', "%$article%")
+        ->orWhere('brand', 'LIKE', "%$article%")
+        ->orWhere('producer', 'LIKE', "%$$producer%")
+        ->orWhere('purl', 'LIKE', "%$article%")
+        ->orWhere('brand', 'LIKE', "%$brand%")
+        ->orWhere('particle', 'LIKE', "%$article%")
+
+        ->inRandomOrder()
+        ->get(8);  
+            }
+
+
+    static public function GetAll(){
+        return DB::table('products as p')
+        ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        ->select('p.ptitle', 'p.id', 'p.price', 'p.pimage', 'p.updated_at', 'c.title')
+        ->paginate(20);
     }
 }

@@ -23,6 +23,7 @@
       <thead>
         <tr>
           <th>Product Title</th>
+          <th>Product Category</th>
           <th>Price</th>
           <th>Product Image</th>
           <th>Last Update</th>
@@ -31,8 +32,10 @@
       </thead>
       <tbody>
         @foreach ($products as $item)
+        {{-- {{dd($item)}} --}}
         <tr>
           <td>{{$item->ptitle}}</td>
+          <td>{{$item->title}}</td>
           <td>{{$item->price}}</td>
         <td><img width="100" class="img-thumbnail" src="{{asset('images/'.$item->pimage)}}"></td>
           <td>{{ date('d/m/Y', strtotime($item->updated_at)) }}</td>
@@ -46,5 +49,7 @@
     </table>
   </div>
 </div>
+
+<span>{{ $products->appends(['orderby' => 'category'])->links() }}</span>
 
 @endsection

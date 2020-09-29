@@ -26,11 +26,17 @@ Route::post('language', 'LanguageController@postLanguages');
 
 
 Route::get('search/{search}', function ($search) {
-    
     //return $search;
     return SearchController::search($search);
 }); 
 // })->where('search', '.*');
+
+Route::get('search/', function () {
+    //return $search;
+     return abort( response('No results where found', 204) );;
+    //return redirect(401);
+}); 
+
 
 
 # Thanks Pages

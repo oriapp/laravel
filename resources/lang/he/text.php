@@ -9,7 +9,7 @@ return [
     'aobut_title' => 'קצת עלינו',
     'about_description' => 'לורם אחד שתיים מידע',
     'view_products_btn' => 'צפה בפריטים',
-    'product_title' => ':product_title פריטי',
+    'product_title' => ':product_title',
     'price_on_site' => 'מחיר באתר:',
     'add_to_cart' => 'הוסף לסל',
     'more_detailes' => 'עוד מידע',

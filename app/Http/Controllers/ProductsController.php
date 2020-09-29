@@ -15,8 +15,8 @@ class ProductsController extends MainController
 {
     public function index()
     {   
-        // make a paginate
-        self::$dtv['products'] = Product::all();
+        # TF Are you looking for
+        self::$dtv['products'] = Product::GetAll();
         return view('cms.products_index', self::$dtv);
     }
 
@@ -52,6 +52,7 @@ class ProductsController extends MainController
     {
         Product::updateItem($request, $id);
         return redirect('cms/products');
+        //return redirect()->back();
     }
 
     public function destroy($id)

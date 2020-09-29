@@ -1,3 +1,7 @@
+@php
+    use App\Product;
+@endphp
+
 @extends('master')
 @section('content')
 <div class="container">
@@ -257,31 +261,53 @@
             <span class="color blue"></span>
           </h5> --}}
 
-          @if ($product->colors !== null)
-          <div class="row container mt-3">
-          <div class="select-colors">
-            <h5 class="sizes">Colors:
-              <select class="select2 form-control" name="colors" id="colors">
-                <label for="colors">Colors</label>
-                @foreach (unserialize($product->colors) as $colors)
-                  <option>{{$colors}}</option>
-                @endforeach
-              </select>
-            </h5>
-            </div>
-          </div>
-          @endif
+          @php
+          if($product->colors == "N;"){
+            $product->colors = null;
+          };
+      @endphp
+      @if ($product->colors != null || $product->colors == '"N;"')
+      @php
+          $product->colors = unserialize($product->colors);
+      @endphp
+      <div class="row container mt-3">
+      <div class="select-size">
+        <h5 class="colors">colors:
+          <select class="select2 form-control" name="colors" id="colors">
+            <label for="colors">Colors</label>
+            @if ($product->colors)
+            @foreach (explode(',', $product->colors) as $colors)
+              <option>{{$colors}}</option>
+            @endforeach
+            
+            @endif
+          </select>
+        </h5>
+        </div>
+      </div>
+      @endif
 
 
-          @if ($product->size !== null)
+          @php
+              if($product->size == "N;"){
+                $product->size = null;
+              };
+          @endphp
+          @if ($product->size != null || $product->size == '"N;"')
+          @php
+              $product->size = unserialize($product->size);
+          @endphp
           <div class="row container mt-3">
           <div class="select-size">
             <h5 class="sizes">sizes:
               <select class="select2 form-control" name="size" id="size">
                 <label for="size">Size</label>
-                @foreach (unserialize($product->size) as $size)
+                @if ($product->size)
+                @foreach (explode(',', $product->size) as $size)
                   <option>{{$size}}</option>
                 @endforeach
+                
+                @endif
               </select>
             </h5>
             </div>
@@ -299,6 +325,36 @@
     </div>
   </div>
 </div>
+
+
+<hr>
+
+
+<!-- Simillar Products --> 
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="{{asset('css/indexPage.css')}}">
+<div class="container mt-3">
+
+  @php
+    $last_view = Product::similarProducts($product->ptitle, $product->ptitle, $product->brand, $product->producer);
+  @endphp
+
+  <h1 class="mb-3 text-center">{{__('text.products_you_may_like')}}</h1>
+    <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "autoPlay": 3000, "pauseAutoPlayOnHover": false, "selectedAttraction": 0.01, "friction": 0.40, "wrapAround": true}'>
+      @foreach ($last_view as $item)
+     
+      {{-- onclick="window.open('{{asset('search/' .$item[0]->purl .'')}}', '_blank');" --}}
+      <div class="carousel-cell">
+      <h3>{{$item->ptitle}}:&nbsp;&nbsp;&nbsp;  </h3>
+      <img class="carousel-cell-image" 
+          data-flickity-lazyload="{{asset('/images/'.$item->pimage)}}" />
+      </div>
+      @endforeach
+    </div>
+  </div>
+  <br><br>
+  <!-- Simillar Products END --> 
 
 
 <div class="sa">

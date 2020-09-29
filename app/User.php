@@ -39,7 +39,9 @@ class User extends Model
         // dd(Cache::has('user_id'));
 
         notify()->success(__('text.welcome_signup', ['username' => $user->name]));
-        Mail::to($request['email'])->send(new WelcomeMail());
+        
+        /* WELCOME email ctn -Will be in use later- */
+        //Mail::to($request['email'])->send(new WelcomeMail());
     }
 
 
@@ -66,7 +68,6 @@ class User extends Model
     }
 
     static public function saveVisit(){
-        //dd(\Request::all());
         $find = DB::table('visitors')->where('ip', \Request::getClientIp())->first();
         
         if($find == null){

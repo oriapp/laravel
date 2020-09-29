@@ -22,7 +22,6 @@ class PagesController extends MainController
 {
     public function home(){
         self::$dtv['page_title'] .= "Home Page";
-        // dd(Session::get('locale'));
         self::$dtv['caregories'] = Categorie::all();
         self::$dtv['last_view'] = Session::get('product_view');
         return view('home', self::$dtv);

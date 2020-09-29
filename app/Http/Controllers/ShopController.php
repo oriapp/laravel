@@ -35,7 +35,9 @@ class ShopController extends MainController
     public function productDetailes($curl, $purl){
         $product = Product::where('purl', '=', $purl)->first();
         //dd(Product::where('purl', '=', $purl)->first()->visibility);
-        if (Product::where('purl', '=', $purl)->first()->visibility == "0") abort(404);
+        if($product != null){
+            if (Product::where('purl', '=', $purl)->first()->visibility == "0" || $product == null) abort(404);
+        }
         if(!$product) abort(404);
         self::$dtv['page_title'] .= $product->ptitle . ' Products';
         self::$dtv['product'] = $product;

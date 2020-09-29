@@ -150,86 +150,26 @@
         <hr>
 
         <div class="form-group">
-          <label class="col-md-2 control-label" for="colors">Colors</label>
-          <div class="col-md-2">
-              <select name="colors[]" id="dates-field2" class="multiselect-ui form-control" multiple="multiple" name="colors">
-                <optgroup label="Colors">
-                  <option>black</option>
-                  <option>desert</option>
-                  <option>coyote</option>
-                  <option>Coyote Brown</option>
-                  <option>Ranger Green </option>
-                  <option>Od Green</option>
-                  <option>Grey</option>
-                  <option>Khaki</option>
-                  <option>Navy Blue</option>
-                </optgroup>
-                </optgroup>
-              </select>
+          <label for="color"><code>*</code> Colors
+            <i>(Put <code style="font-size: 40px">,</code> between each color to separate them)</i></label>
+          <input value="{{unserialize($item->colors)}}" type="text" name="color" id="color" class="form-control">
+          <span class="text-danger"> {{$errors->first('color')}} </span>
           </div>
-      </div>
-
-
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="size">Trouser, Shirts and Shoose sizes</label>
-          <div class="col-md-2">
-              <select name="size[]" id="dates-field2" class="multiselect-ui form-control" multiple="multiple" name="size">
-                <optgroup label="Trouser">
-                  <option>trouser</option>
-                  <option>S-30 </option>
-                  <option>M-32</option>
-                  <option>L-34</option>
-                  <option>XL-36</option>
-                  <option >XXL-38</option>
-                </optgroup>
-
-                <optgroup label="Shirts">
-                  <option>XS</option>
-                  <option>S</option>
-                  <option>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-                  <option>XXL</option>
-                  <option>XXXL</option>
-                  <option>XXXXL</option>
-                </optgroup>
-
-
-
-                  <optgroup label="Shoes">
-                  <option>37</option>
-                  <option>37.5</option>
-                  <option>38</option>
-                  <option>38.5</option>
-                  <option>39</option>
-                  <option>39.5</option>
-                  <option>40</option>
-                  <option>40.5</option>
-                  <option>41</option>
-                  <option>41.5</option>
-                  <option>42</option>
-                  <option>42.5</option>
-                  <option>43</option>
-                  <option>43.5</option>
-                  <option>44</option>
-                  <option>44.5</option>
-                  <option>45</option>
-                  <option>45.5</option>
-                  <option>46</option>
-                  <option>46.5</option>
-                  <option>47</option>
-                  <option>48</option>
-                  <option>49</option>
-
-
-                </optgroup>
-              </select>
-          </div>
-      </div>
-
 
 
       <div class="form-group">
+        @php
+            //$item->size = unserialize($item->size);
+        @endphp
+        <label for="size"><code>*</code> Sizes
+          <i>(Put <code style="font-size: 40px">,</code> between each size to separate them)</i></label>
+        <input value="{{unserialize($item->size)}}" type="size" name="size" id="size" class="form-control">
+        <span class="text-danger"> {{$errors->first('size')}} </span>
+        </div>
+
+
+
+      {{-- <div class="form-group">
         <label class="col-md-4 control-label" for="size">Hats And Gloves</label>
         <div class="col-md-4">
             <select name="size[]" id="dates-field2" class="multiselect-ui form-control" multiple="multiple" name="size">
@@ -249,7 +189,7 @@
               </optgroup>
             </select>
         </div>
-    </div>
+    </div> --}}
 
 
 
