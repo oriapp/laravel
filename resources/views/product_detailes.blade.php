@@ -221,7 +221,7 @@
 
 
 
-<div class="container">
+<div class="container no-select">
   <div class="card">
     <div class="container-fliud">
       <div class="wrapper row">
@@ -261,12 +261,13 @@
             <span class="color blue"></span>
           </h5> --}}
 
-          @php
+          {{-- @php
           if($product->colors == "N;"){
             $product->colors = null;
           };
+          //dd(unserialize($product->colors));
       @endphp
-      @if ($product->colors != null || $product->colors == '"N;"')
+      @if ($product->colors != null || $product->colors != '"N;"')
       @php
           $product->colors = unserialize($product->colors);
       @endphp
@@ -275,17 +276,45 @@
         <h5 class="colors">colors:
           <select class="select2 form-control" name="colors" id="colors">
             <label for="colors">Colors</label>
-            @if ($product->colors)
+            @if (($product->colors))
             @foreach (explode(',', $product->colors) as $colors)
-              <option>{{$colors}}</option>
+              <option data-pcolor="{{$colors}}">{{$colors}}</option>
             @endforeach
-            
+            @else 
+            <option>{{$product->colors[0]}}</option>
             @endif
           </select>
         </h5>
         </div>
       </div>
-      @endif
+      @endif --}}
+
+
+      @php
+              if($product->colors == "N;"){
+                $product->colors = null;
+              };
+          @endphp
+          @if ($product->colors != null || $product->colors == '"N;"')
+          @php
+              $product->colors = unserialize($product->colors);
+          @endphp
+          <div class="row container mt-3">
+          <div class="select-colors">
+            <h5 class="colors">colors:
+              <select class="select2 form-control" name="colors" id="colors">
+                <label for="colors">colors</label>
+                @if ($product->colors)
+                @foreach (explode(',', $product->colors) as $colors)
+                  <option>{{$colors}}</option>
+                @endforeach
+                
+                @endif
+              </select>
+            </h5>
+            </div>
+          </div>
+          @endif
 
 
           @php
@@ -315,9 +344,15 @@
           @endif
 
           <div class="action">
-            <button data-pid="{{$product->id}}" class="add-to-cart btn btn-default" type="button">
+            
+            <button data-pid="{{$product->id}}" class="btn btn-success add-to-cart-btn">
               <i class="fas fa-cart-plus"></i> {{__('text.add_to_cart')}}
               </button>
+            
+            {{-- <button data-pid="{{$product->id}}" class="add-to-cart btn btn-default" type="button">
+              <i class="fas fa-cart-plus"></i> {{__('text.add_to_cart')}}
+              </button> --}}
+
             {{-- <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button> --}}
           </div>
         </div>

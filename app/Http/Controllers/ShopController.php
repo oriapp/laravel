@@ -57,7 +57,7 @@ class ShopController extends MainController
     }
 
     public function addToCart(Request $request){
-        Product::addToCart($request['product_id']);
+        Product::addToCart($request['product_id'], $request['product_color'], $request['product_size']);
     }
 
     public function cart(Request $request){

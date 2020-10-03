@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\ProductRequest;
+use App\Http\Requests\OrderRequest;
 
 use Session, Exception;
 use App\Order;
+use App\Product;
 
 use App\Categorie;
 
@@ -26,7 +27,7 @@ class OrdersController extends MainController
         return view('cms.products_create', self::$dtv);
     }
 
-    public function store(ProductRequest $request)
+    public function store(OrderRequest $request)
     {
         Product::saveNew($request);
         
@@ -46,10 +47,10 @@ class OrdersController extends MainController
         return view('cms.order_edit', self::$dtv);
     }
 
-    public function update(ProductRequest $request, $id)
+    public function update(OrderRequest $request, $id)
     {
-        Product::updateItem($request, $id);
-        return redirect('cms/products');
+        Order::updateOrder($request, $id);
+        return redirect('cms/orders');
     }
 
     public function destroy($id)

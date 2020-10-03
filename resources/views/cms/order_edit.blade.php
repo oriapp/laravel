@@ -32,10 +32,58 @@
             <td>
               <ul>
                 @foreach (unserialize($item->data) as $item)
+                
+                @php
+                        $color = null;
+                        $size = null;
+
+                        (!empty($item['attributes']['color'])) ? $color = $item['attributes']['color'] : $color = null;
+
+                        (!empty($item['attributes']['size'])) ? $size = $item['attributes']['size'] : $size = null;
+
+                        ($color == null && $size == null) ? $color = "Ask the customer":true;
+
+                        
+                @endphp
+
                     <li>
-                    <b>{{$item['name']}}</b>,
+                    <b>{{$item['name']}} </b>,
                     <b>Price: </b> ${{$item['price']}}
                     <b>Quantity: </b> {{$item['quantity']}}
+                    <br>
+                    <b>Color/Size: </b><code>{{$color}} {{$size}}</code> 
+                    </li>
+                    <hr><br>
+                @endforeach
+              </ul>
+            </td>
+      
+            </tr>
+            </tbody>
+          </table>
+
+
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Adreess</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>
+              <ul>
+                @php
+                //dd($order->first()->details);
+                $order->first()->details = explode('%space$',$order->first()->details);
+                    //dd($order->first()->details); 
+                    
+                @endphp
+                @foreach ($order->first()->details as $item => $key)
+
+                    <li>
+                    <b>{{$key}} {{$item}}</b>
                     </li>
                 @endforeach
               </ul>
@@ -47,11 +95,10 @@
 
 
           <div class="form-group">
-            <label for="title">Paid?
+            <label for="paid">Paid?
+              <i>(type <code>Yes</code> or <code>No</code>)</i>
             </label>
             @php
-                //dd($order->first()->paid)
-
                 if($order->first()->paid == "0"){
                   $order->first()->paid = "No";
                 } elseif ($order->first()->paid == "1"){
@@ -60,8 +107,18 @@
                   $order->first()->paid;
                 }
             @endphp
-          <input disabled value="{{$order->first()->paid}}" type="text" name="title" id="title" class="form-control origin-filed">
-          <span class="text-danger">{{$errors->first('title')}}</span>
+          <input value="{{$order->first()->paid}}" type="text" name="paid" id="paid" class="form-control origin-filed">
+          <span class="text-danger">{{$errors->first('paid')}}</span>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="details">Payment Info
+              <i>Write Payment number, via where did he pay and staff like this. <code>Leave it empty if he didn't pay</code></i>
+            </label>
+          <input value="{{$order->first()->payment_info}}" type="text" name="details" id="details" class="form-control origin-filed">
+          <span class="text-danger">{{$errors->first('details')}}</span>
           </div>
 
 

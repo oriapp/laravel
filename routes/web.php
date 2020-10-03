@@ -4,6 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 
 
+/*
+Main to do list
+==================
+
+Make an newletter once someone subscribing to product notflications 
+~~Add size and color to the card for check out.~~
+Try to reduce requests to the database with sessions and chace 
+Put into the dashboard beyond page more things. of things that people updated and orders
+
+get the product page style from the guy from fiverr
+*/
+
+
 # Home
 
 Route::get('/', 'PagesController@home');

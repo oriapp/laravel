@@ -75,7 +75,8 @@ class Order extends Model
         return DB::table('orders as o')
         ->join('users as u', 'u.id', '=', 'o.user_id')
         ->select('u.name', 'o.*')
-        ->paginate(5);
+        ->orderBy('o.created_at', 'desc')
+        ->paginate(10);
     }
 
 
@@ -85,5 +86,17 @@ class Order extends Model
         ->where('o.id', '=', "$id")
         ->select('u.name', 'o.*')
         ->get();
+    }
+
+
+    static public function updateOrder($request, $id){
+
+        $request['paid'] = strtolower($request['paid']);
+        ($request['paid'] == 'yes') ? $request['paid'] = 1 : $request['paid'] = 0;
+
+        $product = self::find($id);
+        $product->paid = $request['paid'];
+        $product->save();
+        Session::flash('sm', 'Product has been updated!');
     }
 }

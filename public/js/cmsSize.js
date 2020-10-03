@@ -29,9 +29,6 @@
                     }
                 }
 
-                //value and selectedOptions are two-way, so these will be triggered even by our own actions.
-                //It needs some way to tell if they are triggered because of us or because of outside change.
-                //It doesn't loop but it's a waste of processing.
                 if (allBindings.has('value')) {
                     var value = allBindings.get('value');
                     if (ko.isObservable(value)) {
@@ -134,13 +131,11 @@
         this.$select = $(select);
         this.options = this.mergeOptions($.extend({}, options, this.$select.data()));
 
-        // Placeholder via data attributes
         if (this.$select.attr("data-placeholder")) {
             this.options.nonSelectedText = this.$select.data("placeholder");
         }
 
-        // Initialization.
-        // We have to clone to create a new reference.
+
         this.originalOptions = this.$select.clone()[0].options;
         this.query = '';
         this.searchTimeout = null;

@@ -9,6 +9,10 @@
 </head>
 <body>
 
+  @component('components.whatsapp')
+  @slot('number') 972528262490 @endslot
+  @endcomponent
+
 <div class="">
     <center>
     <div class="mt-3 jumbotron text-center">

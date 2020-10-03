@@ -3,7 +3,8 @@
 <div class="container">
 @component('components.page_hader')
     @slot('title') {{__('text.categories_title')}} @endslot
-    @slot('description') {{__('text.categories_description')}} @endslot
+    {{-- @slot('description') {{__('text.categories_description')}} @endslot --}}
+    @slot('description') {{null}} @endslot
     @endcomponent
     <link rel="stylesheet" href="{{asset('css/card.css')}}">
 
@@ -43,7 +44,7 @@
 	<div class="card-img" style="background-image:url({{asset('images/' . $category->image)}});">
 		<div class="overlay">
 			<div class="overlay-content">
-				<a href="{{url('shop/'.$category->url)}}">View Project</a>
+				<a href="{{url('shop/'.$category->url)}}">{{__('text.view')}}</a>
 			</div>
 		</div>
 	</div>

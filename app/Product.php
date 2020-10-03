@@ -40,7 +40,8 @@ class Product extends Model
 
     static public function searchProduct($query){
         return DB::table('products as p')
-        ->select('p.*')
+        ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        ->select('p.*', 'c.url')
         //->where('p.visibility', '=', '1')
         ->where('ptitle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
         //->where('ptitle', 'LIKE', "%$query%", 'AND', 'p.visibility', '!=', '1')
@@ -51,11 +52,12 @@ class Product extends Model
         ->paginate(9);
     }
 
-    static public function addToCart($pid){
+    static public function addToCart($pid, $pcolor, $psize){
         if(is_numeric($pid) && $product = self::find($pid)){
             if(!Cart::get($pid)){
-            Cart::add($pid, $product->ptitle, $product->price, 1, []);
-            notify()->success('awesome! ' . $product->ptitle . ' has been added to the cart!');
+            Cart::add($pid, $product->ptitle, $product->price, 1, ['color' => $pcolor, 'size' => $psize]);
+
+            notify()->success("awesome! $product->ptitle has been added to the cart!");
             }
         }
     }
@@ -101,9 +103,6 @@ class Product extends Model
         $request['color'] = ($request['color'] == null) ? $request['color'] = null : serialize($request['color']);
 
         $request['size'] = ($request['size'] == null) ? $request['size'] = null : serialize($request['size']);
-        // if($request['size'] != null){
-        //     $request['size'] = serialize($request['size']);
-        // }
 
         $product = self::find($id);
         $product->categorie_id = $request['category'];
@@ -165,6 +164,7 @@ class Product extends Model
         return DB::table('products as p')
         ->join('categories as c', 'c.id', '=', 'p.categorie_id')
         ->select('p.ptitle', 'p.id', 'p.price', 'p.pimage', 'p.updated_at', 'c.title')
+        ->orderBy('p.created_at', 'desc')
         ->paginate(20);
     }
 }

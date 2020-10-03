@@ -32,12 +32,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{-- {{dd($cart[0]['attributes']['color'])}} --}}
                     @foreach ($cart as $item)
+
+                    @php
+                        $color = null;
+                        $size = null;
+                        
+                        (!empty($item['attributes']['color'])) ? $color = $item['attributes']['color'] : $color = null;
+
+                        (!empty($item['attributes']['size'])) ? $size = $item['attributes']['size'] : $size = null;
+
+                    @endphp
+
                         <tr>
-                            <td>{{$item['name']}}</td>
+                        <td>{{$item['name']}} <mark>{{$color}} {{$size}}</mark></td>
                             <td class="text-center">
                             <button data-pid="{{$item['id']}}" data-op="minus" type="button" href="#" class="update-cart-btn btn btn-outline-primary btn-sm"><i class="fas fa-minus-circle"></i></button>
-                            <input size="1" id="quantity" class="text-center" type="text" value="{{$item['quantity']}}">
+                            <input disabled="disabled" size="1" id="quantity" class="text-center" type="text" value="{{$item['quantity']}}">
                                 <button data-pid="{{$item['id']}}" data-qu="{{amount($item['id'])}}" data-op="plus" type="button" href="#" class="update-cart-btn btn btn-outline-primary btn-sm"><i class="fas fa-plus-circle"></i></button>
                             </td>
                             <td>{{$item['price']}}</td>

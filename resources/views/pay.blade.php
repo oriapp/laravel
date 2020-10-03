@@ -55,7 +55,7 @@
                     <span class="text-danger"> {{$errors->first('email')}} </span>
                 </div>
                 
-                <button type="submit" class="mb-3 btn btn-primary">{{__('text.signup')}}</button>
+                <button type="submit" class="mb-3 btn btn-primary">Check Out!</button>
             </form>
         </div>
     </div>

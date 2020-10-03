@@ -77,13 +77,15 @@
 
       @foreach ($categoriess as $item)
           @php
-          $direct = null;
-              if($item->id == $product->categorie_id){
-              $direct = $item->url;
-            }
+          // $direct = null;
+          //     if($item->id == $product->categorie_id){
+          //     $direct = $item->url;
+          //   }
+
+          // dd($item);
           @endphp	
       @endforeach
-      <a href="{{url('shop/' .$direct . '/' .$product->purl)}}" class="btn btn-sm btn-primary float-right">View Product</a>
+      <a href="{{url('shop/' .$item->url . '/' .$product->purl)}}" class="btn btn-sm btn-primary float-right">View Product</a>
       
 			<div class="price-wrap h5">
         @if ($product->old_price != null && $product->old_price != "0.00")

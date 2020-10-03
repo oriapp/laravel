@@ -7,11 +7,18 @@ String.prototype.permalink = function () {
 
 $(".add-to-cart-btn").on("click", function () {
     var pid = $(this).data("pid");
+    let pcolor = $("#colors").val();
+    let psize = $("#size").val();
+    console.log(psize);
     $.ajax({
         url: BASE_URL + "shop/add-to-cart",
         type: "GET",
         dataType: "html",
-        data: { product_id: pid },
+        data: {
+            product_id: pid,
+            product_color: pcolor,
+            product_size: psize
+        },
         success: function (res) {
             window.location.reload();
         }
@@ -50,9 +57,12 @@ $('.origin-filed').on('focusout '/*input*/, function () {
     $('.target-filed').val($(this).val().permalink());
 })
 
-$('#article').summernote({
-    height: 350,
-});
+if (document.getElementById("article")) {
+    $('#article').summernote({
+        height: 350,
+    });
+};
+
 
 
 $('.image-file-upload').change(function (e) {
@@ -104,7 +114,6 @@ $(document).ready(function(){
     
     
 });
-   
 
 
 
