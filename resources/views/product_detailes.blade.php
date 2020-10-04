@@ -11,414 +11,538 @@
     @slot('description') {{null}}  <!-- {{$product->brand}} -->@endslot
     @endcomponent
 
+<link rel="stylesheet" href="{{url('css/product_page.css')}}">
 
-    {{-- <div class="row"> 
-        <div class="col-7 my-5">
-          <div class="card">
-            <div class="header">
-            <h3>{{$product->ptitle}}</h3>
-            </div>
-          <img src="{{asset('images/'.$product->pimage)}}" class="card-img-top">
-            <div class="card-body">
-            <p>{!! $product->particle !!}</p>
-            <p><b>{{__('text.price_on_site')}} <b>$</b>{{$product->price}}</b></p>
-            <p class="{{__('btn.float')}}">
-              
-              @if (!Cart::get($product->id))
-              @if($product->amount)
-            <button data-pid="{{$product->id}}" class="btn btn-success add-to-cart-btn">
-              <i class="fas fa-cart-plus"></i> {{__('text.add_to_cart')}}
-              </button>
-              @else
-              <button class="btn btn-danger">
-                out of stock!
-                </button>
-              @endif
-              @else
-              <button class="btn btn-success" disabled="disabled">
-                In Cart!
-              </button>
-              @endif
-              
-              <a href="{{url('shop/cart')}}" class="btn btn-primary ml-2">
-                {{__('text.go_to_cart')}}
-              </a>
-            </p>
+
+
+    <section class="product-details-area pt-70 pb-40">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-12">
+            <div class="products-details-image">
+              <ul class="products-details-image-slides owl-theme owl-carousel" data-slider-id="1">
+                <li><img src="{{asset('images/'.$product->pimage)}}" alt="image"></li>
+                {{-- <li><img src="assets/img/products/products-img2.jpg" alt="image"></li>
+                <li><img src="assets/img/products/products-img3.jpg" alt="image"></li>
+                <li><img src="assets/img/products/products-img4.jpg" alt="image"></li> --}}
+              </ul>
+  
+              <!-- Carousel Thumbs -->
+              <div class="owl-thumbs products-details-image-slides-owl-thumbs" data-slider-id="1">
+                <div class="owl-thumb-item">
+                  <img src="{{asset('images/'.$product->pimage)}}" alt="image">
+                </div>
+  
+                {{-- <div class="owl-thumb-item">
+                  <img src="assets/img/products/products-img2.jpg" alt="image">
+                </div>
+  
+                <div class="owl-thumb-item">
+                  <img src="assets/img/products/products-img3.jpg" alt="image">
+                </div>
+  
+                <div class="owl-thumb-item">
+                  <img src="assets/img/products/products-img4.jpg" alt="image">
+                </div> --}}
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    </div>
-</div> --}}
-
-{{-- {{dd($product)}} --}}
-
-<link rel="stylesheet" href="{{asset('css/selectoption.css')}}">
-
-
-
-<style>
-  img {
-  max-width: 100%; }
-
-.preview {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  @media screen and (max-width: 996px) {
-    .preview {
-      margin-bottom: 20px; } }
-
-.preview-pic {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.preview-thumbnail.nav-tabs {
-  border: none;
-  margin-top: 15px; }
-  .preview-thumbnail.nav-tabs li {
-    width: 18%;
-    margin-right: 2.5%; }
-    .preview-thumbnail.nav-tabs li img {
-      max-width: 100%;
-      display: block; }
-    .preview-thumbnail.nav-tabs li a {
-      padding: 0;
-      margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
-      margin-right: 0; }
-
-.tab-content {
-  overflow: hidden; }
-  .tab-content img {
-    width: 100%;
-    -webkit-animation-name: opacity;
-            animation-name: opacity;
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s; }
-
-.card {
-  margin-top: 50px;
-  background: #eee;
-  padding: 3em;
-  line-height: 1.5em; }
-
-@media screen and (min-width: 997px) {
-  .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; } }
-
-.details {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.colors {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.product-title, .price, .sizes, .colors {
-  text-transform: UPPERCASE;
-  font-weight: bold; }
-
-.checked, .price span {
-  color: #ff9f1a; }
-
-.product-title, .rating, .product-description, .price, .vote, .sizes {
-  margin-bottom: 15px; }
-
-.product-title {
-  margin-top: 0; }
-
-.size {
-  margin-right: 10px; }
-  .size:first-of-type {
-    margin-left: 40px; }
-
-.color {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  height: 2em;
-  width: 2em;
-  border-radius: 2px; }
-  .color:first-of-type {
-    margin-left: 20px; }
-
-.add-to-cart, .like {
-  background: #ff9f1a;
-  padding: 1.2em 1.5em;
-  border: none;
-  text-transform: UPPERCASE;
-  font-weight: bold;
-  color: #fff;
-  -webkit-transition: background .3s ease;
-          transition: background .3s ease; }
-  .add-to-cart:hover, .like:hover {
-    background: #b36800;
-    color: #fff; }
-
-.not-available {
-  text-align: center;
-  line-height: 2em; }
-  .not-available:before {
-    font-family: fontawesome;
-    content: "\f00d";
-    color: #fff; }
-
-.orange {
-  background: #ff9f1a; }
-
-.green {
-  background: #85ad00; }
-
-.blue {
-  background: #0076ad; }
-
-.tooltip-inner {
-  padding: 1.3em; }
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-/*# sourceMappingURL=style.css.map */
-</style>
-
-
-
-<div class="container no-select">
-  <div class="card">
-    <div class="container-fliud">
-      <div class="wrapper row">
-        <div class="preview col-md-6">
-          
-          <div class="preview-pic tab-content">
-            <div class="tab-pane active" id="pic-1"><img src="{{asset('images/'.$product->pimage)}}" /></div>
-            {{-- <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div> --}}
-          </div>
-          <ul class="preview-thumbnail nav nav-tabs">
-            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{asset('images/'.$product->pimage)}}" /></a></li>
-            {{-- <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li> --}}
-            
-          </ul>
-          
-        </div>
-        <div class="details col-md-6">
-          <h3 class="product-title">{{$product->ptitle}}</h3>
-          {{-- <div class="rating">
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-            <span class="review-no">41 reviews</span>
-          </div> --}}
-          <p class="product-description">{!!$product->particle!!}</p>
-          <h4 class="price {{__('btn.text_align')}}">{{__('text.price_on_site')}} <span>${{$product->price}}</span></h4>
-          {{-- <h5 class="colors">colors:
-            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-            <span class="color green"></span>
-            <span class="color blue"></span>
-          </h5> --}}
-
-          {{-- @php
-          if($product->colors == "N;"){
-            $product->colors = null;
-          };
-          //dd(unserialize($product->colors));
-      @endphp
-      @if ($product->colors != null || $product->colors != '"N;"')
-      @php
-          $product->colors = unserialize($product->colors);
-      @endphp
-      <div class="row container mt-3">
-      <div class="select-size">
-        <h5 class="colors">colors:
-          <select class="select2 form-control" name="colors" id="colors">
-            <label for="colors">Colors</label>
-            @if (($product->colors))
-            @foreach (explode(',', $product->colors) as $colors)
-              <option data-pcolor="{{$colors}}">{{$colors}}</option>
-            @endforeach
-            @else 
-            <option>{{$product->colors[0]}}</option>
-            @endif
-          </select>
-        </h5>
-        </div>
-      </div>
-      @endif --}}
-
-
-      @php
-              if($product->colors == "N;"){
-                $product->colors = null;
-              };
-          @endphp
-          @if ($product->colors != null || $product->colors == '"N;"')
-          @php
-              $product->colors = unserialize($product->colors);
-          @endphp
-          <div class="row container mt-3">
-          <div class="select-colors">
-            <h5 class="colors">colors:
-              <select class="select2 form-control" name="colors" id="colors">
-                <label for="colors">colors</label>
-                @if ($product->colors)
-                @foreach (explode(',', $product->colors) as $colors)
-                  <option>{{$colors}}</option>
-                @endforeach
-                
+  
+          <div class="col-lg-7 col-md-12">
+            <div class="products-details-desc">
+              <h3>{{$product->ptitle}}</h3>
+  
+              <div class="price">
+                <span class="new-price">${{$product->price}}</span>
+                @if ($product->old_price != "0.00")
+                <span class="old-price">${{$product->old_price}}</span>
                 @endif
-              </select>
-            </h5>
+              </div>
+              <br>
+  
+              {{-- <div class="products-review">
+                <div class="rating">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </div>
+                <a href="#" class="rating-count">3 reviews</a>
+              </div> --}}
+  
+              <ul class="products-info">
+                <li><span>Vendor:</span> <a target="_blank" href="{{url("search/$product->brand")}}">{{$product->brand}}</a></li>
+                @php
+                    ($product->amount || $product->amount > 0) ? $product->amount = "In stock $product->amount" : $product->amount = "Out of stock";
+                @endphp
+                <li><span>Availability:</span> <a>({{$product->amount}})</a></li>
+                <li><span>Products Type:</span> <a href="#">Mask</a></li>
+              </ul>
+  
+  
+  
+            {{-- <div class="product-options mt-4">
+              <div class="form-group">
+                <label for="" class="font-weight-bold">MCK MODEL <span class="text-danger">*</span> </label>
+                <select class="form-control w-75" name="" id="">
+                  <option selected>Choose an option</option>
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="" class="font-weight-bold">STABILIZER <span class="text-danger">*</span> </label>
+                <select class="form-control w-75" name="" id="">
+                  <option selected>Choose an option</option>
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+              </div> 
+
+            </div> --}}
+
+            @php
+            if($product->colors == "N;"){
+              $product->colors = null;
+            };
+        @endphp
+        @if ($product->colors != null || $product->colors == '"N;"')
+        @php
+            $product->colors = unserialize($product->colors);
+        @endphp
+        <div class="font-weight-bold">
+        <div class="select-colors">
+          <h5 class="colors">colors:
+            <select class="form-control w-75" name="colors" id="colors">
+              <label for="colors">colors</label>
+              @if ($product->colors)
+              @foreach (explode(',', $product->colors) as $colors)
+                <option>{{$colors}}</option>
+              @endforeach
+
+              @endif
+            </select>
+          </h5>
+          </div>
+        </div>
+        @endif
+
+
+
+        @php
+        if($product->size == "N;"){
+          $product->size = null;
+        };
+    @endphp
+    @if ($product->size != null || $product->size == '"N;"')
+    @php
+        $product->size = unserialize($product->size);
+    @endphp
+    <div class="font-weight-bold">
+    <div class="select-size">
+      <h5 class="sizes">sizes:
+        <select class="form-control w-75" name="size" id="size">
+          <label for="size">Size</label>
+          @if ($product->size)
+          @foreach (explode(',', $product->size) as $size)
+            <option>{{$size}}</option>
+          @endforeach
+
+          @endif
+        </select>
+      </h5>
+      </div>
+    </div>
+    @endif
+  
+              {{-- <div class="products-info-btn">
+                <a href="customer-service.html"><i class='bx bxs-truck'></i> Shipping</a>
+                <a href="contact.html"><i class='bx bx-envelope'></i> Ask about this products</a>
+              </div> --}}
+  
+              <div class="products-add-to-cart">
+                <div class="input-counter">
+                  <span class="minus-btn"><i class='bx bx-minus'></i></span>
+                  <input disabled="disabled" type="text" value="1" min="1">
+                  <span class="plus-btn"><i class='bx bx-plus'></i></span>
+                </div>
+  
+                <button data-pid="{{$product->id}}" type="submit" class="default-btn add-to-cart-btn"><i class="flaticon-trolley"></i> {{__('text.add_to_cart')}}</button>
+              </div>
+  
+              {{-- <div class="wishlist-btn">
+                <a href="#"><i class='bx bx-heart'></i> Add to Wishlist</a>
+              </div>
+  
+              <div class="buy-checkbox-btn">
+                <div class="item">
+                  <input class="inp-cbx" id="cbx" type="checkbox">
+                  <label class="cbx" for="cbx">
+                    <span>
+                      <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                      </svg>
+                    </span>
+                    <span>I agree with the terms and conditions</span>
+                  </label>
+                </div> --}}
+  
+                {{-- <div class="item">
+                  <a href="#" class="default-btn">Buy it now!</a>
+                </div> --}}
+              </div>
             </div>
           </div>
-          @endif
-
-
-          @php
-              if($product->size == "N;"){
-                $product->size = null;
-              };
-          @endphp
-          @if ($product->size != null || $product->size == '"N;"')
-          @php
-              $product->size = unserialize($product->size);
-          @endphp
-          <div class="row container mt-3">
-          <div class="select-size">
-            <h5 class="sizes">sizes:
-              <select class="select2 form-control" name="size" id="size">
-                <label for="size">Size</label>
-                @if ($product->size)
-                @foreach (explode(',', $product->size) as $size)
-                  <option>{{$size}}</option>
-                @endforeach
-                
-                @endif
-              </select>
-            </h5>
+  
+          <div class="col-lg-12 col-md-12">
+            <div class="products-details-tabs">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item"><a class="nav-link active" id="description-tab" data-toggle="tab" href="#description"
+                    role="tab" aria-controls="description">Description</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" id="shipping-tab" data-toggle="tab" href="#shipping" role="tab"
+                    aria-controls="shipping">Shipping</a></li>
+                <li class="nav-item"><a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
+                    aria-controls="reviews">Reviews (2)</a></li> --}}
+              </ul>
+  
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel">
+                <p>{!! $product->particle !!}</p>
+                </div>
+  
+                <div class="tab-pane fade" id="shipping" role="tabpanel">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr>
+                          <td>Shipping</td>
+                          <td>This item Ship to USA</td>
+                        </tr>
+  
+                        <tr>
+                          <td>Delivery</td>
+                          <td>
+                            Estimated between Wednesday 07/31/2020 and Monday 08/05/2020 <br>
+                            Will usually ship within 1 bussiness day.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+  
+                <div class="tab-pane fade" id="reviews" role="tabpanel">
+                  <div class="products-reviews">
+                    <h3>Products Rating</h3>
+  
+                    <div class="rating">
+                      <span class="bx bxs-star checked"></span>
+                      <span class="bx bxs-star checked"></span>
+                      <span class="bx bxs-star checked"></span>
+                      <span class="bx bxs-star checked"></span>
+                      <span class="bx bxs-star"></span>
+                    </div>
+  
+                    <div class="rating-count">
+                      <span>4.1 average based on 4 reviews.</span>
+                    </div>
+  
+                    <div class="row">
+                      <div class="side">
+                        <div>5 star</div>
+                      </div>
+  
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-5"></div>
+                        </div>
+                      </div>
+  
+                      <div class="side right">
+                        <div>02</div>
+                      </div>
+  
+                      <div class="side">
+                        <div>4 star</div>
+                      </div>
+  
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-4"></div>
+                        </div>
+                      </div>
+  
+                      <div class="side right">
+                        <div>03</div>
+                      </div>
+  
+                      <div class="side">
+                        <div>3 star</div>
+                      </div>
+  
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-3"></div>
+                        </div>
+                      </div>
+  
+                      <div class="side right">
+                        <div>04</div>
+                      </div>
+  
+                      <div class="side">
+                        <div>2 star</div>
+                      </div>
+  
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-2"></div>
+                        </div>
+                      </div>
+  
+                      <div class="side right">
+                        <div>05</div>
+                      </div>
+  
+                      <div class="side">
+                        <div>1 star</div>
+                      </div>
+  
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-1"></div>
+                        </div>
+                      </div>
+  
+                      <div class="side right">
+                        <div>00</div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="products-review-comments">
+                    <h3>3 Reviews</h3>
+  
+                    <div class="user-review">
+                      <img src="assets/img/user1.jpg" alt="image">
+  
+                      <div class="review-rating">
+                        <div class="review-stars">
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                        </div>
+  
+                        <span class="d-inline-block">James Anderson</span>
+                      </div>
+  
+                      <span class="d-block sub-comment">Excellent</span>
+                      <p>Very well built theme, couldn't be happier with it. Can't wait for future updates to see what else they add
+                        in.</p>
+                    </div>
+  
+                    <div class="user-review">
+                      <img src="assets/img/user2.jpg" alt="image">
+  
+                      <div class="review-rating">
+                        <div class="review-stars">
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star'></i>
+                          <i class='bx bxs-star'></i>
+                        </div>
+  
+                        <span class="d-inline-block">Sarah Taylor</span>
+                      </div>
+                      <span class="d-block sub-comment">Video Quality!</span>
+                      <p>Was really easy to implement and they quickly answer my additional questions!</p>
+                    </div>
+  
+                    <div class="user-review">
+                      <img src="assets/img/user3.jpg" alt="image">
+  
+                      <div class="review-rating">
+                        <div class="review-stars">
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                        </div>
+                        <span class="d-inline-block">David Warner</span>
+                      </div>
+                      <span class="d-block sub-comment">Perfect Coding!</span>
+                      <p>Stunning design, very dedicated crew who welcome new ideas suggested by customers, nice support.</p>
+                    </div>
+  
+                    <div class="user-review">
+                      <img src="assets/img/user4.jpg" alt="image">
+  
+                      <div class="review-rating">
+                        <div class="review-stars">
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star checked'></i>
+                          <i class='bx bxs-star'></i>
+                        </div>
+                        <span class="d-inline-block">King Kong</span>
+                      </div>
+                      <span class="d-block sub-comment">Perfect Video!</span>
+                      <p>Stunning design, very dedicated crew who welcome new ideas suggested by customers, nice support.</p>
+                    </div>
+                  </div>
+  
+                  <div class="review-form-wrapper">
+                    <h3>Add a review</h3>
+                    <p class="comment-notes">Your email address will not be published. Required fields are marked <span>*</span></p>
+  
+                    <form>
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                          <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                          </div>
+                        </div>
+  
+                        <div class="col-lg-6 col-md-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name *">
+                          </div>
+                        </div>
+  
+                        <div class="col-lg-6 col-md-6">
+                          <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email *">
+                          </div>
+                        </div>
+  
+                        <div class="col-lg-12 col-md-12">
+                          <div class="form-group">
+                            <textarea placeholder="Your review" class="form-control" cols="30" rows="6"></textarea>
+                          </div>
+                        </div>
+  
+                        <div class="col-lg-12 col-md-12">
+                          <p class="comment-form-cookies-consent">
+                            <input type="checkbox" id="test1">
+                            <label for="test1">Save my name, email, and website in this browser for the next time I comment.</label>
+                          </p>
+                        </div>
+  
+                        <div class="col-lg-12 col-md-12">
+                          <button type="submit" class="default-btn">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          @endif
-
-          <div class="action">
-            
-            <button data-pid="{{$product->id}}" class="btn btn-success add-to-cart-btn">
-              <i class="fas fa-cart-plus"></i> {{__('text.add_to_cart')}}
-              </button>
-            
-            {{-- <button data-pid="{{$product->id}}" class="add-to-cart btn btn-default" type="button">
-              <i class="fas fa-cart-plus"></i> {{__('text.add_to_cart')}}
-              </button> --}}
-
-            {{-- <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button> --}}
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-<hr>
-
-
-<!-- Simillar Products --> 
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<link rel="stylesheet" href="{{asset('css/indexPage.css')}}">
-<div class="container mt-3">
-
-  @php
-    $last_view = Product::similarProducts($product->ptitle, $product->ptitle, $product->brand, $product->producer);
-  @endphp
-
-  <h1 class="mb-3 text-center">{{__('text.products_you_may_like')}}</h1>
-    <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "autoPlay": 3000, "pauseAutoPlayOnHover": false, "selectedAttraction": 0.01, "friction": 0.40, "wrapAround": true}'>
-      @foreach ($last_view as $item)
-     
-      {{-- onclick="window.open('{{asset('search/' .$item[0]->purl .'')}}', '_blank');" --}}
-      <div class="carousel-cell">
-      <h3>{{$item->ptitle}}:&nbsp;&nbsp;&nbsp;  </h3>
-      <img class="carousel-cell-image" 
-          data-flickity-lazyload="{{asset('/images/'.$item->pimage)}}" />
+  
+      <div class="related-products">
+        <div class="container">
+          <div class="section-title">
+            <h2>Related Products</h2>
+          </div>
+  
+  
+            <div class="single-product">
+              <div class="img-container">
+                <img src="img/1.jpg" class="img-fluid p-img" alt="">
+                <div class="sale">sale</div>
+                <div class="view-btn">
+                  <a href="#" class="btn btn-view  btn-sm btn-block"> View </a>
+                </div><!-- /.view-btn -->
+              </div><!-- /.img-container -->
+              <div class="product-details">
+                <div class="category">
+                  <a href="#"> Category </a>
+                </div><!-- /.category -->
+                <div class="product-title">
+                  <h3><a href="#"> Lorem ipsum dolor </a></h3>
+                </div><!-- /.product-title -->
+                <div class="positioned-bottom">
+                  <div class="product-ratings">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                  </div><!-- /.product-ratings -->
+                  <div class="price mb-2 mt-1">
+                    <span class="old-price mr-1">$165.00</span>
+                    <span class="new-price">$159.00</span>
+                  </div> <!-- .price -->
+                </div><!-- /.positioned-bottom -->
+              </div><!-- /.product-details -->
+            </div><!-- /.single-product -->
+  
+          </div>
+        </div>
       </div>
-      @endforeach
-    </div>
-  </div>
-  <br><br>
-  <!-- Simillar Products END --> 
+    </section>
+    <!-- End Product Details Area -->
+  
+    <!-- Start Facility Area -->
+    <section class="facility-area bg-f7f8fa pt-70 pb-40">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-md-3 col-6">
+            <div class="single-facility-box">
+              <div class="icon">
+                <i class="flaticon-free-shipping"></i>
+              </div>
+              <h3>Free Shipping</h3>
+              <p>Free shipping world wide</p>
+            </div>
+          </div>
+  
+          <div class="col-lg-3 col-sm-6 col-md-3 col-6">
+            <div class="single-facility-box">
+              <div class="icon">
+                <i class="flaticon-headset"></i>
+              </div>
+              <h3>Support 24/7</h3>
+              <p>Contact us 24 hours a day</p>
+            </div>
+          </div>
+  
+          <div class="col-lg-3 col-sm-6 col-md-3 col-6">
+            <div class="single-facility-box">
+              <div class="icon">
+                <i class="flaticon-secure-payment"></i>
+              </div>
+              <h3>Secure Payments</h3>
+              <p>100% payment protection</p>
+            </div>
+          </div>
+  
+          <div class="col-lg-3 col-sm-6 col-md-3 col-6">
+            <div class="single-facility-box">
+              <div class="icon">
+                <i class="flaticon-return-box"></i>
+              </div>
+              <h3>Easy Return</h3>
+              <p>Simple returns policy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Facility Area -->
 
 
-<div class="sa">
-<div class=" mb-5">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card card-1">
-        <h3>Ionic Native</h3>
-        <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins to easily add any native functionality to your Ionic apps.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card card-2">
-        <h3>UI Components</h3>
-        <p>Tabs, buttons, inputs, lists, cards, and more! A comprehensive library
-          of mobile UI components, ready to go.</p>
-      </div>
-    </div>
-    
-    <div class="col-md-4">
-      <div class="card card-3">
-        <h3>Theming</h3>
-        <p>Learn how to easily customize and modify your app’s design to fit your
-          brand across all mobile platform styles.</p>
-      </div>
-    </div>
-    
-  </div>
-</div>
 </div>
 
 

@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App;
 
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 
-class NexmoController extends MainController
+class Nexmo extends Model
 {
-
     public static function welcome(){
         $basic = new \Nexmo\Client\Credentials\Basic('89e14e93', 'fGHJ2kmgjQngJ6lS');
         $client = new \Nexmo\Client($basic);
@@ -26,9 +25,9 @@ class NexmoController extends MainController
 
         $message = $client->message()->send([
             'to' => '972549082678',
-            'from' => 'Idfger.org New Order',
-            'text' => "New Order!
-            "
+            'from' => 'Order $order_id',
+            'text' => 'New Order!\n Phone: $info->phone \n Email: $info->email \n see more -> ". url("cms/orders/$order_id/edit") ."
+            '
         ]);
     }
 

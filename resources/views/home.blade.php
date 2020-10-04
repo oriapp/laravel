@@ -4,311 +4,927 @@
 
 @extends('master')
 @section('content')
-<div class="container">
-    {{-- @component('components.page_hader')
-    @slot('title') {{__('text.home_title')}} @endslot
-    @slot('description') {{__('text.home_description')}} @endslot
-    @endcomponent --}}
-</div>
-
-<!-- index css -->
-<link rel="stylesheet" href="{{asset('css/indexPage.css')}}">
 
 
+<section class="slider-area">
 
-@component('components.indexBanner')
-@slot('title_one') Idfgear @endslot
-@slot('title_two') Professional equipment @endslot
-@slot('title_tree') AirSoft And Tools @endslot
-@slot('title_four') Israeli tactical outdoor gear @endslot
-@endcomponent
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12 pd-0">
+              <div class="item-content">
+                  <div class="item-slider items1 bg-img">
+        <div class="slider_section_overlay"></div>
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="contents text-center">
+                                      <h2 class="wow animated fadeInUp" data-wow-duration="1s">MC5 Carbine</h2>
+                                      <p class="mr-lu mr-ru wow animated fadeInDown" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
+                                          <a href="#" class="btn1">buy now</a>
+                                          <a href="#" class="btn2">read more</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item-slider items2 bg-img">
+      <div class="slider_section_overlay"></div>
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="contents text-center">
+                                      <h2 class="wow animated fadeInDown" data-wow-duration="1s">MC5 Carbine</h2>
+                                      <p class="mr-lu mr-ru wow animated fadeInUp" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
+                                          <a href="#" class="btn1">buy now</a>
+                                          <a href="#" class="btn2">read more</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item-slider items3 bg-img">
+      <div class="slider_section_overlay"></div>
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="contents text-right">
+                                      <h2 class="wow animated fadeInRight" data-wow-duration="1s">MC5 Carbine</h2>
+                                      <p class="mr-lu wow animated fadeInRight" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
+                                          <a href="#" class="btn1">buy now</a>
+                                          <a href="#" class="btn2">read more</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item-slider items4 bg-img">
+      <div class="slider_section_overlay"></div>
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="contents">
+                                      <h2 class="wow animated fadeInLeft" data-wow-duration="1s">MC5 Carbine</h2>
+                                      <p class="wow animated fadeInLeft" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
+                                          <a href="#" class="btn1">buy now</a>
+                                          <a href="#" class="btn2">read more</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
+              @php
+                  $fourItems = Product::fourItems();
+              @endphp
+              
+              
+              <div class="col-sm-12">
+                  <div class="item-thumbnail">
 
-
-<hr>
-
-
-<div class="container body mt-3">
-<div class="child-page-listing">
-
-  <h2 class="{{__('btn.text_align')}}">{{__('text.brands')}}</h2>
-
-  <div class="grid-container">
-
-    <article id="3685" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/caa')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-        <img class="img" width="300" height="169" src="{{asset('/images/home/images/caa.jpg')}}" alt="caa">      </a>
-
-      </div>
-
-    </article>
-
-    <article id="3688" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/crispi')}}">
-                    <!--San Francisco-->                      </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/crispi.jpg')}}" alt="crispi">    </a>
-
-      </div>
-
-    </article>
-
-    <article id="3691" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/masada')}}">
-                    <!--San Francisco-->                        </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/masada.jpg')}}" alt="masada">    </a>
-
-      </div>
-
-    </article>
-
-    <article id="3694" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/fab')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/fab.jpg')}}" alt="fab">  </a>
-
-      </div>
-
-    </article>
-
-    <article id="3697" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/lalo')}}">
-                    <!--San Francisco-->                     </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/lalo.jpg')}}" alt="lalo">      </a>
-
-      </div>
-
-    </article>
-
-    <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/imi')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/imi.jpg')}}" alt="imi">                  
+                    @foreach ($fourItems as $item)
+                    <a href="{{url('shop/'.$item->url . '/'. $item->purl)}}" class="col-sm-3" data-slide-index="0">
+                        <div class="items">
+                            <div class="dbox">
+                                <div class="dleft">
+                                    <figure><img src="{{asset('/images/'.$item->pimage)}}" alt=""></figure>
+                                </div>
+                                <div class="dright">
+                                    <div class="content">
+                                        <h3>{{mb_substr($item->ptitle, 0, 25)}}...</h3>
+                                        <p>${{$item->price}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </a>
+                    @endforeach
+                    
+
+                  </div>
+              </div>
+          </div>
       </div>
-
-    </article>
-
-
-
-    <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/511')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/511.jpg')}}" alt="511">                  
-                    </a>
-      </div>
-
-    </article>
-
-
-    <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/nitecore')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/nitecore.jpg')}}" alt="nitecore">                  
-                    </a>
-      </div>
-
-    </article>
-
-
-
-    <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/oakley')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/oakley.jpg')}}" alt="oakley">                  
-                    </a>
-      </div>
-
-    </article>
-
-
-    <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/olight')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/olight.jpg')}}" alt="olight">                  
-                    </a>
-      </div>
-
-    </article>
-
-
-    <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/pi9')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/pi9.jpg')}}" alt="pi9">                  
-                    </a>
-      </div>
-
-    </article>
-
-
-    <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/lior')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/lior.jpg')}}" alt="lior">                  
-                    </a>
-      </div>
-
-    </article>
-
-
-    {{-- <article id="3700" class="location-listing">
-
-      <a class="location-title" href="{{asset('search/lior')}}">
-                    <!--San Francisco-->                       </a>
-
-      <div class="location-image">
-        <a href="#">
-                        <img class="img" width="300" height="169" src="{{asset('/images/home/images/lior.jpg')}}" alt="lior">                  
-                    </a>
-      </div>
-
-    </article> --}}
-
   </div>
-  <!-- end grid container -->
+</section>
+<!--Slider area end here-->
+<!--About area start here-->
+<section class="about-area section bg-img jarallax">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-7 col-sm-12">
+              <div class="section-heading2">
+                  <h2>Who We Are</h2>
+              </div>
+              <div class="about-contents">
+                  <p>With state-of-the-art indoor training facilities and full service custom shop on lion, we can accommodate most requests. All modern weapon enthussts can appreciate our broad services and real-world, experienced staff. With state-of-the-art indoor training facilities and full service.</p>
+                  <blockquote>“This kiosk will revolutionize the purchasing process of silencers, SBRs, ine ns and in the class 3 realm.we can accommodate most rests.”</blockquote>
+                  <p>All modern weaponts can appreciate our broad services and real-world, exper ienced taff.T fm nunc. Etiam pharetra, eratd fermentum feugiat, velit mauris aks egestasut aliquam akshay handge.</p>
+                  <div class="buttons">
+                      <a href="{{url('/about')}}" class="btn1">Read More</a>
+                      <a href="{{url('/shop')}}" class="btn2">Our Shop</a>
+                  </div>
+              </div>
+          </div>
+          
+          {{-- <div class="col-md-5 col-sm-12 ">
+              <div class="about-cata">
+                  <div class="cata-list list-t1">
+                      <div class="dbox">
+                          <div class="dleft">
+                              <div class="content">
+                                  <h4>Hunting</h4>
+                                  <a href="#" class="btn3">Read More<i class="fas fa-arrow-right"></i></a>
+                              </div>
+                          </div>
+                          <div class="dright">
+                              <div class="cate-ico">
+                                  <img src="assets/images/icons/01.png" alt="" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cata-list list-t2">
+                      <div class="dbox">
+                          <div class="dleft">
+                              <div class="content">
+                                  <h4>Trainning</h4>
+                                  <a href="#" class="btn3">Read More<i class="fas fa-arrow-right"></i></a>
+                              </div>
+                          </div>
+                          <div class="dright">
+                              <div class="cate-ico">
+                                  <img src="assets/images/icons/02.png" alt="" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cata-list list-t1">
+                      <div class="dbox">
+                          <div class="dleft">
+                              <div class="content">
+                                  <h4>Shoot Range</h4>
+                                  <a href="#" class="btn3">Read More<i class="fas fa-arrow-right"></i></a>
+                              </div>
+                          </div>
+                          <div class="dright">
+                              <div class="cate-ico">
+                                  <img src="assets/images/icons/03.png" alt="" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> --}}
 
-</div>
-</div>
-
-<style>
-  /* position dots up a bit */
-.flickity-page-dots {
-  bottom: -22px;
-}
-/* dots are lines */
-.flickity-page-dots .dot {
-  height: 4px;
-  width: 40px;
-  margin: 0;
-  border-radius: 0;
-}
-</style>
+</section>
 
 
-<hr>
 
-@if (Session::get("product_view"))
-<div class="container mt-3">
-<h1 class="mb-3 text-center">{{__('text.rhf-container')}}</h1>
-  <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "autoPlay": 3000, "pauseAutoPlayOnHover": false, "selectedAttraction": 0.01, "friction": 0.40, "wrapAround": true}'>
-    @foreach ($last_view as $item)
-   
-    {{-- onclick="window.open('{{asset('search/' .$item[0]->purl .'')}}', '_blank');" --}}
-    <div class="carousel-cell">
-    <h3 onclick="window.location.href =('{{asset('search/' .$item[0]->purl .'')}}');">{{$item[0]->ptitle}}:&nbsp;&nbsp;&nbsp;  </h3>
-    <img class="carousel-cell-image" 
-        data-flickity-lazyload="{{asset('/images/'.$item[0]->pimage)}}" />
-    </div>
-    @endforeach
-  </div>
-</div>
-<br><br>
-    
-@else
-
-<div class="container mt-3">
-
+  <!--About area end here-->
+  <!--Banner area start here-->
+  @if(Product::newItem() )
   @php
-    $last_view = Product::fiveItems();
+      $item = Product::newItem();
+      $item = $item->first();
   @endphp
-
-  <h1 class="mb-3 text-center">{{__('text.products_you_may_like')}}</h1>
-    <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "autoPlay": 3000, "pauseAutoPlayOnHover": false, "selectedAttraction": 0.01, "friction": 0.40, "wrapAround": true}'>
-      @foreach ($last_view as $item)
-     
-      {{-- onclick="window.open('{{asset('search/' .$item[0]->purl .'')}}', '_blank');" --}}
-      <div class="carousel-cell">
-      <h3>{{$item->ptitle}}:&nbsp;&nbsp;&nbsp;  </h3>
-      <img class="carousel-cell-image" 
-          data-flickity-lazyload="{{asset('/images/'.$item->pimage)}}" />
-      </div>
-      @endforeach
-    </div>
-  </div>
-  <br><br>
-
-@endif
-
-
-
-<link rel="stylesheet" href="{{asset('css/card.css')}}">
-<div class="container">
-  <hr>
-  <br><br>
-  <h1 class="{{__('btn.text_align')}}">{{__('text.new_products')}}</h1>
-  @if(Product::newItems() )
-  
-          @foreach(Product::newItems() as $item)
-  <div class="card">
-    <div class="card-img" style="background-image:url({{asset('images/' . $item->pimage)}});">
-      <div class="overlay">
-        <div class="overlay-content">
-          <a href="{{url('shop/'.$item->url . '/'. $item->purl)}}">{{__('text.view_product')}}</a>
+  <section class="banner-area section bg-img af jarallax">
+    <div class="container">
+        <div class="row">
+            {{-- <div class="col-md-6 col-sm-12 hidden-sm hidden-xs">
+                <div class="banner-img">
+                    <figure><img src="{{asset('images/' . $item->pimage)}}" alt="" /></figure>
+                </div>
+            </div> --}}
+            <div class="col-md-6 col-sm-12">
+                <div class="banner-con sm-t-center">
+                    <h2>New {{$item->ptitle}}</h2>
+                    <div class="price">
+                        @if ($item->old_price != '0.00')
+                        <del>${{$item->old_price}}</del>
+                        @endif
+                        <strong>${{$item->price}}</strong>
+                    </div>
+                    <a href="{{url('shop/'.$item->url . '/'. $item->purl)}}" class="btn1">Buy Now</a>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
+@endif
+<!--Banner area end here-->
+
+{{-- <!--Videos area start here-->
+<section class="banner-area2 bg-img jarallax af">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="videos-area text-center">
+                    <div class="video-popups">
+                        <a href="https://www.youtube.com/watch?v=PZxHwbxI3TU" class="video-play-icon"><i class="fas fa-play"></i></a>
+                    </div>
+                    <div class="section-heading mr-0">
+                        <h2 class="mr-0">New MC7 Carbine Gun</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lg-text">
+        <h1>Coming Soon</h1>
+    </div>
+</section>
+<!--Videos area end here--> --}}
+
+<!--Products area start here-->
+<section class="products-area section bg-img jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-heading">
+                    <h2>Our Products</h2>
+                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 pro-ctg">
+                <div class="col-md-3 col-sm-6 pd-0">
+                    <div class="catagories-lists">
+                        <div class="contents">
+                            <figure><img src="{{asset('css/images/products/1.png')}}" alt="" /></figure>
+                            <h3>Handguns</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 pd-0">
+                    <div class="catagories-lists nd">
+                        <div class="contents">
+                            <figure><img src="{{asset('css/images/products/2.png')}}" alt="" /></figure>
+                            <h3>Machine guns</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 pd-0">
+                    <div class="catagories-lists">
+                        <div class="contents">
+                            <figure><img src="{{asset('css/images/products/3.png')}}" alt="" /></figure>
+                            <h3>Silencers</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 pd-0">
+                    <div class="catagories-lists nd">
+                        <div class="contents">
+                            <figure><img src="{{asset('css/images/products/4.png')}}" alt="" /></figure>
+                            <h3>Gun Bullet</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 pd-0">
+                <div class="pro-sliders">
+                    <div class="col-sm-12">
+                        <div class="products">
+                            <figure><img src="assets/images/products/1.jpg" alt="" /></figure>
+                            <div class="contents">
+                                <h3>MC5 Carbine</h3>
+                                <span>$1,499.00</span>
+                                <a href="#" class="btn4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="products">
+                            <figure><img src="assets/images/products/2.jpg" alt="" /></figure>
+                            <div class="contents">
+                                <h3>MC5 Carbine</h3>
+                                <span>$1,499.00</span>
+                                <a href="#" class="btn4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="products">
+                            <figure><img src="assets/images/products/3.jpg" alt="" /></figure>
+                            <div class="contents">
+                                <h3>MC5 Carbine</h3>
+                                <span>$1,499.00</span>
+                                <a href="#" class="btn4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="products">
+                            <figure><img src="assets/images/products/4.jpg" alt="" /></figure>
+                            <div class="contents">
+                                <h3>MC5 Carbine</h3>
+                                <span>$1,499.00</span>
+                                <a href="#" class="btn4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="products">
+                            <figure><img src="assets/images/products/1.jpg" alt="" /></figure>
+                            <div class="contents">
+                                <h3>MC5 Carbine</h3>
+                                <span>$1,499.00</span>
+                                <a href="#" class="btn4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="products">
+                            <figure><img src="assets/images/products/2.jpg" alt="" /></figure>
+                            <div class="contents">
+                                <h3>MC5 Carbine</h3>
+                                <span>$1,499.00</span>
+                                <a href="#" class="btn4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="products">
+                            <figure><img src="assets/images/products/3.jpg" alt="" /></figure>
+                            <div class="contents">
+                                <h3>MC5 Carbine</h3>
+                                <span>$1,499.00</span>
+                                <a href="#" class="btn4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <div class="load-btn text-center mr-t80">
+                    <a href="#" class="btn1">View All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Products area end here-->
+<!--Twitter area start here-->
+<div class="twitter-posts section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 pd-0">
+                <div class="twitt-sliders">
+                    <div class="col-sm-12">
+                        <div class="contents">
+                            <p>New Item on Weapon Store. We are Happy too show my new item on our store Machine Gun
+                                <br>#weapon #gun #webstrot</p>
+                            <span>by AkshayHandge @HandgeAkshay - Jan 23, 2017</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="contents">
+                            <p>New Item on Weapon Store. We are Happy too show my new item on our store Machine Gun
+                                <br>#weapon #gun #webstrot</p>
+                            <span>by AkshayHandge @HandgeAkshay - Jan 23, 2017</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Twitter area end here-->
+<!--Gallery area start here-->
+<section class="gallery-area section2 bg-img jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-heading">
+                    <h2>Photo Gallery</h2>
+                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                </div>
+            </div>
+            <div class="gallery col-sm-12 pd-0">
+                <div class="col-md-4 col-sm-4 col-xs-12 pd-0">
+                    <div class="col-sm-12 mr-b30">
+                        <div class="gimg">
+                            <figure>
+                                <a href="assets/images/gallery/1.jpg">
+                                    <img src="assets/images/gallery/1.jpg" alt="" />
+                                    <div class="con-pop">
+                                        <span><i class="fas fa-search"></i></span>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <h3>Bullets Roll</h3>
+                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mr-b30">
+                        <div class="gimg">
+                            <figure>
+                                <a href="assets/images/gallery/4.jpg">
+                                    <img src="assets/images/gallery/4.jpg" alt="" />
+                                    <div class="con-pop">
+                                        <span><i class="fas fa-search"></i></span>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <h3>Bullets Roll</h3>
+                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 pd-0">
+                    <div class="col-sm-12 mr-b30">
+                        <div class="gimg">
+                            <figure>
+                                <a href="assets/images/gallery/2.jpg">
+                                    <img src="assets/images/gallery/2.jpg" alt="" />
+                                    <div class="con-pop">
+                                        <span><i class="fas fa-search"></i></span>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <h3>Bullets Roll</h3>
+                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 pd-0">
+                    <div class="col-sm-12 mr-b30">
+                        <div class="gimg">
+                            <figure>
+                                <a href="assets/images/gallery/3.jpg">
+                                    <img src="assets/images/gallery/3.jpg" alt="" />
+                                    <div class="con-pop">
+                                        <span><i class="fas fa-search"></i></span>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <h3>Bullets Roll</h3>
+                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mr-b30">
+                        <div class="gimg">
+                            <figure>
+                                <a href="assets/images/gallery/6.jpg">
+                                    <img src="assets/images/gallery/6.jpg" alt="" />
+                                    <div class="con-pop">
+                                        <span><i class="fas fa-search"></i></span>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <h3>Bullets Roll</h3>
+                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 pd-0">
+                    <div class="col-sm-12 mr-b30  lst_div_box_galery hidden-xs">
+                        <div class="gimg">
+                            <figure>
+                                <a href="assets/images/gallery/5.jpg">
+                                    <img src="assets/images/gallery/5.jpg" alt="" />
+                                    <div class="con-pop">
+                                        <span><i class="fas fa-search"></i></span>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <h3>Bullets Roll</h3>
+                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Gallery area end here-->
+<!--Trainning area Start here-->
+<section class="training-area section bg-img jarallax af">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="training-forms">
+                    <form>
+                        <fieldset>
+                            <input type="text" placeholder="Full Name">
+                        </fieldset>
+                        <fieldset>
+                            <input type="email" placeholder="Email Address">
+                        </fieldset>
+                        <fieldset>
+                            <input type="text" placeholder="Phone No.">
+                        </fieldset>
+                        <fieldset>
+                            <select>
+                                <option>Weapon / Plans</option>
+                                <option>Weapon / Plans</option>
+                                <option>Weapon / Plans</option>
+                                <option>Weapon / Plans</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="arrows">
+                            <div class="col-md-5 col-sm-6 pd-0">
+                                <select>
+                                    <option>Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                            <div class="col-md-7 col-sm-6 pd-r0">
+                                <input type="number" placeholder="Age">
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <textarea placeholder="Message"></textarea>
+                        </fieldset>
+                        <button type="submit" class="btn1">Send Now</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="training-con pd-t60">
+                    <h2>Weapon Trainings</h2>
+                    <p>With state-of-the-art indoor training facilities and full service custom shop on lion, we can accommodate most requests.</p>
+                    <h1>P. +880 451 455</h1>
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem is bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh idlit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.</p>
+                    <ul>
+                        <li><i class="fas fa-long-arrow-alt-right"></i>Trainning x2 Hand Gun Full Pack</li>
+                        <li><i class="fas fa-long-arrow-alt-right"></i>Machine Gun CS5 4141 Full Pack </li>
+                        <li><i class="fas fa-long-arrow-alt-right"></i>Custom Shooting Range For Trainning</li>
+                        <li><i class="fas fa-long-arrow-alt-right"></i>Outfitters hunting and tactical shooting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Trainning area End here-->
+<!--Price area Start here-->
+<section class="price-area section bg-img jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-heading">
+                    <h2>Trainning Pricing</h2>
+                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="col-sm-4 pd-0">
+                    <div class="price-lists">
+                        <div class="phead">
+                            <ul class="rate">
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                            <h3>Basic Plan</h3>
+                            <div class="prices">
+                                <strong><i class="fas fa-dollar-sign"></i>49</strong>
+                                <span>/per mo</span>
+                            </div>
+                        </div>
+                        <div class="pbody">
+                            <ul>
+                                <li><span>MC5 Carbine</span></li>
+                                <li><span>MC6 Carbine</span></li>
+                                <li><span>MC7 Long Range Carbine</span></li>
+                                <li><span>MR1 Bolt Action</span></li>
+                            </ul>
+                            <a href="#" class="btn4">Book Now!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 pd-0">
+                    <div class="price-lists middel">
+                        <div class="phead">
+                            <ul class="rate">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                            <h3>Basic Plan</h3>
+                            <div class="prices">
+                                <strong><i class="fas fa-dollar-sign"></i>49</strong>
+                                <span>/per mo</span>
+                            </div>
+                        </div>
+                        <div class="pbody">
+                            <ul>
+                                <li><span>MC5 Carbine</span></li>
+                                <li><span>MC6 Carbine</span></li>
+                                <li><span>MC7 Long Range Carbine</span></li>
+                                <li><span>MR1 Bolt Action</span></li>
+                            </ul>
+                            <a href="#" class="btn4">Book Now!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 pd-0">
+                    <div class="price-lists">
+                        <div class="phead">
+                            <ul class="rate">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                            <h3>Ultimate Plan</h3>
+                            <div class="prices">
+                                <strong><i class="fas fa-dollar-sign"></i>99</strong>
+                                <span>/per mo</span>
+                            </div>
+                        </div>
+                        <div class="pbody">
+                            <ul>
+                                <li><span>MC5 Carbine</span></li>
+                                <li><span>MC6 Carbine</span></li>
+                                <li><span>MC7 Long Range Carbine</span></li>
+                                <li><span>MR1 Bolt Action</span></li>
+                            </ul>
+                            <a href="#" class="btn4">Book Now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Price area End here-->
+<!--Banner area start here-->
+<section class="banner-area3 section af bg-img jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-12 col-md-offset-5">
+                <div class="content">
+                    <div class="con">
+                        <h2>THREAT-MANAGEMENT <br>EXPERTS</h2>
+                        <p>Our facilities in Tilden, TX offer great ranges and accommns for anyone looking to attend one of our hunts or training ses. Tilden has a 1000 yard range with steel every 100 yards as well a unknown distance steel throughout. For aerial opens we have vehicle interdiction.</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Banner area end here-->
+<!--Blog area start here-->
+<section class="blog-area section bg-img jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-heading">
+                    <h2>Latest News</h2>
+                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 pd-0">
+    <div class="news_left_wrapper">
+      <div class="news_left_img_overlay"></div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="news_left_cont">
+              <p><i>News, weapons ,training</i></p>
+              <div class="heart_box">
+                <a href="#"><i class="fa fa-heart"></i></a>
+              </div>
+              <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+              <h3>Weapon Services - 2017</h3>
+              <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+            </div>
+          </div>	
+        </div>	
       </div>
     </div>
-    
-    <div class="card-content">
-      <a href="{{url('shop/'.$item->url . '/'. $item->purl)}}">
-        <h2>{{$item->ptitle ?? 'Error'}}</h2>
-        <p>{!!$item->in_short ?? null!!}</p>
-      <h7 class="float-right">{{date('d/m/y H:i:s', strtotime($item->updated_at))}}</h7>
-      </a>
+    <div class="col-md-6 col-sm-12 col-xs-12 pd-0">
+                <div class="ln-sliders">
+                    <div class="col-sm-12">
+                       <div class="main_news_right_box">
+              <div class="news_right_box1_wrapper">
+                <div class="news_right_box1">
+                  <p>News,gun</p>
+                  <h3>Weapon <br>Trainning 22</h3>
+                  <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+                  <div class="news_border_bottom">
+                  </div>
+                </div>
+              </div>
+              <div class="news_botton_cont">
+                <p>Proin ravida nibh vel velit auctor aliquet. Aenean sotn.</p>
+                <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+              </div>
+            </div>	
+                    </div>
+                    <div class="col-sm-12">
+                       <div class="main_news_right_box">
+              <div class="news_right_box1_wrapper">
+                <div class="news_right_box1">
+                  <p>News,gun</p>
+                  <h3>Weapon <br>Trainning 22</h3>
+                  <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+                  <div class="news_border_bottom">
+                  </div>
+                </div>
+              </div>
+              <div class="news_botton_cont">
+                <p>Proin ravida nibh vel velit auctor aliquet. Aenean sotn.</p>
+                <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+              </div>
+            </div>	
+                    </div>
+                    <div class="col-sm-12">
+                       <div class="main_news_right_box">
+              <div class="news_right_box1_wrapper">
+                <div class="news_right_box1">
+                  <p>News,gun</p>
+                  <h3>Weapon <br>Trainning 22</h3>
+                  <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+                  <div class="news_border_bottom">
+                  </div>
+                </div>
+              </div>
+              <div class="news_botton_cont">
+                <p>Proin ravida nibh vel velit auctor aliquet. Aenean sotn.</p>
+                <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+              </div>
+            </div>	
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="main_news_right_box">
+              <div class="news_right_box1_wrapper">
+                <div class="news_right_box1">
+                  <p>News,gun</p>
+                  <h3>Weapon <br>Trainning 22</h3>
+                  <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+                  <div class="news_border_bottom">
+                  </div>
+                </div>
+              </div>
+              <div class="news_botton_cont">
+                <p>Proin ravida nibh vel velit auctor aliquet. Aenean sotn.</p>
+                <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+              </div>
+            </div>	
+                    </div>
+                    <div class="col-sm-12">
+                       <div class="main_news_right_box">
+              <div class="news_right_box1_wrapper">
+                <div class="news_right_box1">
+                  <p>News,gun</p>
+                  <h3>Weapon <br>Trainning 22</h3>
+                  <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+                  <div class="news_border_bottom">
+                  </div>
+                </div>
+              </div>
+              <div class="news_botton_cont">
+                <p>Proin ravida nibh vel velit auctor aliquet. Aenean sotn.</p>
+                <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+              </div>
+            </div>	
+                    </div>
+                    <div class="col-sm-12">
+                       <div class="main_news_right_box">
+              <div class="news_right_box1_wrapper">
+                <div class="news_right_box1">
+                  <p>News,gun</p>
+                  <h3>Weapon <br>Trainning 22</h3>
+                  <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+                  <div class="news_border_bottom">
+                  </div>
+                </div>
+              </div>
+              <div class="news_botton_cont">
+                <p>Proin ravida nibh vel velit auctor aliquet. Aenean sotn.</p>
+                <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+              </div>
+            </div>	
+                    </div>
+                    <div class="col-sm-12">
+                       <div class="main_news_right_box">
+              <div class="news_right_box1_wrapper">
+                <div class="news_right_box1">
+                  <p>News,gun</p>
+                  <h3>Weapon <br>Trainning 22</h3>
+                  <h6><i class="fa fa-calendar-alt"></i>29-Jan-2017</h6>
+                  <div class="news_border_bottom">
+                  </div>
+                </div>
+              </div>
+              <div class="news_botton_cont">
+                <p>Proin ravida nibh vel velit auctor aliquet. Aenean sotn.</p>
+                <h5><a href="#">Read More</a> &nbsp;<i class="fa fa-long-arrow-alt-right"></i></h5>
+              </div>
+            </div>	
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  @endforeach
-  @endif
-  <br><br>
-  </div>
+</section>
+<!--Blog area end here-->
+<hr>
+<!--Partner area start here-->
+<section class="partner-area section bg-img jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-heading">
+                    <h2>Our Trusted Partners</h2>
+                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="partner-list">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="css/images/partners/1.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/2.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/3.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/4.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/5.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/6.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/7.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/8.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/9.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="css/images/partners/10.png" alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Partner area End here-->
+<!--Subscribe area start here-->
+<section class="subscribe-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="subscribe">
+                    <span class="ico"><i class="far fa-envelope"></i></span>
+                    <div class="conts">
+                        <h2>Get Our Latest News</h2>
+                        <p>Subscribe our Newsletter Now !</p>
+                    </div>
+                    <form>
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit" class="btn1">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Subscribe area End here-->
+
 
 
 @endsection

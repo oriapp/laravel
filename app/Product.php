@@ -144,6 +144,29 @@ class Product extends Model
         ->get();
     }
 
+
+    static public function newItem(){
+        return DB::table('products as p')
+        ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        ->where('p.visibility', '=', '1')
+        ->select('p.*', 'c.url')
+        ->orderBy('p.created_at', 'DESC')
+        ->limit(1)
+        ->get(1);
+    }
+
+
+    static public function fourItems(){
+        return DB::table('products as p')
+        ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        ->where('p.visibility', '=', '1')
+        ->select('p.*', 'c.url')
+        ->orderBy('p.created_at', 'DESC')
+        //->orderByRaw('RAND()')
+        ->limit(4)
+        ->get(4);
+    }
+
     static public function similarProducts($title, $article, $brand, $producer){
         return DB::table('products as p')
         ->select('p.*')

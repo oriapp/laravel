@@ -30,7 +30,7 @@ class FileManagerServiceProvider extends ServiceProvider
                 $image_name = self::generateRandomFileName($file->getClientOriginalName());
                 $request->file('image')->move(public_path() . '/images', $image_name); 
                 $img = Image::make(public_path() . '/images/' . $image_name);
-                $img->resize(null, 150, function ($constraint) {
+                $img->resize(null, 1000, function ($constraint) {
                     $constraint->aspectRatio();
                 });
                 $img->save();
