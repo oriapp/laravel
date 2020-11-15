@@ -14,15 +14,48 @@
   <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
   <link rel="stylesheet" href="{{asset('css/custom.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+    <meta property="og:title" content="IdfGear.Org - Online tactical shop">
+    <meta property="og:description" content="Pi9, 5.11, nitecore, fab, masada, lalo and more!">
+    <meta property="og:image" content="{{asset('css/images/lol.png')}}">
+    <meta property="og:url" content="{{url('')}}">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+
   <title>{{$page_title ?? ''}}</title>
   <script>let BASE_URL = "{{ url('') }}/";</script>
 
-@if (Cart::getTotal())
+  {{-- {{dd(Cart::getTotalQuantity())}} --}}
+@if (Cart::getTotalQuantity())
 <style>
   header .main-header .cart-head button:after {
 visibility: visible !important;
-content: "{{Cart::getTotal()}}";
+content: "{{Cart::getTotalQuantity()}}";
 }
+
+.my-btn {
+  float: right;
+  margin-right: 20px;
+  line-height: 1px;
+}
+
+.btn3 {
+    display: inline-block;
+    color: #878244;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 15px;
+}
+
+.btn3 i {
+    padding-left: 8px;
+}
+
+.btn3:hover {
+    color: white;
+}
+
 </style> 
 @endif
 
@@ -47,12 +80,37 @@ content: "{{Cart::getTotal()}}";
   <header>
 
       <div class="container-fluid">
+
+        <div class="my-btn pull-right">
+                    
+            @if(!Session::has('user_id'))
+            <a href="{{url('user/signin')}}" class="btn3">Sign in</a> |
+            <a href="{{url('user/signup')}}" class="btn3">Sign up</a> 
+                  @else
+                  @if(Session::get('is_admin'))
+                  <a href="{{url('cms/dashboard')}}" class="btn3" style="color: #fff">Dashboard</a> |
+                  @endif
+                  <a href="{{url('user/logout')}}" class="btn3">Logout</a> | 
+                  <span class="text-primary">{{Session::get('user_name')}}</span>
+                      @endif
+                    
+            </div>
+
           <div class="row">
+
+            
+</div>
+
+{{-- {{dd(Cart::getContent())}} --}}
+
+
+
               <div class="col-md-2 col-sm-2 col-xs-12">
                   <div class="logo-area">
                       <a href="{{url('')}}"><img src="{{asset('css/images/lol.png')}}" alt="" /></a>
                   </div>
               </div>
+
               <div class="col-md-10 col-sm-10 hidden-xs">
                   <div class="main-header">
                       <div class="main-menus">
@@ -63,25 +121,17 @@ content: "{{Cart::getTotal()}}";
                                   @foreach($menu as $menu_item)
                                   <li><a href="{{url($menu_item->url)}}">{{$menu_item->link}}</a></li>
                                   @endforeach
-                                  <li>
+                                  
                                   @endif
                                   <li><a href="{{url('/shop')}}">Shop</a></li>
                                   </li>
 
-                                  <li><a href="contact.html">Contact</a></li>
+                                  <li><a href="{{url('content')}}">Contact</a></li>
                               </ul>
                           </nav>
                       </div>
-                      {{-- <div class="serach-header">
-                          <button class="searchd"><i class="fas fa-search"></i></button>
-                          <div class="searchbox">
-                              <button class="close">×</button>
-                              <form>
-                                  <input type="search" placeholder="Search …">
-                                  <button type="submit"><i class="fas fa-search"></i></button>
-                              </form>
-                          </div>
-                      </div> --}}
+
+
                       <div class="cart-head">
                           <button><i class="fas fa-shopping-cart"></i></button>
                           <div class="nav-shop-cart">
@@ -89,42 +139,20 @@ content: "{{Cart::getTotal()}}";
                                   <ul class="product_list_widget ">
                                       <li class="mini_cart_item">
 
+                                        @foreach (Cart::getContent() as $item)
+
                                           <a href="#">
                                               <img src="assets/images/products/5.jpg" alt="" />
-                                              <p class="product-name">Shop Item 01</p>
+                                              <p class="product-name">{{$item->name}}</p>
                                           </a>
 
-                                          <p class="quantity">1 x
-                                              <strong class="Price-amount">$200.00</strong>
+                                          <p class="quantity">{{$item->quantity}} x
+                                              <strong class="Price-amount">${{$item->price}}</strong>
                                           </p>
 
                                           <a href="#" class="remove" title="Remove this item">x</a>
-                                      </li>
-                                      <li class="mini_cart_item">
 
-                                          <a href="#">
-                                              <img src="assets/images/products/6.jpg" alt="" />
-                                              <p class="product-name">Shop Item 01</p>
-                                          </a>
-
-                                          <p class="quantity">1 x
-                                              <strong class="Price-amount">$200.00</strong>
-                                          </p>
-
-                                          <a href="#" class="remove" title="Remove this item">x</a>
-                                      </li>
-                                      <li class="mini_cart_item">
-
-                                          <a href="#">
-                                              <img src="assets/images/products/7.jpg" alt="" />
-                                              <p class="product-name">Shop Item 01</p>
-                                          </a>
-
-                                          <p class="quantity">1 x
-                                              <strong class="Price-amount">$200.00</strong>
-                                          </p>
-
-                                          <a href="#" class="remove" title="Remove this item">x</a>
+                                          @endforeach
                                       </li>
                                   </ul>
                                   <!-- /.product_list_widget -->
@@ -136,41 +164,13 @@ content: "{{Cart::getTotal()}}";
                                   </p>
 
                                   <p class="buttons">
-                                      <a href="{{url('shop/cart')}}" class="btn1">View Cart</a>
+                                      <a href="{{((Cart::getTotalQuantity() != 0) ? url('shop/cart') : "javascript:void(0)")}}" class="btn1">View Cart</a>
                                       <a href="" class="btn2">Checkout</a>
                                   </p>
                               </div>
                           </div>
                       </div>
-                      @if(!Session::has('user_id'))
-
-                      <div class="sing-in-btn">
-                        <a href="{{url('user/signin')}}" class="btn1">Sign in</a>
-                    </div>
-
-                    <div class="sing-in-btn">
-                      <a href="{{url('user/signup')}}" class="btn1">Sign up</a>
-                  </div>
-
-                  @else
-
-                  @if(Session::get('is_admin'))
-
-                  <div class="sing-in-btn">
-                    <a href="{{url('cms/dashboard')}}" class="btn1"> {{__('text.admin_dashboard')}} </a>
-                    </div>
-                  @endif
-
-                  <div class="sing-in-btn">
-                    <a href="#" class="btn1"> {{Session::get('user_name')}} </a>
-                    </div>
-
-
-                    <div class="sing-in-btn">
-                      <a href="{{url('user/logout')}}" class="btn1"> {{__('text.logout')}} </a>
-                      </div>
-
-                      @endif
+                      
                   </div>
               </div>
           </div>
@@ -179,41 +179,20 @@ content: "{{Cart::getTotal()}}";
       <!--Responsive Menu area-->
       <div class="mobilemenu">
           <div class="mobile-menu visible-xs">
+
               <nav>
                   <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="services.html">services</a></li>
-                      <li>
-                          <a href="javascript:void(0)">pages</a>
-                          <ul>
-                              <li><a href="about.html">about</a></li>
-                              <li><a href="shop.html">shop</a></li>
-                              <li><a href="product-single.html">shop single</a></li>
-                              <li><a href="event.html">event</a></li>
-                              <li><a href="event-single.html">event-single</a></li>
-                              <li><a href="gallery.html">gallery</a></li>
-                              <li><a href="blog.html">blog</a></li>
-                              <li><a href="blog-single.html">blog single</a></li>
-                              <li><a href="contact.html">contact</a></li>
-                          </ul>
+                      <li><a href="{{url('')}}">Home</a></li>
+                      <li><a href="{{url('shop')}}">Shop</a></li>
+                      @if(!empty($menu))
+                            @foreach($menu as $menu_item)
+                      <li><a href="{{url($menu_item->url)}}">{{$menu_item->link}}</a></li>
+                            @endforeach
+                            @endif
                       </li>
-                      <li>
-                          <a href="#">shop</a>
-                          <ul>
-                              <li><a href="shop.html">shop page</a></li>
-                              <li><a href="product-single.html">shop single</a></li>
 
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="#">blog</a>
-                          <ul>
-                              <li><a href="blog.html">blog page</a></li>
-                              <li><a href="blog-single.html">blog single</a></li>
-                          </ul>
-                      </li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="{{url('shop/cart')}}">Cart</a></li>
+
                   </ul>
               </nav>
           </div>
@@ -233,9 +212,9 @@ content: "{{Cart::getTotal()}}";
               <div class="row">
                   <div class="col-md-4 col-sm-6">
                       <div class="foo-about">
-                          <figure><img src="assets/images/logo/logo.png" alt="" /></figure>
+                          <figure><img src="{{asset('css/images/logo/logo.png')}}" alt="" /></figure>
                           <div class="contents">
-                              <p>All modern weaponts can apprecie our broad services akshay handge phatum feugiat gun. This is Photo shop's version of Lorem.</p>
+                              <p>The online tactical shop of dvir zohar</p>
                               {{-- <a href="#" class="btn3">read more <i class="fas fa-arrow-right"></i></a> --}}
                           </div>
                           <ul class="foo-social">
@@ -305,15 +284,15 @@ content: "{{Cart::getTotal()}}";
               <div class="row">
                   <div class="col-md-6 col-sm-12">
                       <div class="copyright sm-t-center">
-                          <p>Copyright © 2020 <a href="#"><span>Weapon</span> </a>Store. Design by <a href="#"><span>Webstrot</span></a></p>
+                        <p>Copyright © {{Date('Y')}} <a href="#"><span>Ori Applebaum</span> </a></p>
                       </div>
                   </div>
                   <div class="col-md-6 col-sm-12">
                       <div class="foo-links sm-t-center">
                           <ul>
-                              <li><a href="#">Privacy Policy</a></li>
-                              <li><a href="#">Terms & Conditions</a></li>
-                              <li><a href="#">Copyright Policy</a></li>
+                              <li><a href="{{url('privacy/privacy-policy')}}">Privacy Policy</a></li>
+                              <li><a href="{{url('privacy/terms')}}">Terms & Conditions</a></li>
+                              <li><a href="{{url('privacy/disclaimer')}}">Copyright Policy</a></li>
                           </ul>
                       </div>
                   </div>
@@ -362,6 +341,7 @@ content: "{{Cart::getTotal()}}";
   <script src="{{asset('js/plugins.js')}}"></script>
   <!-- Init JavaScript -->
   <script src="{{asset('js/main.js')}}"></script>
+  <script src="{{asset('js/script.js')}}"></script>
 
   <script>
       function initMap() {

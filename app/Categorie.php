@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use FileManager, Session;
+use FileManager, Session, DB;
 
 class Categorie extends Model
 {
@@ -27,4 +27,12 @@ class Categorie extends Model
         $category->save();
         Session::flash('sm', 'Category Has Been Edit!');
     }
+
+
+    static public function getAll(){
+        return DB::table('categories as c')
+        ->select('c.title', 'c.url', 'c.id')
+        ->get();
+    }
+
 }

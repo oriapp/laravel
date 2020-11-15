@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use App, Session;
 use App\Content;
 use App\Categorie;
+use App\User;
 
 class PagesController extends MainController
 {
@@ -26,6 +27,21 @@ class PagesController extends MainController
         self::$dtv['last_view'] = Session::get('product_view');
         return view('home', self::$dtv);
     }
+
+    public function contentPage(){
+        self::$dtv['page_title'] .= "Content";
+        return view('chatwithus', self::$dtv);
+    }
+
+    public function blacklisted(){
+        if(Session::has('user_id') && User::isBlackListed(Session::get('user_id'))[1] == true){
+        return view('black', self::$dtv);
+        } else {
+            return redirect(''); 
+        }
+    }
+
+
 
     public function content($menu_url){
         self::$dtv['contents'] = Content::getAll($menu_url);

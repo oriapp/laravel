@@ -17,37 +17,18 @@
               <th>ID</th>
               <th>User Name</th>
               <th>Phone</th>
-              <th>Header</th>
-              <th>Header</th>
+              <th>Paid</th>
+              <th>View Order</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($orders as $order)
-            @php
-                $num++;
-                if($num > 3) continue;
-            @endphp
             <tr>
               <td>{{$order->id}}</td>
-              <td>{{$users->where('user_id', '=', $order->user_id)->first()->name}}</td>
-              <td>lorem</td>
-              <td>dolor</td>
-              <td>sit</td>
-            </tr>
-            @endforeach
-
-
-            @foreach ($orders as $order)
-            @php
-                $num++;
-                if($num > 3) continue;
-            @endphp
-            <tr>
-              <td>{{$order->id}}</td>
-              <td>{{$users->where('user_id', '=', $order->user_id)->first()->name}}</td>
-              <td>lorem</td>
-              <td>dolor</td>
-              <td>sit</td>
+              <td>{{$users->first()->name}}</td>
+              <td>{{$users->first()->phone}}</td>
+              <td>{{($order->paid) ? "Yes" : "No"}}</td>
+              <td><a target="_blank" href="{{url("cms/orders/$order->id/edit")}}">View</a></td>
             </tr>
             @endforeach
 

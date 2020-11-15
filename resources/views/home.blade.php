@@ -18,11 +18,11 @@
                           <div class="row">
                               <div class="col-sm-12">
                                   <div class="contents text-center">
-                                      <h2 class="wow animated fadeInUp" data-wow-duration="1s">MC5 Carbine</h2>
-                                      <p class="mr-lu mr-ru wow animated fadeInDown" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <h2 class="wow animated fadeInUp" data-wow-duration="1s">Idfgear.org</h2>
+                                      <p class="mr-lu mr-ru wow animated fadeInDown" data-wow-duration="1.5s">Online tactical shop. </p>
                                       <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
-                                          <a href="#" class="btn1">buy now</a>
-                                          <a href="#" class="btn2">read more</a>
+                                      <a href="{{url('shop')}}" class="btn1">buy now</a>
+                                          <a href="{{url('shop')}}" class="btn2">read more</a>
                                       </div>
                                   </div>
                               </div>
@@ -35,11 +35,11 @@
                           <div class="row">
                               <div class="col-sm-12">
                                   <div class="contents text-center">
-                                      <h2 class="wow animated fadeInDown" data-wow-duration="1s">MC5 Carbine</h2>
-                                      <p class="mr-lu mr-ru wow animated fadeInUp" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <h2 class="wow animated fadeInDown" data-wow-duration="1s">Best Quality</h2>
+                                      <p class="mr-lu mr-ru wow animated fadeInUp" data-wow-duration="1.5s">Our products are the you could get online for good prices! </p>
                                       <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
-                                          <a href="#" class="btn1">buy now</a>
-                                          <a href="#" class="btn2">read more</a>
+                                          <a href{{url('shop')}}" class="btn1">buy now</a>
+                                          <a href{{url('shop')}}" class="btn2">read more</a>
                                       </div>
                                   </div>
                               </div>
@@ -52,11 +52,11 @@
                           <div class="row">
                               <div class="col-sm-12">
                                   <div class="contents text-right">
-                                      <h2 class="wow animated fadeInRight" data-wow-duration="1s">MC5 Carbine</h2>
-                                      <p class="mr-lu wow animated fadeInRight" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <h2 class="wow animated fadeInRight" data-wow-duration="1s">Huge selection</h2>
+                                      <p class="mr-lu wow animated fadeInRight" data-wow-duration="1.5s">From flashlights to guns equipment we have everything you will need! </p>
                                       <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
-                                          <a href="#" class="btn1">buy now</a>
-                                          <a href="#" class="btn2">read more</a>
+                                          <a href="{{url('shop')}}" class="btn1">buy now</a>
+                                          <a href="{{url('shop')}}" class="btn2">read more</a>
                                       </div>
                                   </div>
                               </div>
@@ -69,11 +69,11 @@
                           <div class="row">
                               <div class="col-sm-12">
                                   <div class="contents">
-                                      <h2 class="wow animated fadeInLeft" data-wow-duration="1s">MC5 Carbine</h2>
-                                      <p class="wow animated fadeInLeft" data-wow-duration="1.5s">Built from a forged upper and lower AR-15 receiver with a standard barrel nut interface and mil-spec controls; The MC5 is made for abuse and high round counts. </p>
+                                      <h2 class="wow animated fadeInLeft" data-wow-duration="1s">Let's start </h2>
+                                      <p class="wow animated fadeInLeft" data-wow-duration="1.5s">Click "Read More" and start shopping today! </p>
                                       <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
-                                          <a href="#" class="btn1">buy now</a>
-                                          <a href="#" class="btn2">read more</a>
+                                          <a href="{{url('shop')}}" class="btn1">buy now</a>
+                                          <a href="{{url('shop')}}" class="btn2">read more</a>
                                       </div>
                                   </div>
                               </div>
@@ -129,7 +129,7 @@
                   <blockquote>“This kiosk will revolutionize the purchasing process of silencers, SBRs, ine ns and in the class 3 realm.we can accommodate most rests.”</blockquote>
                   <p>All modern weaponts can appreciate our broad services and real-world, exper ienced taff.T fm nunc. Etiam pharetra, eratd fermentum feugiat, velit mauris aks egestasut aliquam akshay handge.</p>
                   <div class="buttons">
-                      <a href="{{url('/about')}}" class="btn1">Read More</a>
+                      <a href="{{url('/about-us')}}" class="btn1">Read More</a>
                       <a href="{{url('/shop')}}" class="btn2">Our Shop</a>
                   </div>
               </div>
@@ -193,9 +193,9 @@
 
   <!--About area end here-->
   <!--Banner area start here-->
-  @if(Product::newItem() )
+  @if(Product::newItems(1) )
   @php
-      $item = Product::newItem();
+      $item = Product::newItems(1);
       $item = $item->first();
   @endphp
   <section class="banner-area section bg-img af jarallax">
@@ -253,7 +253,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="section-heading">
                     <h2>Our Products</h2>
-                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                    {{-- <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p> --}}
                 </div>
             </div>
         </div>
@@ -296,76 +296,20 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 pd-0">
                 <div class="pro-sliders">
+                    @foreach (Product::fourItems(12) as $item)
                     <div class="col-sm-12">
                         <div class="products">
-                            <figure><img src="assets/images/products/1.jpg" alt="" /></figure>
+                            <figure><img src="{{asset('images/'.$item->pimage)}}" alt="" /></figure>
                             <div class="contents">
-                                <h3>MC5 Carbine</h3>
-                                <span>$1,499.00</span>
-                                <a href="#" class="btn4">Add To Cart</a>
+                                <h3>{{mb_strimwidth($item->ptitle, 0, 25, '...')}}</h3>
+                                <span>${{$item->price}}</span>
+                            <a href="{{url('shop/'.$item->url . '/'. $item->purl)}}" class="btn4">{{__('text.view')}}</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <div class="products">
-                            <figure><img src="assets/images/products/2.jpg" alt="" /></figure>
-                            <div class="contents">
-                                <h3>MC5 Carbine</h3>
-                                <span>$1,499.00</span>
-                                <a href="#" class="btn4">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="products">
-                            <figure><img src="assets/images/products/3.jpg" alt="" /></figure>
-                            <div class="contents">
-                                <h3>MC5 Carbine</h3>
-                                <span>$1,499.00</span>
-                                <a href="#" class="btn4">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
-                    <div class="col-sm-12">
-                        <div class="products">
-                            <figure><img src="assets/images/products/4.jpg" alt="" /></figure>
-                            <div class="contents">
-                                <h3>MC5 Carbine</h3>
-                                <span>$1,499.00</span>
-                                <a href="#" class="btn4">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="products">
-                            <figure><img src="assets/images/products/1.jpg" alt="" /></figure>
-                            <div class="contents">
-                                <h3>MC5 Carbine</h3>
-                                <span>$1,499.00</span>
-                                <a href="#" class="btn4">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="products">
-                            <figure><img src="assets/images/products/2.jpg" alt="" /></figure>
-                            <div class="contents">
-                                <h3>MC5 Carbine</h3>
-                                <span>$1,499.00</span>
-                                <a href="#" class="btn4">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="products">
-                            <figure><img src="assets/images/products/3.jpg" alt="" /></figure>
-                            <div class="contents">
-                                <h3>MC5 Carbine</h3>
-                                <span>$1,499.00</span>
-                                <a href="#" class="btn4">Add To Cart</a>
-                            </div>
-                        </div>
+                   
                     </div>
                 </div>
             </div>
@@ -411,7 +355,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="section-heading">
                     <h2>Photo Gallery</h2>
-                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                    <p>Photos from the field</p>
                 </div>
             </div>
             <div class="gallery col-sm-12 pd-0">
@@ -419,15 +363,15 @@
                     <div class="col-sm-12 mr-b30">
                         <div class="gimg">
                             <figure>
-                                <a href="assets/images/gallery/1.jpg">
-                                    <img src="assets/images/gallery/1.jpg" alt="" />
+                                <a href="{{asset('css/images/gallery/1.jpg')}}">
+                                    <img src="{{asset('css/images/gallery/1.jpg')}}" alt="" />
                                     <div class="con-pop">
                                         <span><i class="fas fa-search"></i></span>
                                     </div>
                                 </a>
                                 <div class="content">
-                                    <h3>Bullets Roll</h3>
-                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                    <h3>Vests</h3>
+                                    <p>Best tactical vests in the market!</p>
                                 </div>
                             </figure>
                         </div>
@@ -435,33 +379,15 @@
                     <div class="col-sm-12 mr-b30">
                         <div class="gimg">
                             <figure>
-                                <a href="assets/images/gallery/4.jpg">
-                                    <img src="assets/images/gallery/4.jpg" alt="" />
+                                <a href="{{asset('css/images/gallery/4.jpg')}}">
+                                    <img src="{{asset('css/images/gallery/4.jpg')}}" alt="" />
                                     <div class="con-pop">
                                         <span><i class="fas fa-search"></i></span>
                                     </div>
                                 </a>
                                 <div class="content">
-                                    <h3>Bullets Roll</h3>
-                                    <p>All modern weaponts can aiate our broad services akshay.</p>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 pd-0">
-                    <div class="col-sm-12 mr-b30">
-                        <div class="gimg">
-                            <figure>
-                                <a href="assets/images/gallery/2.jpg">
-                                    <img src="assets/images/gallery/2.jpg" alt="" />
-                                    <div class="con-pop">
-                                        <span><i class="fas fa-search"></i></span>
-                                    </div>
-                                </a>
-                                <div class="content">
-                                    <h3>Bullets Roll</h3>
-                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                    <h3>Israeli Defence Forch</h3>
+                                    <p>Also the IDF uses our grate products!</p>
                                 </div>
                             </figure>
                         </div>
@@ -471,15 +397,33 @@
                     <div class="col-sm-12 mr-b30">
                         <div class="gimg">
                             <figure>
-                                <a href="assets/images/gallery/3.jpg">
-                                    <img src="assets/images/gallery/3.jpg" alt="" />
+                                <a href="{{asset('css/images/gallery/2.jpg')}}">
+                                    <img src="{{asset('css/images/gallery/2.jpg')}}" alt="" />
                                     <div class="con-pop">
                                         <span><i class="fas fa-search"></i></span>
                                     </div>
                                 </a>
                                 <div class="content">
-                                    <h3>Bullets Roll</h3>
-                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                    <h3>comfortable</h3>
+                                    <p>Quality and easy-to-use products.</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 pd-0">
+                    <div class="col-sm-12 mr-b30">
+                        <div class="gimg">
+                            <figure>
+                                <a href="{{asset('css/images/gallery/3.jpg')}}">
+                                    <img src="{{asset('css/images/gallery/3.jpg')}}" alt="" />
+                                    <div class="con-pop">
+                                        <span><i class="fas fa-search"></i></span>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <h3>Modern</h3>
+                                    <p>Modern and professional equipment.</p>
                                 </div>
                             </figure>
                         </div>
@@ -487,15 +431,15 @@
                     <div class="col-sm-12 mr-b30">
                         <div class="gimg">
                             <figure>
-                                <a href="assets/images/gallery/6.jpg">
-                                    <img src="assets/images/gallery/6.jpg" alt="" />
+                                <a href="{{asset('css/images/gallery/6.jpg')}}">
+                                    <img src="{{asset('css/images/gallery/6.jpg')}}" alt="" />
                                     <div class="con-pop">
                                         <span><i class="fas fa-search"></i></span>
                                     </div>
                                 </a>
                                 <div class="content">
-                                    <h3>Bullets Roll</h3>
-                                    <p>All modern weaponts can aiate our broad services akshay.</p>
+                                    <h3>Cheap</h3>
+                                    <p>Favorable prices for every pocket in excellent quality!</p>
                                 </div>
                             </figure>
                         </div>
@@ -505,8 +449,8 @@
                     <div class="col-sm-12 mr-b30  lst_div_box_galery hidden-xs">
                         <div class="gimg">
                             <figure>
-                                <a href="assets/images/gallery/5.jpg">
-                                    <img src="assets/images/gallery/5.jpg" alt="" />
+                                <a href="{{asset('css/images/gallery/5.jpg')}}">
+                                    <img src="{{asset('css/images/gallery/5.jpg')}}" alt="" />
                                     <div class="con-pop">
                                         <span><i class="fas fa-search"></i></span>
                                     </div>
@@ -524,7 +468,7 @@
     </div>
 </section>
 <!--Gallery area end here-->
-<!--Trainning area Start here-->
+{{-- <!--Trainning area Start here-->
 <section class="training-area section bg-img jarallax af">
     <div class="container">
         <div class="row">
@@ -571,7 +515,7 @@
                 <div class="training-con pd-t60">
                     <h2>Weapon Trainings</h2>
                     <p>With state-of-the-art indoor training facilities and full service custom shop on lion, we can accommodate most requests.</p>
-                    <h1>P. +880 451 455</h1>
+                    <h1>P. +972 52-826-2490</h1>
                     <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem is bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh idlit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.</p>
                     <ul>
                         <li><i class="fas fa-long-arrow-alt-right"></i>Trainning x2 Hand Gun Full Pack</li>
@@ -584,97 +528,8 @@
         </div>
     </div>
 </section>
-<!--Trainning area End here-->
-<!--Price area Start here-->
-<section class="price-area section bg-img jarallax">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="section-heading">
-                    <h2>Trainning Pricing</h2>
-                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="col-sm-4 pd-0">
-                    <div class="price-lists">
-                        <div class="phead">
-                            <ul class="rate">
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                            <h3>Basic Plan</h3>
-                            <div class="prices">
-                                <strong><i class="fas fa-dollar-sign"></i>49</strong>
-                                <span>/per mo</span>
-                            </div>
-                        </div>
-                        <div class="pbody">
-                            <ul>
-                                <li><span>MC5 Carbine</span></li>
-                                <li><span>MC6 Carbine</span></li>
-                                <li><span>MC7 Long Range Carbine</span></li>
-                                <li><span>MR1 Bolt Action</span></li>
-                            </ul>
-                            <a href="#" class="btn4">Book Now!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 pd-0">
-                    <div class="price-lists middel">
-                        <div class="phead">
-                            <ul class="rate">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                            <h3>Basic Plan</h3>
-                            <div class="prices">
-                                <strong><i class="fas fa-dollar-sign"></i>49</strong>
-                                <span>/per mo</span>
-                            </div>
-                        </div>
-                        <div class="pbody">
-                            <ul>
-                                <li><span>MC5 Carbine</span></li>
-                                <li><span>MC6 Carbine</span></li>
-                                <li><span>MC7 Long Range Carbine</span></li>
-                                <li><span>MR1 Bolt Action</span></li>
-                            </ul>
-                            <a href="#" class="btn4">Book Now!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 pd-0">
-                    <div class="price-lists">
-                        <div class="phead">
-                            <ul class="rate">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                            <h3>Ultimate Plan</h3>
-                            <div class="prices">
-                                <strong><i class="fas fa-dollar-sign"></i>99</strong>
-                                <span>/per mo</span>
-                            </div>
-                        </div>
-                        <div class="pbody">
-                            <ul>
-                                <li><span>MC5 Carbine</span></li>
-                                <li><span>MC6 Carbine</span></li>
-                                <li><span>MC7 Long Range Carbine</span></li>
-                                <li><span>MR1 Bolt Action</span></li>
-                            </ul>
-                            <a href="#" class="btn4">Book Now!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Price area End here-->
+<!--Trainning area End here--> --}}
+
 <!--Banner area start here-->
 <section class="banner-area3 section af bg-img jarallax">
     <div class="container">
@@ -699,7 +554,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="section-heading">
                     <h2>Latest News</h2>
-                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                    {{-- <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p> --}}
                 </div>
             </div>
         </div>
@@ -858,7 +713,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="section-heading">
                     <h2>Our Trusted Partners</h2>
-                    <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p>
+                    {{-- <p>All modern weaponts can appreciate our broad services akshay handge pharetra, eratd fermentum feugiat, gun are best velit mauris aks egestasut aliquam.</p> --}}
                 </div>
             </div>
         </div>
@@ -867,34 +722,34 @@
                 <div class="partner-list">
                     <ul>
                         <li>
-                            <a href="#"><img src="css/images/partners/1.png" alt="" /></a>
+                            <a href="{{url('search/silynx')}}"><img src="css/images/partners/1.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/2.png" alt="" /></a>
+                            <a href="{{url('search/511')}}"><img src="css/images/partners/2.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/3.png" alt="" /></a>
+                            <a href="{{url('search/masada')}}"><img src="css/images/partners/3.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/4.png" alt="" /></a>
+                            <a href="{{url('search/pi9')}}"><img src="css/images/partners/4.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/5.png" alt="" /></a>
+                            <a href="{{url('search/fab')}}"><img src="css/images/partners/5.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/6.png" alt="" /></a>
+                            <a href="{{url('search/crispi')}}"><img src="css/images/partners/6.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/7.png" alt="" /></a>
+                            <a href="{{url('search/keela')}}"><img src="css/images/partners/7.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/8.png" alt="" /></a>
+                            <a href="{{url('search/lalo')}}"><img src="css/images/partners/8.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/9.png" alt="" /></a>
+                            <a href="{{url('search/caa')}}"><img src="css/images/partners/9.png" alt="" /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="css/images/partners/10.png" alt="" /></a>
+                            <a href="{{url('search/olight')}}"><img src="css/images/partners/10.png" alt="" /></a>
                         </li>
                     </ul>
                 </div>

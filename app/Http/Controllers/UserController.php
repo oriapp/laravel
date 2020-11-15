@@ -50,7 +50,7 @@ class UserController extends MainController
         //     'is_admin' => false,
         // ]);
         Session::flush();
-        connectify('error', 'Connection Closed', 'successfully logged out. see you in the next round');
+        Session::flash('sm', 'successfully logged out. see you in the next round');
         return redirect('user/signin');
     }
 

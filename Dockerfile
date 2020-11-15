@@ -1,0 +1,1 @@
+docker login localhost:8080

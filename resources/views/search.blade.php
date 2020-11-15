@@ -1,113 +1,161 @@
+@php
+    $num = 0;
+    use App\Categorie;
+@endphp
 
 @extends('master')
 @section('content')
-<div class="container">
-@component('components.page_hader')
-    @slot('title') <div>{{$res->total()}} search results found</div> @endslot
-    @slot('description') {{null}} @endslot
-    @endcomponent
-
-    <style>
-      
-
-  .card-product:after {
-    content: "";
-    display: table;
-    clear: both;
-    visibility: hidden; }
-  .card-product .price-new, .card-product .price {
-    margin-right: 5px; }
-  .card-product .price-old {
-    color: #999; }
-  .card-product .img-wrap {
-    border-radius: 3px 3px 0 0;
-    overflow: hidden;
-    position: relative;
-    height: 220px;
-    text-align: center; }
-    .card-product .img-wrap img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: cover; }
-      
-      .card-product .info-wrap {
-    overflow: hidden;
-    padding: 15px;
-    border-top: 1px solid #eee; }
-  .card-product .action-wrap {
-    padding-top: 4px;
-    margin-top: 4px; }
-  .card-product .bottom-wrap {
-    padding: 15px;
-    border-top: 1px solid #eee; }
-  .card-product .title {
-    margin-top: 0; }
-    </style>
 
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+ <!--Breadcumb area start here-->
+ <section class="breadcumb-area jarallax bg-img af">
+  <div class="breadcumb">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="content">
+                      <h2>Our products</h2>
+                      <ul>
+                          <li><a href="{{url('')}}">Home</a></li>
+                          <li><a href="javascript:void(0)">shop</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--Breadcumb area end here-->
 
-<div class="container">
+@if ($res && count($res) > 0)
+    
+<!--Products area start here-->
+<section class="shop-page section">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3">
+              <div class="sibebar">
+                  <div class="wighet search">
+                      <form>
+                          <input type="search" placeholder="Search here">
+                          <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
+                  </div>
+                  <div class="wighet categories">
+                      <h3>categ<span>ories</span></h3>
+                      <ul>
+                          @foreach (Categorie::getAll() as $cat)
+                              {{-- {{dd($cat)}} --}}
+                      <li><a href="{{$cat->url}}"><i class="fa fa-angle-double-right"></i>{{$cat->title}} </a></li>
 
+                          @endforeach
+                      </ul>
+                  </div>
 
-<div class="row">
-@foreach ($res as $product)
+              </div>
+          </div>
+          <div class="col-sm-9 pd-0">
+              <div class="col-sm-12">
+                  <div class="filter-area">
+                      {{-- <select>
+                          <option>short by</option>
+                          <option>Laptop</option>
+                          <option>Ram</option>
+                          <option>cpu</option>
+                      </select> --}}
 
-@php
-    if($product->visibility == "0"){
-      continue;
-    }
-@endphp
-  
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="{{asset('images/'.$product->pimage)}}"></div>
-		<figcaption class="info-wrap">
-				<h4 class="title">{{$product->ptitle}}</h4>
-				<p class="desc">{{$product->in_short}}</p>
-				{{-- <div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// --> --}}
-		</figcaption>
-		<div class="bottom-wrap">
+                      <div class="showpro">
+                          <p><span>{{$res->total()}} Results found</span></p>
+                      </div>
+                  </div>
+              </div>
 
-      @foreach ($categoriess as $item)
-          @php
-          // $direct = null;
-          //     if($item->id == $product->categorie_id){
-          //     $direct = $item->url;
-          //   }
+              
+              <div class="card-group h-400 w-260">
+                @foreach ($res as $product)
+                @php
+                    $num += 1;
+                @endphp
+                <div class="col-sm-4 products">
+                  <figure><img src="{{asset('images/'.$product->pimage)}}" alt="" /></figure>
+                  <div class="contents">
+                  <h3 style="font-size: 20px !important">{{mb_strimwidth($product->ptitle, 0, 15, '...')}}</h3>
+                      {{-- {{mb_strimwidth($product->in_short, 0, 10, '...')}} <br> --}}
+                      <span>$1,499.00</span>
+                      <a href="{{url('shop/'.$product->url.'/'.$product->purl)}}" class="btn4">Add To Cart</a>
+                  </div>
+              </div>
+              @if ($num == 6)
+                    <h1 style="visibility: hidden;">ad</h1>
+                    @php
+                        $num = 0;
+                    @endphp
+                @endif
+                @endforeach
 
-          // dd($item);
-          @endphp	
-      @endforeach
-      <a href="{{url('shop/' .$item->url . '/' .$product->purl)}}" class="btn btn-sm btn-primary float-right">View Product</a>
-      
-			<div class="price-wrap h5">
-        @if ($product->old_price != null && $product->old_price != "0.00")
-        <span class="price-new">${{$product->price}}</span> <del class="price-old">{{$product->old_price}}</del>
-        @else
-        <span class="price-new">${{$product->price}}</span>
-        @endif
-      
-			</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-@endforeach
-</div> <!-- row.// -->
+              </div>
+              <div class="col-sm-12">
+                  <div class="">
+                      {{-- <ul>
+                          <li><a href="#"><span>Pervious</span></a></li>
+                          <li><a href="#" class="active">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">.....</a></li>
+                          <li><a href="#">10</a></li>
+                          <li><a href="#"><span>next</span></a></li>
+                      </ul> --}}
+                      {{$res->appends(['sort' => 'title'])->render()}}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--Products area end here-->
 
+@else
 
+<div style="min-height: 750px;" class="about">
+  <br>
+  <div class="text-center col-md-12 col-sm-12 ">
+      <div class="section-heading">
+          <h2> 404 </h2>
+      </div>
+  </div>
 
+  <div class="text-center"><b>0 Results found!</b></div><br>
+  <div class="text-center"><a class="btn btn-primary" href="{{url('')}}" role="button">Go Home</a></div>
 
-</div> 
-<!--container.//-->
+</div>
 
-{{ $res->links() }}
+@endif
+
+<!--Subscribe area start here-->
+<section class="subscribe-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-sm-12">
+              <div class="subscribe">
+                  <span class="ico"><i class="far fa-envelope"></i></span>
+                  <div class="conts">
+                      <h2>Get Our Latest News</h2>
+                      <p>Subscribe our Newsletter Now !</p>
+                  </div>
+                  <form>
+                      <input type="email" placeholder="Email Address">
+                      <button type="submit" class="btn1">Subscribe</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--Subscribe area End here-->
+
+  {{-- {{$products->appends(['sort' => 'title'])->render()}} --}}
 
 
 @endsection

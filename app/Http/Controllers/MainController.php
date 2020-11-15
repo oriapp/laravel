@@ -37,9 +37,9 @@ class MainController extends Controller
 
 
             if(Session::get('user_id')){
-                //dd($request->server);
                 if(User::isBlackListed(Session::get('user_id'))[1] == true){
-                    dd(User::isBlackListed(Session::get('user_id')));
+                    //dd(User::isBlackListed(Session::get('user_id')));
+                    redirect('black');
                 };
                 User::saveVisitDate();
             } else {
@@ -48,6 +48,7 @@ class MainController extends Controller
             
             return $next($request);
         });
+
 
     }
 

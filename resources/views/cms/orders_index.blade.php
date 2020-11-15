@@ -5,7 +5,8 @@
     <h1 class="h2">Shop Orders</h1>
 </div>
 
-
+<p>Red background = Didn't pay</p>
+<p>Green background = Paid</p>
 
 <div class="row">
   <div class="col-12 mt-3">
@@ -22,7 +23,7 @@
       </thead>
       <tbody>
         @foreach ($orders as $order)
-      <tr>
+      <tr {!!(!$order->paid) ? "style=\"background-color: rgba(255, 0, 0, 0.404)\"" : "style=\"background-color:  rgba(0, 255, 13, 0.404)\"" !!}>
         <td>{{$order->name}}</td>
       <td>${{$order->total}}</td>
       <td>

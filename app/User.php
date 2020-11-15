@@ -13,10 +13,10 @@ class User extends Model
     static public function saveNew($request){
         $user = new self();
         $user->name = $request['name'];
-        $user->email = $request['email'];
+        $user->email = strtolower($request['email']);
         $user->password = bcrypt($request['password']);
         
-        $user->language = $request['Language'];
+        $user->language = 'en';
         $user->ip = \Request::getClientIp();
         $user->last_visit = date('l jS \of F Y h:i:s A');
         $user->blacklisted = 0;

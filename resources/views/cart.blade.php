@@ -12,13 +12,44 @@
 
 @extends('master')
 @section('content')
-<div class="container">
-    @component('components.page_hader')
-    @slot('title') Cart Page @endslot
-    @slot('description') {{__('text.about_description')}} @endslot
-    @endcomponent
-    <div class="row">
+
+<style>
+    .about {
+    min-height: 750px;
+}
+</style>
+
+<section class="breadcumb-area jarallax bg-img af about">
+    <div class="breadcumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="content">
+                        <h2>Checkout</h2>
+                        <ul>
+                            <li><a href="{{url('')}}">Home</a></li>
+                            <li><a href="{{url('shop')}}">shop</a></li>
+                            <li><a href="javascript:void(0)">cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container mt-5 about-area section bg-img about jarallax">
         @if(!Cart::isEmpty())
+
+        <br><br><br>
+
+        <div class="col-md-12 col-sm-12">
+            <div class="section-heading">
+                <h2> Shopping Cart </h2>
+            </div>
+        </div>
+
+
         <div class="col-12">
             <table class="table table-bordered table-responsive-sm">
                 <thead>
@@ -76,9 +107,18 @@
             
         </div>
         @else
-        <div class="col-12 text-center">
-            <p><i>No Items In Cart!</i></p>
+
+        <div class="about">
+        <br>
+        <div class="text-center col-md-12 col-sm-12 ">
+            <div class="section-heading">
+                <h2> Cart empty </h2>
+            </div>
         </div>
+
+        <div class="text-center"><b>Cart Is Empty</b></div>
+
+    </div>
         @endif
     </div>
 

@@ -27,6 +27,7 @@ class Order extends Model
         $validation = true;
         
         foreach(Cart::getContent()->toArray() as $item){
+            dd(serialize($request->address, $request->city, $request->state, $request->zip, $request->phone, $request->email));
             //dd($item['name']);
             //dd(self::getProductsByTitle($item['name'])[0]);
 
@@ -53,7 +54,7 @@ class Order extends Model
         }
 
 
-        $order_data = ("$request->address %space$ $request->city %space$ $request->state %space$ $request->zip %space$ $request->phone %space$ $request->email");
+        // $order_data = ("$request->address %space$ $request->city %space$ $request->state %space$ $request->zip %space$ $request->phone %space$ $request->email");
 
         if($validation){
             // If we have those items in stock!
@@ -62,7 +63,7 @@ class Order extends Model
             $order->user_id = Session::get('user_id');
             $order->data = serialize(Cart::getContent()->toArray());
             $order->total = Cart::getTotal();
-            $order->details = $order_data;
+            $order->details = serialize($request->address, $request->city, $request->state, $request->zip, $request->phone, $request->email);
             $order->save();
             Cart::clear();
             notify()->success('Your order has been placed.');
@@ -74,8 +75,8 @@ class Order extends Model
     static public function getAll(){
         return DB::table('orders as o')
         ->join('users as u', 'u.id', '=', 'o.user_id')
-        ->select('u.name', 'o.*')
-        ->orderBy('o.created_at', 'desc')
+        ->select('u.*', 'o.*')
+        ->orderBy('o.created_at', 'desc', 'AND', 'o.paid', 'DESC')
         ->paginate(10);
     }
 

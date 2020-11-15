@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Audiowide|Poppins:300,400,400i,500,700,800,900");
 /*-------------------------------------
-    Template Name: Weapon Store - Gun Shop HTML Template
-    Description: This is html5 template
-    Author: Webstrot
+
 ---------------------------------------
     
     CSS INDEX
@@ -4168,7 +4166,7 @@ margin-top:50px;
 .products-area .catagories-lists {
   display: block;
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   height: 230px;
   border: 1px solid #eee;
   text-align: center;
@@ -4313,7 +4311,7 @@ margin-top:50px;
   vertical-align: middle;
 }
 .products-area .pro-sliders .products figure img {
-  width: 100%;
+  /* width: 100%; */
   transition: all 0.3s;
 }
 .products-area .pro-sliders .products .contents {
@@ -4353,7 +4351,7 @@ margin-top:50px;
 }
 .shop-page .filter-area select {
   display: inline-block;
-  width: 230px;
+  /* width: 230px; */
   height: 50px;
   line-height: 50px;
   border: 1px solid #e5e5e5;
@@ -4380,7 +4378,7 @@ margin-top:50px;
   font-size: 18px;
   height: 50px;
   line-height: 48px;
-  width: 50px;
+  /* width: 50px; */
   text-align: center;
   border: 1px solid #e5e5e5;
 }
@@ -4420,7 +4418,6 @@ margin-top:50px;
   vertical-align: middle;
 }
 .shop-page .products figure img {
-  width: 100%;
   transition: all 0.3s;
 }
 .shop-page .products .contents {
@@ -4456,20 +4453,20 @@ margin-top:50px;
   border-top: none;
 }
 .shop-page .products.list-item {
-  width: 100%;
+  /* width: 100%; */
   display: block;
   overflow: hidden;
   vertical-align: middle;
   text-align: left;
 }
 .shop-page .products.list-item figure {
-  width: 30%;
+  /* width: 30%; */
   display: inline-block;
   float: left;
 }
 .shop-page .products.list-item .contents {
   display: inline-block;
-  width: 70%;
+  /* width: 70%; */
   padding: 21px 30px 0;
   float: left;
   border-bottom: none;
@@ -4495,7 +4492,7 @@ margin-top:50px;
   margin: 0 0 20px;
 }
 .product-details .products-photo .tab-content .tab-pane img {
-  width: 100%;
+  /* width: 100%; */
 }
 .product-details .products-photo .nav-tabs {
   border: none;
@@ -4503,7 +4500,7 @@ margin-top:50px;
 }
 .product-details .products-photo .nav-tabs li {
   display: inline-block;
-  width: 25%;
+  /* width: 25%; */
   padding: 0 10px;
 }
 .product-details .products-photo .nav-tabs li a {
@@ -4513,7 +4510,7 @@ margin-top:50px;
   border-radius: 0;
 }
 .product-details .products-photo .nav-tabs li a img {
-  width: 100%;
+  /* width: 100%; */
 }
 .product-details .single-product-content h2 {
   font-size: 36px;
@@ -4530,7 +4527,7 @@ margin-top:50px;
   left: 0;
   top: 5px;
   bottom: 0;
-  width: 50px;
+  /* width: 50px; */
   height: 30px;
   background: #878244;
   -webkit-clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
@@ -4576,7 +4573,7 @@ margin-top:50px;
   zoom: 1;
 }
 .product-details .single-product-content .select-pro .input-group {
-  width: 160px;
+  /* width: 160px; */
   border-radius: 0;
   line-height: 43px;
   border: 1px solid #e5e5e5;
@@ -4601,7 +4598,7 @@ margin-top:50px;
   text-align: center;
 }
 .product-details .single-product-content .select-pro select {
-  width: 130px;
+  /* width: 130px; */
   line-height: 43px;
   height: 45px;
   border: 1px solid #e5e5e5;
@@ -4634,7 +4631,7 @@ margin-top:50px;
   border: 1px solid #878244;
 }
 .product-details .single-product-content .buttons a.heart {
-  width: 50px;
+  /* width: 50px; */
   height: 50px;
   line-height: 48px;
   text-align: center;
@@ -4744,7 +4741,7 @@ padding:0 20px 0 0px;}
   display: block;
 }
 .partner-area .partner-list ul li a img {
-  width: 100%;
+  /* width: 100%; */
   display: block;
   opacity: 0.3;
   transition: all 0.3s;

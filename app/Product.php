@@ -35,7 +35,7 @@ class Product extends Model
         ->where('c.url', '=', $curl)
         ->where('p.visibility', '=', '1')
         ->orderBy('p.price')
-        ->paginate(12);
+        ->paginate(15);
     }
 
     static public function searchProduct($query){
@@ -134,52 +134,54 @@ class Product extends Model
     }
 
 
-    static public function newItems(){
+    static public function newItems($amount = 6){
         return DB::table('products as p')
         ->join('categories as c', 'c.id', '=', 'p.categorie_id')
         ->where('p.visibility', '=', '1')
         ->select('p.*', 'c.url')
         ->orderBy('p.created_at', 'DESC')
-        ->limit(6)
+        ->limit($amount)
         ->get();
     }
 
 
-    static public function newItem(){
-        return DB::table('products as p')
-        ->join('categories as c', 'c.id', '=', 'p.categorie_id')
-        ->where('p.visibility', '=', '1')
-        ->select('p.*', 'c.url')
-        ->orderBy('p.created_at', 'DESC')
-        ->limit(1)
-        ->get(1);
-    }
-
-
-    static public function fourItems(){
+    static public function fourItems($amount = 4){
         return DB::table('products as p')
         ->join('categories as c', 'c.id', '=', 'p.categorie_id')
         ->where('p.visibility', '=', '1')
         ->select('p.*', 'c.url')
         ->orderBy('p.created_at', 'DESC')
         //->orderByRaw('RAND()')
-        ->limit(4)
-        ->get(4);
+        ->limit($amount)
+        ->get($amount);
     }
 
     static public function similarProducts($title, $article, $brand, $producer){
-        return DB::table('products as p')
-        ->select('p.*')
-        ->where('ptitle', 'LIKE', "%$article%")
-        ->orWhere('purl', 'LIKE', "%$article%")
-        ->orWhere('brand', 'LIKE', "%$article%")
-        ->orWhere('producer', 'LIKE', "%$$producer%")
-        ->orWhere('purl', 'LIKE', "%$article%")
-        ->orWhere('brand', 'LIKE', "%$brand%")
-        ->orWhere('particle', 'LIKE', "%$article%")
+        // return DB::table('products as p')
+        // ->select('p.*')
+        // ->join('categories as c', 'p.categorie_id' ,
+        // '=', 'c.id')
+        // ->where('p.ptitle', 'LIKE', "%$article%")
+        // ->orWhere('purl', 'LIKE', "%$article%")
+        // ->orWhere('brand', 'LIKE', "%$article%")
+        // ->orWhere('producer', 'LIKE', "%$$producer%")
+        // ->orWhere('purl', 'LIKE', "%$article%")
+        // ->orWhere('brand', 'LIKE', "%$brand%")
+        // ->orWhere('particle', 'LIKE', "%$article%")
+        // ->select('p.*', 'c.*')
 
+        // ->inRandomOrder()
+        // ->get(8);  
+
+
+        return DB::table('products as p')
+        ->select('p.*', 'c.*')
+        ->join('categories as c', 'p.categorie_id' ,
+        '=', 'c.id')
+        ->where('producer', 'LIKE', "%$producer%")
         ->inRandomOrder()
         ->get(8);  
+
             }
 
 

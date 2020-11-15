@@ -13,13 +13,25 @@ Make an newletter once someone subscribing to product notflications
 Try to reduce requests to the database with sessions and chace 
 Put into the dashboard beyond page more things. of things that people updated and orders
 
-get the product page style from the guy from fiverr
+Make the product title a bit smaller in the products page
 */
 
 
 # Home
 
 Route::get('/', 'PagesController@home');
+Route::get('content', 'PagesController@contentPage');
+Route::get('/black', 'PagesController@blacklisted');
+
+
+
+# Praivece
+
+Route::prefix('privacy')->group(function(){
+    Route::get('/terms', 'PrivacyController@terms_and_conditions');
+    Route::get('/privacy-policy', 'PrivacyController@privacy_policy');
+    Route::get('/disclaimer', 'PrivacyController@disclaimer');
+});
 
 # Payments
 
