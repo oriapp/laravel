@@ -1,7 +1,3 @@
-@php
-    use App\Product;
-@endphp
-
 @extends('master')
 @section('content')
 

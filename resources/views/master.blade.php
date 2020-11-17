@@ -1,6 +1,4 @@
 @php
-    use App\Categorie;
-    use App\Product;
     $caregories = Categorie::all();
 @endphp
 

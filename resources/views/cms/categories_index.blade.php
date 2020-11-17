@@ -33,7 +33,8 @@
         <tr>
           <td>{{$item->title}}</td>
         <td><img width="100" class="img-thumbnail" src="{{asset('images/'.$item->image)}}"></td>
-          <td>{{ date('d/m/Y', strtotime($item->updated_at)) }}</td>
+          {{-- <td>{{ date('d/m/Y', strtotime($item->updated_at)) }}</td> --}}
+          <td>{{Carbon::parse($item->updated_at)->locale(Session::get('locale'))->diffForHumans()}}</td>
           <td class="text-center">
           <a href="{{url('cms/categories/'.$item->id.'/edit')}}" title="Edit Menu"><i class="far fa-edit"></i></a>
             <a class="ml-3 text-danger" href="{{url('cms/categories/'.$item->id)}}" title="Delete Menu"><i class="fas fa-trash-alt"></i></a>

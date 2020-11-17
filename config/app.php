@@ -239,6 +239,9 @@ return [
         'FileManager' => App\Providers\FileManagerServiceProvider::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Carbon' => Carbon\Carbon::class,
+        'Product' => App\Product::class,
+        'Categorie' => App\Categorie::class,
 
     ],
 

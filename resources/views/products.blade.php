@@ -1,6 +1,5 @@
 @php
     $num = 0;
-    use App\Categorie;
 @endphp
 
 @extends('master')

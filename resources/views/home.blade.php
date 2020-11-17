@@ -1,6 +1,6 @@
-@php
-    use App\Product;
-@endphp
+{{-- @php
+    Session::put('locale', 'he');
+@endphp --}}
 
 @extends('master')
 @section('content')
@@ -101,6 +101,8 @@
                                     <div class="content">
                                         <h3>{{mb_substr($item->ptitle, 0, 25)}}...</h3>
                                         <p>${{$item->price}}</p>
+                                        {{-- {{dd($item->created_at)}} --}}
+                                        <h4>{{Carbon::parse($item->created_at)->locale(Session::get('locale'))->diffForHumans()}}</h4>
                                     </div>
                                 </div>
                             </div>

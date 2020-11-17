@@ -168,6 +168,10 @@
         </div>
 
 
+        <h6>Created: {{Carbon::parse($item->created_at)->locale(Session::get('locale'))->diffForHumans()}} <br>
+        Update: {{Carbon::parse($item->updated_at)->diffForHumans()}}</h6>
+
+
 
       {{-- <div class="form-group">
         <label class="col-md-4 control-label" for="size">Hats And Gloves</label>
