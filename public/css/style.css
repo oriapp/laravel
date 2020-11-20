@@ -4410,6 +4410,7 @@ margin-top:50px;
   display: block;
   position: relative;
   margin: 0 0 30px;
+  max-height: 345px;
 }
 .shop-page .products figure {
   display: block;

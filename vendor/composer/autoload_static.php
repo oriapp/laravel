@@ -66,6 +66,7 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         '7aed44d824e149ce152c0fb82af9379a' => __DIR__ . '/..' . '/colinodell/json5/src/global.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'dc1275c308c5b416beb314b6317daca2' => __DIR__ . '/..' . '/overtrue/pinyin/src/const.php',
         '8de48d62a74adbc904265684a8d5ac6d' => __DIR__ . '/..' . '/pragmarx/coollection/src/package/Support/helpers.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
@@ -136,7 +137,13 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
             'Stichoza\\GoogleTranslate\\' => 25,
             'Srmklive\\PayPal\\' => 16,
+            'Spatie\\TemporaryDirectory\\' => 26,
+            'Spatie\\Image\\' => 13,
+            'Spatie\\ImageOptimizer\\' => 22,
+            'Spatie\\Browsershot\\' => 19,
+            'Silber\\PageCache\\' => 17,
             'Sentry\\' => 7,
+            'SVG\\' => 4,
         ),
         'R' => 
         array (
@@ -178,6 +185,7 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         ),
         'O' => 
         array (
+            'Overtrue\\Pinyin\\' => 16,
             'Opis\\Closure\\' => 13,
         ),
         'N' => 
@@ -193,13 +201,21 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'L' => 
         array (
             'League\\MimeTypeDetection\\' => 25,
+            'League\\Glide\\' => 13,
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
             'Lcobucci\\JWT\\' => 13,
+            'LasseRafn\\Initials\\' => 19,
+            'LasseRafn\\InitialAvatarGenerator\\' => 33,
+            'LasseRafn\\' => 10,
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laminas\\ZendFrameworkBridge\\' => 28,
             'Laminas\\Diactoros\\' => 18,
+        ),
+        'K' => 
+        array (
+            'Knp\\Snappy\\' => 11,
         ),
         'J' => 
         array (
@@ -270,6 +286,7 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         array (
             'Brick\\Math\\' => 11,
             'BeyondCode\\LaravelWebSockets\\' => 29,
+            'Barryvdh\\Snappy\\' => 16,
             'Barryvdh\\Debugbar\\' => 18,
         ),
         'A' => 
@@ -451,9 +468,33 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         array (
             0 => __DIR__ . '/..' . '/srmklive/paypal/src',
         ),
+        'Spatie\\TemporaryDirectory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/temporary-directory/src',
+        ),
+        'Spatie\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/image/src',
+        ),
+        'Spatie\\ImageOptimizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/image-optimizer/src',
+        ),
+        'Spatie\\Browsershot\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/browsershot/src',
+        ),
+        'Silber\\PageCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/silber/page-cache/src',
+        ),
         'Sentry\\' => 
         array (
             0 => __DIR__ . '/..' . '/sentry/sentry/src',
+        ),
+        'SVG\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/meyfa/php-svg/src',
         ),
         'RingCentral\\Psr7\\' => 
         array (
@@ -584,6 +625,10 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         array (
             0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
         ),
+        'Overtrue\\Pinyin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/pinyin/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -608,6 +653,10 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
         ),
+        'League\\Glide\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/glide/src',
+        ),
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
@@ -619,6 +668,18 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'Lcobucci\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
+        ),
+        'LasseRafn\\Initials\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lasserafn/php-initials/src',
+        ),
+        'LasseRafn\\InitialAvatarGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lasserafn/php-initial-avatar-generator/src',
+        ),
+        'LasseRafn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lasserafn/php-string-script-language/src',
         ),
         'Laravel\\Ui\\' => 
         array (
@@ -635,6 +696,10 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'Laminas\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-diactoros/src',
+        ),
+        'Knp\\Snappy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy',
         ),
         'Jean85\\' => 
         array (
@@ -809,6 +874,10 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         array (
             0 => __DIR__ . '/..' . '/beyondcode/laravel-websockets/src',
         ),
+        'Barryvdh\\Snappy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src',
+        ),
         'Barryvdh\\Debugbar\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src',
@@ -973,6 +1042,15 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'Barryvdh\\Debugbar\\Twig\\Extension\\Stopwatch' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Extension/Stopwatch.php',
         'Barryvdh\\Debugbar\\Twig\\Node\\StopwatchNode' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Node/StopwatchNode.php',
         'Barryvdh\\Debugbar\\Twig\\TokenParser\\StopwatchTokenParser' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/TokenParser/StopwatchTokenParser.php',
+        'Barryvdh\\Snappy\\Facades\\SnappyImage' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/Facades/SnappyImage.php',
+        'Barryvdh\\Snappy\\Facades\\SnappyPdf' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/Facades/SnappyPdf.php',
+        'Barryvdh\\Snappy\\IlluminateSnappyImage' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/IlluminateSnappyImage.php',
+        'Barryvdh\\Snappy\\IlluminateSnappyPdf' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/IlluminateSnappyPdf.php',
+        'Barryvdh\\Snappy\\ImageWrapper' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/ImageWrapper.php',
+        'Barryvdh\\Snappy\\LumenServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/LumenServiceProvider.php',
+        'Barryvdh\\Snappy\\PdfFaker' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/PdfFaker.php',
+        'Barryvdh\\Snappy\\PdfWrapper' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/PdfWrapper.php',
+        'Barryvdh\\Snappy\\ServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/ServiceProvider.php',
         'BeyondCode\\LaravelWebSockets\\Apps\\App' => __DIR__ . '/..' . '/beyondcode/laravel-websockets/src/Apps/App.php',
         'BeyondCode\\LaravelWebSockets\\Apps\\AppProvider' => __DIR__ . '/..' . '/beyondcode/laravel-websockets/src/Apps/AppProvider.php',
         'BeyondCode\\LaravelWebSockets\\Apps\\ConfigAppProvider' => __DIR__ . '/..' . '/beyondcode/laravel-websockets/src/Apps/ConfigAppProvider.php',
@@ -3319,6 +3397,11 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'Jean85\\PrettyVersions' => __DIR__ . '/..' . '/jean85/pretty-package-versions/src/PrettyVersions.php',
         'Jean85\\Version' => __DIR__ . '/..' . '/jean85/pretty-package-versions/src/Version.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Knp\\Snappy\\AbstractGenerator' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/AbstractGenerator.php',
+        'Knp\\Snappy\\Exception\\FileAlreadyExistsException' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/Exception/FileAlreadyExistsException.php',
+        'Knp\\Snappy\\GeneratorInterface' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/GeneratorInterface.php',
+        'Knp\\Snappy\\Image' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/Image.php',
+        'Knp\\Snappy\\Pdf' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/Pdf.php',
         'Laminas\\Diactoros\\AbstractSerializer' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/AbstractSerializer.php',
         'Laminas\\Diactoros\\CallbackStream' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/CallbackStream.php',
         'Laminas\\Diactoros\\ConfigProvider' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/ConfigProvider.php',
@@ -3382,6 +3465,12 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
         'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
         'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
+        'LasseRafn\\InitialAvatarGenerator\\InitialAvatar' => __DIR__ . '/..' . '/lasserafn/php-initial-avatar-generator/src/InitialAvatar.php',
+        'LasseRafn\\InitialAvatarGenerator\\Translator\\Base' => __DIR__ . '/..' . '/lasserafn/php-initial-avatar-generator/src/Translator/Base.php',
+        'LasseRafn\\InitialAvatarGenerator\\Translator\\En' => __DIR__ . '/..' . '/lasserafn/php-initial-avatar-generator/src/Translator/En.php',
+        'LasseRafn\\InitialAvatarGenerator\\Translator\\ZhCN' => __DIR__ . '/..' . '/lasserafn/php-initial-avatar-generator/src/Translator/ZhCN.php',
+        'LasseRafn\\Initials\\Initials' => __DIR__ . '/..' . '/lasserafn/php-initials/src/Initials.php',
+        'LasseRafn\\StringScript' => __DIR__ . '/..' . '/lasserafn/php-string-script-language/src/StringScript.php',
         'Lcobucci\\JWT\\Builder' => __DIR__ . '/..' . '/lcobucci/jwt/src/Builder.php',
         'Lcobucci\\JWT\\Claim' => __DIR__ . '/..' . '/lcobucci/jwt/src/Claim.php',
         'Lcobucci\\JWT\\Claim\\Basic' => __DIR__ . '/..' . '/lcobucci/jwt/src/Claim/Basic.php',
@@ -3674,6 +3763,39 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'League\\Flysystem\\Util\\ContentListingFormatter' => __DIR__ . '/..' . '/league/flysystem/src/Util/ContentListingFormatter.php',
         'League\\Flysystem\\Util\\MimeType' => __DIR__ . '/..' . '/league/flysystem/src/Util/MimeType.php',
         'League\\Flysystem\\Util\\StreamHasher' => __DIR__ . '/..' . '/league/flysystem/src/Util/StreamHasher.php',
+        'League\\Glide\\Api\\Api' => __DIR__ . '/..' . '/league/glide/src/Api/Api.php',
+        'League\\Glide\\Api\\ApiInterface' => __DIR__ . '/..' . '/league/glide/src/Api/ApiInterface.php',
+        'League\\Glide\\Filesystem\\FileNotFoundException' => __DIR__ . '/..' . '/league/glide/src/Filesystem/FileNotFoundException.php',
+        'League\\Glide\\Filesystem\\FilesystemException' => __DIR__ . '/..' . '/league/glide/src/Filesystem/FilesystemException.php',
+        'League\\Glide\\Manipulators\\Background' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Background.php',
+        'League\\Glide\\Manipulators\\BaseManipulator' => __DIR__ . '/..' . '/league/glide/src/Manipulators/BaseManipulator.php',
+        'League\\Glide\\Manipulators\\Blur' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Blur.php',
+        'League\\Glide\\Manipulators\\Border' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Border.php',
+        'League\\Glide\\Manipulators\\Brightness' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Brightness.php',
+        'League\\Glide\\Manipulators\\Contrast' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Contrast.php',
+        'League\\Glide\\Manipulators\\Crop' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Crop.php',
+        'League\\Glide\\Manipulators\\Encode' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Encode.php',
+        'League\\Glide\\Manipulators\\Filter' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Filter.php',
+        'League\\Glide\\Manipulators\\Flip' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Flip.php',
+        'League\\Glide\\Manipulators\\Gamma' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Gamma.php',
+        'League\\Glide\\Manipulators\\Helpers\\Color' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Helpers/Color.php',
+        'League\\Glide\\Manipulators\\Helpers\\Dimension' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Helpers/Dimension.php',
+        'League\\Glide\\Manipulators\\ManipulatorInterface' => __DIR__ . '/..' . '/league/glide/src/Manipulators/ManipulatorInterface.php',
+        'League\\Glide\\Manipulators\\Orientation' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Orientation.php',
+        'League\\Glide\\Manipulators\\Pixelate' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Pixelate.php',
+        'League\\Glide\\Manipulators\\Sharpen' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Sharpen.php',
+        'League\\Glide\\Manipulators\\Size' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Size.php',
+        'League\\Glide\\Manipulators\\Watermark' => __DIR__ . '/..' . '/league/glide/src/Manipulators/Watermark.php',
+        'League\\Glide\\Responses\\PsrResponseFactory' => __DIR__ . '/..' . '/league/glide/src/Responses/PsrResponseFactory.php',
+        'League\\Glide\\Responses\\ResponseFactoryInterface' => __DIR__ . '/..' . '/league/glide/src/Responses/ResponseFactoryInterface.php',
+        'League\\Glide\\Server' => __DIR__ . '/..' . '/league/glide/src/Server.php',
+        'League\\Glide\\ServerFactory' => __DIR__ . '/..' . '/league/glide/src/ServerFactory.php',
+        'League\\Glide\\Signatures\\Signature' => __DIR__ . '/..' . '/league/glide/src/Signatures/Signature.php',
+        'League\\Glide\\Signatures\\SignatureException' => __DIR__ . '/..' . '/league/glide/src/Signatures/SignatureException.php',
+        'League\\Glide\\Signatures\\SignatureFactory' => __DIR__ . '/..' . '/league/glide/src/Signatures/SignatureFactory.php',
+        'League\\Glide\\Signatures\\SignatureInterface' => __DIR__ . '/..' . '/league/glide/src/Signatures/SignatureInterface.php',
+        'League\\Glide\\Urls\\UrlBuilder' => __DIR__ . '/..' . '/league/glide/src/Urls/UrlBuilder.php',
+        'League\\Glide\\Urls\\UrlBuilderFactory' => __DIR__ . '/..' . '/league/glide/src/Urls/UrlBuilderFactory.php',
         'League\\MimeTypeDetection\\EmptyExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\ExtensionMimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/ExtensionMimeTypeDetector.php',
         'League\\MimeTypeDetection\\ExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/ExtensionToMimeTypeMap.php',
@@ -4017,6 +4139,11 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
+        'Overtrue\\Pinyin\\DictLoaderInterface' => __DIR__ . '/..' . '/overtrue/pinyin/src/DictLoaderInterface.php',
+        'Overtrue\\Pinyin\\FileDictLoader' => __DIR__ . '/..' . '/overtrue/pinyin/src/FileDictLoader.php',
+        'Overtrue\\Pinyin\\GeneratorFileDictLoader' => __DIR__ . '/..' . '/overtrue/pinyin/src/GeneratorFileDictLoader.php',
+        'Overtrue\\Pinyin\\MemoryFileDictLoader' => __DIR__ . '/..' . '/overtrue/pinyin/src/MemoryFileDictLoader.php',
+        'Overtrue\\Pinyin\\Pinyin' => __DIR__ . '/..' . '/overtrue/pinyin/src/Pinyin.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',
@@ -5815,6 +5942,49 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'RingCentral\\Psr7\\StreamDecoratorTrait' => __DIR__ . '/..' . '/ringcentral/psr7/src/StreamDecoratorTrait.php',
         'RingCentral\\Psr7\\StreamWrapper' => __DIR__ . '/..' . '/ringcentral/psr7/src/StreamWrapper.php',
         'RingCentral\\Psr7\\Uri' => __DIR__ . '/..' . '/ringcentral/psr7/src/Uri.php',
+        'SVG\\Nodes\\Embedded\\SVGImage' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Embedded/SVGImage.php',
+        'SVG\\Nodes\\SVGGenericNodeType' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/SVGGenericNodeType.php',
+        'SVG\\Nodes\\SVGNode' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/SVGNode.php',
+        'SVG\\Nodes\\SVGNodeContainer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/SVGNodeContainer.php',
+        'SVG\\Nodes\\Shapes\\SVGCircle' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGCircle.php',
+        'SVG\\Nodes\\Shapes\\SVGEllipse' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGEllipse.php',
+        'SVG\\Nodes\\Shapes\\SVGLine' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGLine.php',
+        'SVG\\Nodes\\Shapes\\SVGPath' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGPath.php',
+        'SVG\\Nodes\\Shapes\\SVGPolygon' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGPolygon.php',
+        'SVG\\Nodes\\Shapes\\SVGPolygonalShape' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGPolygonalShape.php',
+        'SVG\\Nodes\\Shapes\\SVGPolyline' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGPolyline.php',
+        'SVG\\Nodes\\Shapes\\SVGRect' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Shapes/SVGRect.php',
+        'SVG\\Nodes\\Structures\\SVGClipPath' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Structures/SVGClipPath.php',
+        'SVG\\Nodes\\Structures\\SVGDefs' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Structures/SVGDefs.php',
+        'SVG\\Nodes\\Structures\\SVGDocumentFragment' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Structures/SVGDocumentFragment.php',
+        'SVG\\Nodes\\Structures\\SVGFont' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Structures/SVGFont.php',
+        'SVG\\Nodes\\Structures\\SVGGroup' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Structures/SVGGroup.php',
+        'SVG\\Nodes\\Structures\\SVGLinkGroup' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Structures/SVGLinkGroup.php',
+        'SVG\\Nodes\\Structures\\SVGStyle' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Structures/SVGStyle.php',
+        'SVG\\Nodes\\Texts\\SVGText' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Texts/SVGText.php',
+        'SVG\\Nodes\\Texts\\SVGTextPath' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Texts/SVGTextPath.php',
+        'SVG\\Nodes\\Texts\\SVGTitle' => __DIR__ . '/..' . '/meyfa/php-svg/src/Nodes/Texts/SVGTitle.php',
+        'SVG\\Rasterization\\Path\\SVGArcApproximator' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Path/SVGArcApproximator.php',
+        'SVG\\Rasterization\\Path\\SVGBezierApproximator' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Path/SVGBezierApproximator.php',
+        'SVG\\Rasterization\\Path\\SVGPathApproximator' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Path/SVGPathApproximator.php',
+        'SVG\\Rasterization\\Path\\SVGPathParser' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Path/SVGPathParser.php',
+        'SVG\\Rasterization\\Path\\SVGPolygonBuilder' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Path/SVGPolygonBuilder.php',
+        'SVG\\Rasterization\\Renderers\\SVGEllipseRenderer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Renderers/SVGEllipseRenderer.php',
+        'SVG\\Rasterization\\Renderers\\SVGImageRenderer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Renderers/SVGImageRenderer.php',
+        'SVG\\Rasterization\\Renderers\\SVGLineRenderer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Renderers/SVGLineRenderer.php',
+        'SVG\\Rasterization\\Renderers\\SVGPolygonRenderer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Renderers/SVGPolygonRenderer.php',
+        'SVG\\Rasterization\\Renderers\\SVGRectRenderer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Renderers/SVGRectRenderer.php',
+        'SVG\\Rasterization\\Renderers\\SVGRenderer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Renderers/SVGRenderer.php',
+        'SVG\\Rasterization\\Renderers\\SVGTextRenderer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/Renderers/SVGTextRenderer.php',
+        'SVG\\Rasterization\\SVGRasterizer' => __DIR__ . '/..' . '/meyfa/php-svg/src/Rasterization/SVGRasterizer.php',
+        'SVG\\Reading\\SVGReader' => __DIR__ . '/..' . '/meyfa/php-svg/src/Reading/SVGReader.php',
+        'SVG\\SVG' => __DIR__ . '/..' . '/meyfa/php-svg/src/SVG.php',
+        'SVG\\Utilities\\Colors\\Color' => __DIR__ . '/..' . '/meyfa/php-svg/src/Utilities/Colors/Color.php',
+        'SVG\\Utilities\\Colors\\ColorLookup' => __DIR__ . '/..' . '/meyfa/php-svg/src/Utilities/Colors/ColorLookup.php',
+        'SVG\\Utilities\\SVGStyleParser' => __DIR__ . '/..' . '/meyfa/php-svg/src/Utilities/SVGStyleParser.php',
+        'SVG\\Utilities\\Units\\Angle' => __DIR__ . '/..' . '/meyfa/php-svg/src/Utilities/Units/Angle.php',
+        'SVG\\Utilities\\Units\\Length' => __DIR__ . '/..' . '/meyfa/php-svg/src/Utilities/Units/Length.php',
+        'SVG\\Writing\\SVGWriter' => __DIR__ . '/..' . '/meyfa/php-svg/src/Writing/SVGWriter.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -6005,6 +6175,34 @@ class ComposerStaticInita0c41d74c8792ec5785e53df77b5b1bf
         'Sentry\\Transport\\TransportInterface' => __DIR__ . '/..' . '/sentry/sentry/src/Transport/TransportInterface.php',
         'Sentry\\Util\\JSON' => __DIR__ . '/..' . '/sentry/sentry/src/Util/JSON.php',
         'Sentry\\Util\\PHPVersion' => __DIR__ . '/..' . '/sentry/sentry/src/Util/PHPVersion.php',
+        'Silber\\PageCache\\Cache' => __DIR__ . '/..' . '/silber/page-cache/src/Cache.php',
+        'Silber\\PageCache\\Console\\ClearCache' => __DIR__ . '/..' . '/silber/page-cache/src/Console/ClearCache.php',
+        'Silber\\PageCache\\LaravelServiceProvider' => __DIR__ . '/..' . '/silber/page-cache/src/LaravelServiceProvider.php',
+        'Silber\\PageCache\\Middleware\\CacheResponse' => __DIR__ . '/..' . '/silber/page-cache/src/Middleware/CacheResponse.php',
+        'Spatie\\Browsershot\\Browsershot' => __DIR__ . '/..' . '/spatie/browsershot/src/Browsershot.php',
+        'Spatie\\Browsershot\\Exceptions\\CouldNotTakeBrowsershot' => __DIR__ . '/..' . '/spatie/browsershot/src/Exceptions/CouldNotTakeBrowsershot.php',
+        'Spatie\\Browsershot\\Exceptions\\ElementNotFound' => __DIR__ . '/..' . '/spatie/browsershot/src/Exceptions/ElementNotFound.php',
+        'Spatie\\ImageOptimizer\\DummyLogger' => __DIR__ . '/..' . '/spatie/image-optimizer/src/DummyLogger.php',
+        'Spatie\\ImageOptimizer\\Image' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Image.php',
+        'Spatie\\ImageOptimizer\\Optimizer' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizer.php',
+        'Spatie\\ImageOptimizer\\OptimizerChain' => __DIR__ . '/..' . '/spatie/image-optimizer/src/OptimizerChain.php',
+        'Spatie\\ImageOptimizer\\OptimizerChainFactory' => __DIR__ . '/..' . '/spatie/image-optimizer/src/OptimizerChainFactory.php',
+        'Spatie\\ImageOptimizer\\Optimizers\\BaseOptimizer' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizers/BaseOptimizer.php',
+        'Spatie\\ImageOptimizer\\Optimizers\\Cwebp' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizers/Cwebp.php',
+        'Spatie\\ImageOptimizer\\Optimizers\\Gifsicle' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizers/Gifsicle.php',
+        'Spatie\\ImageOptimizer\\Optimizers\\Jpegoptim' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizers/Jpegoptim.php',
+        'Spatie\\ImageOptimizer\\Optimizers\\Optipng' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizers/Optipng.php',
+        'Spatie\\ImageOptimizer\\Optimizers\\Pngquant' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizers/Pngquant.php',
+        'Spatie\\ImageOptimizer\\Optimizers\\Svgo' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Optimizers/Svgo.php',
+        'Spatie\\Image\\Exceptions\\CouldNotConvert' => __DIR__ . '/..' . '/spatie/image/src/Exceptions/CouldNotConvert.php',
+        'Spatie\\Image\\Exceptions\\InvalidImageDriver' => __DIR__ . '/..' . '/spatie/image/src/Exceptions/InvalidImageDriver.php',
+        'Spatie\\Image\\Exceptions\\InvalidManipulation' => __DIR__ . '/..' . '/spatie/image/src/Exceptions/InvalidManipulation.php',
+        'Spatie\\Image\\Exceptions\\InvalidTemporaryDirectory' => __DIR__ . '/..' . '/spatie/image/src/Exceptions/InvalidTemporaryDirectory.php',
+        'Spatie\\Image\\GlideConversion' => __DIR__ . '/..' . '/spatie/image/src/GlideConversion.php',
+        'Spatie\\Image\\Image' => __DIR__ . '/..' . '/spatie/image/src/Image.php',
+        'Spatie\\Image\\ManipulationSequence' => __DIR__ . '/..' . '/spatie/image/src/ManipulationSequence.php',
+        'Spatie\\Image\\Manipulations' => __DIR__ . '/..' . '/spatie/image/src/Manipulations.php',
+        'Spatie\\TemporaryDirectory\\TemporaryDirectory' => __DIR__ . '/..' . '/spatie/temporary-directory/src/TemporaryDirectory.php',
         'Srmklive\\PayPal\\Facades\\PayPal' => __DIR__ . '/..' . '/srmklive/paypal/src/Facades/PayPal.php',
         'Srmklive\\PayPal\\PayPalFacadeAccessor' => __DIR__ . '/..' . '/srmklive/paypal/src/PayPalFacadeAccessor.php',
         'Srmklive\\PayPal\\Providers\\PayPalServiceProvider' => __DIR__ . '/..' . '/srmklive/paypal/src/Providers/PayPalServiceProvider.php',

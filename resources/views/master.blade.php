@@ -1,6 +1,6 @@
 @php
     $caregories = Categorie::all();
-@endphp
+@endphp 
 
 <!doctype html>
 <html lang="he">

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '8b62ffa7449a971c0973d2f4f232023ad5e9655d',
+    'reference' => 'b9d9d42414c36d37a254051c007619e785a7d865',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -28,6 +28,15 @@
       array (
       ),
       'reference' => '233c10688f4c1a6e66ed2ef123038b1363d1bedc',
+    ),
+    'barryvdh/laravel-snappy' => 
+    array (
+      'pretty_version' => 'v0.4.8',
+      'version' => '0.4.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1903ab84171072b6bff8d98eb58d38b2c9aaf645',
     ),
     'beyondcode/laravel-websockets' => 
     array (
@@ -516,6 +525,15 @@
       ),
       'reference' => 'a917488320c20057da87f67d0d40543dd9427f7a',
     ),
+    'knplabs/knp-snappy' => 
+    array (
+      'pretty_version' => 'v1.2.1',
+      'version' => '1.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7bac60fb729147b7ccd8532c07df3f52a4afa8a4',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -557,7 +575,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '8b62ffa7449a971c0973d2f4f232023ad5e9655d',
+      'reference' => 'b9d9d42414c36d37a254051c007619e785a7d865',
     ),
     'laravel/tinker' => 
     array (
@@ -576,6 +594,33 @@
       array (
       ),
       'reference' => 'd01a705763c243b07be795e9d1bb47f89260f73d',
+    ),
+    'lasserafn/php-initial-avatar-generator' => 
+    array (
+      'pretty_version' => '4.1.2',
+      'version' => '4.1.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1d2d7363ea22d10915b95f2df31ea4f4aa384211',
+    ),
+    'lasserafn/php-initials' => 
+    array (
+      'pretty_version' => '3.0',
+      'version' => '3.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '551ef049aa83748d6fb5ce98ce5fe36f9f3eef94',
+    ),
+    'lasserafn/php-string-script-language' => 
+    array (
+      'pretty_version' => '0.1',
+      'version' => '0.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'afde8404f211af21f7ec8b453eb84ce70bbd3692',
     ),
     'lcobucci/jwt' => 
     array (
@@ -603,6 +648,15 @@
       array (
       ),
       'reference' => '9be3b16c877d477357c015cec057548cf9b2a14a',
+    ),
+    'league/glide' => 
+    array (
+      'pretty_version' => '1.7.0',
+      'version' => '1.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ae5e26700573cb678919d28e425a8b87bc71c546',
     ),
     'league/mime-type-detection' => 
     array (
@@ -639,6 +693,15 @@
       array (
       ),
       'reference' => 'aa66ae440f5b2b9a8aa35def9a9cafe498264d6f',
+    ),
+    'meyfa/php-svg' => 
+    array (
+      'pretty_version' => 'v0.9.1',
+      'version' => '0.9.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '34401edef1f724898f468f71b85505fbcc8351bb',
     ),
     'mockery/mockery' => 
     array (
@@ -768,6 +831,15 @@
       array (
       ),
       'reference' => '943b5d70cc5ae7483f6aff6ff43d7e34592ca0f5',
+    ),
+    'overtrue/pinyin' => 
+    array (
+      'pretty_version' => '4.0.6',
+      'version' => '4.0.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9836dae1783bcf5934508a2abe32eca9ea5ee15d',
     ),
     'paragonie/random_compat' => 
     array (
@@ -1463,6 +1535,51 @@
       array (
       ),
       'reference' => '8567e70d03081cbc04e35eb3fa7389d06816196e',
+    ),
+    'silber/page-cache' => 
+    array (
+      'pretty_version' => 'v1.0.7',
+      'version' => '1.0.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cea67525d8407988d8fecfb0c87901546e39754c',
+    ),
+    'spatie/browsershot' => 
+    array (
+      'pretty_version' => '3.40.2',
+      'version' => '3.40.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3e55eaf5ab8cee65d1661a567e89b3374afb9116',
+    ),
+    'spatie/image' => 
+    array (
+      'pretty_version' => '1.9.0',
+      'version' => '1.9.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cef42a2d131e28d6f3e0af91c0570f6ba45a8d40',
+    ),
+    'spatie/image-optimizer' => 
+    array (
+      'pretty_version' => '1.3.0',
+      'version' => '1.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f87f8328ca5bfabb3811241f5d35f17e146f7f83',
+    ),
+    'spatie/temporary-directory' => 
+    array (
+      'pretty_version' => '1.3.0',
+      'version' => '1.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f517729b3793bca58f847c5fd383ec16f03ffec6',
     ),
     'srmklive/paypal' => 
     array (

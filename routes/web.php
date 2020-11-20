@@ -19,8 +19,8 @@ Make the product title a bit smaller in the products page
 
 # Home
 
-Route::get('/', 'PagesController@home');
-Route::get('content', 'PagesController@contentPage');
+Route::middleware('page-cache')->get('/', 'PagesController@home');
+Route::get('/content', 'PagesController@contentPage');
 Route::get('/black', 'PagesController@blacklisted');
 
 
@@ -28,9 +28,9 @@ Route::get('/black', 'PagesController@blacklisted');
 # Praivece
 
 Route::prefix('privacy')->group(function(){
-    Route::get('/terms', 'PrivacyController@terms_and_conditions');
-    Route::get('/privacy-policy', 'PrivacyController@privacy_policy');
-    Route::get('/disclaimer', 'PrivacyController@disclaimer');
+    Route::middleware('page-cache')->get('/terms', 'PrivacyController@terms_and_conditions');
+    Route::middleware('page-cache')->get('/privacy-policy', 'PrivacyController@privacy_policy');
+    Route::middleware('page-cache')->get('/disclaimer', 'PrivacyController@disclaimer');
 });
 
 # Payments
@@ -45,18 +45,18 @@ Route::get('/debug-sentry', function () {
 
 # language
 Route::prefix('flag')->group(function(){
-Route::get('language', 'PagesController@languages');
-Route::post('language', 'LanguageController@postLanguages');
+    Route::middleware('page-cache')->get('language', 'PagesController@languages');
+    Route::post('language', 'LanguageController@postLanguages');
 }); 
 
 
-Route::get('search/{search}', function ($search) {
+Route::middleware('page-cache')->get('search/{search}', function ($search) {
     //return $search;
     return SearchController::search($search);
 }); 
 // })->where('search', '.*');
 
-Route::get('search/', function () {
+Route::middleware('page-cache')->get('search/', function () {
     //return $search;
      return abort( response('No results where found', 204) );;
     //return redirect(401);
@@ -66,7 +66,7 @@ Route::get('search/', function () {
 
 # Thanks Pages
 
-Route::get('thanks', function () {
+Route::middleware('page-cache')->get('thanks', function () {
     //return $search;
     return view('thanks');
 }); 
@@ -105,30 +105,30 @@ Route::middleware(['cmsguard'])->group(function(){
 
 # Shop
 Route::prefix('shop')->group(function(){
-    Route::get('/', 'ShopController@categories');
+    Route::middleware('page-cache')->get('/', 'ShopController@categories');
     Route::get('checkout', 'ShopController@checkOut');
     Route::get('add-to-cart', 'ShopController@addToCart');
     Route::get('clear-cart', 'ShopController@clearCart');
     Route::get('update-cart', 'ShopController@updateCart');
-    Route::get('cart', 'ShopController@cart');
+    Route::middleware('page-cache')->get('cart', 'ShopController@cart');
 
     Route::get('check-out', 'ShopController@checkOut');
     Route::post('check-out', 'ShopController@checkOutPost');
 
     //Route::get('check-out', 'CheckOutSysController@index');
     //Route::post('cart', 'CheckOutSysController@post');
-    Route::get('{curl}', 'ShopController@products');
-    Route::get('{curl}/{purl}', 'ShopController@productDetailes');
+    Route::middleware('page-cache')->get('{curl}', 'ShopController@products');
+    Route::middleware('page-cache')->get('{curl}/{purl}', 'ShopController@productDetailes');
 });
 
 
 # User
 Route::prefix('user')->group(function(){
-    Route::get('signup', 'UserController@signUp');
+    Route::middleware('page-cache')->get('signup', 'UserController@signUp');
     Route::post('signup', 'UserController@postSignUp');
     Route::post('signin', 'UserController@postSignin');
     Route::get('logout', 'UserController@logout');
-    Route::get('signin', 'UserController@signin');
+    Route::middleware('page-cache')->get('signin', 'UserController@signin');
     Route::get('profile', 'UserController@profile');
     //Route::post('profile', 'UserController@postProfile');
 });

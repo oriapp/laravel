@@ -36,7 +36,7 @@
           <td>{{$item->url}}</td>
           <td>{{$item->title}}</td>
           {{-- <td>{{ date('d/m/Y', strtotime($item->updated_at)) }}</td> --}}
-          <td>{{Carbon::parse($item->updated_at)->locale(Session::get('locale'))->diffForHumans()}}</td>
+          <td>{{RealTime::parse($item->updated_at)->locale(Session::get('locale'))->diffForHumans()}}</td>
           <td class="text-center">
           <a href="{{url('cms/menu/'.$item->id.'/edit')}}" title="Edit Menu"><i class="far fa-edit"></i></a>
             <a class="ml-3 text-danger" href="{{url('cms/menu/'.$item->id)}}" title="Delete Menu"><i class="fas fa-trash-alt"></i></a>

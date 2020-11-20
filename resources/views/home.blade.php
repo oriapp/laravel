@@ -5,7 +5,6 @@
 @extends('master')
 @section('content')
 
-
 <section class="slider-area">
 
   <div class="container-fluid">
@@ -102,7 +101,8 @@
                                         <h3>{{mb_substr($item->ptitle, 0, 25)}}...</h3>
                                         <p>${{$item->price}}</p>
                                         {{-- {{dd($item->created_at)}} --}}
-                                        <h4>{{Carbon::parse($item->created_at)->locale(Session::get('locale'))->diffForHumans()}}</h4>
+                                        <br>
+                                        <h5>{{RealTime::parse($item->created_at)->locale(Session::get('locale'))->diffForHumans()}}</h5>
                                     </div>
                                 </div>
                             </div>

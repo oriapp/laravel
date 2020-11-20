@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
         RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
+        Silber\PageCache\LaravelServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -239,7 +240,7 @@ return [
         'FileManager' => App\Providers\FileManagerServiceProvider::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Carbon' => Carbon\Carbon::class,
+        'RealTime' => Carbon\Carbon::class,
         'Product' => App\Product::class,
         'Categorie' => App\Categorie::class,
 

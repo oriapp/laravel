@@ -39,7 +39,7 @@
           <td>{{$item->price}}</td>
         <td><img width="100" class="img-thumbnail" src="{{asset('images/'.$item->pimage)}}"></td>
           {{-- <td>{{ date('d/m/Y', strtotime($item->updated_at)) }}</td> --}}
-          <td>{{Carbon::parse($item->updated_at)->locale(Session::get('locale'))->diffForHumans()}}</td>
+          <td>{{RealTime::parse($item->updated_at)->locale(Session::get('locale'))->diffForHumans()}}</td>
           <td class="text-center">
           <a href="{{url('cms/products/'.$item->id.'/edit')}}" title="Edit Menu"><i class="far fa-edit"></i></a>
             <a class="ml-3 text-danger" href="{{url('cms/products/'.$item->id)}}" title="Delete Menu"><i class="fas fa-trash-alt"></i></a>

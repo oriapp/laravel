@@ -35,7 +35,7 @@
                 <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>Email: {{$user->email}}</p></li>
               
               <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Primary Language: {{$user->language}}</p></li>
-              <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Created At: {{$user->created_at}}</p></li>
+              <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Created: {{RealTime::parse($user->created_at)->locale(Session::get('locale'))->diffForHumans()}}</p></li>
               </ul>
           </div>
       </div>

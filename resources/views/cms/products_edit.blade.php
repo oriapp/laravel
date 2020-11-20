@@ -168,8 +168,8 @@
         </div>
 
 
-        <h6>Created: {{Carbon::parse($item->created_at)->locale(Session::get('locale'))->diffForHumans()}} <br>
-        Update: {{Carbon::parse($item->updated_at)->diffForHumans()}}</h6>
+        <h6>Created: {{RealTime::parse($item->created_at)->locale(Session::get('locale'))->diffForHumans()}} <br>
+        Update: {{RealTime::parse($item->updated_at)->diffForHumans()}}</h6>
 
 
 
