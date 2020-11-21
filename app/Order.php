@@ -100,4 +100,12 @@ class Order extends Model
         $product->save();
         Session::flash('sm', 'Product has been updated!');
     }
+
+    static public function count(){
+        $user = DB::table('orders as o')
+        ->select('o.id')
+        ->count();
+
+        return $user;
+    }
 }

@@ -128,4 +128,13 @@ class User extends Model
             ";
         }
     }
+
+
+    static public function count(){
+        $user = DB::table('users as u')
+        ->select('u.id')
+        ->count();
+
+        return $user;
+    }
 }
