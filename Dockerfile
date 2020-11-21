@@ -1,1 +1,1 @@
-docker login localhost:8080
+Docker login localhost:8080
