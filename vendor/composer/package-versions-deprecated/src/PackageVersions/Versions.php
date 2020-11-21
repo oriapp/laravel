@@ -135,8 +135,10 @@ final class Versions
   'sentry/sentry-laravel' => '1.9.0@8567e70d03081cbc04e35eb3fa7389d06816196e',
   'silber/page-cache' => 'v1.0.7@cea67525d8407988d8fecfb0c87901546e39754c',
   'spatie/browsershot' => '3.40.2@3e55eaf5ab8cee65d1661a567e89b3374afb9116',
+  'spatie/db-dumper' => '2.18.0@eddb2b7c6877817d97bbdc1c60d1a800bf5a267a',
   'spatie/image' => '1.9.0@cef42a2d131e28d6f3e0af91c0570f6ba45a8d40',
   'spatie/image-optimizer' => '1.3.0@f87f8328ca5bfabb3811241f5d35f17e146f7f83',
+  'spatie/laravel-backup' => '6.11.1@3ede36961b79b6ea4a6b5f708f2cc60fee74ad6c',
   'spatie/temporary-directory' => '1.3.0@f517729b3793bca58f847c5fd383ec16f03ffec6',
   'srmklive/paypal' => '1.8.0@0c2ae237577f62396d474674cb40f82825a41ffb',
   'stichoza/google-translate-php' => 'v4.1.1@2fc76c49b5f032c4210a98ced00e344d7d9022f2',
@@ -215,7 +217,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
   'webmozart/assert' => '1.9.1@bafc69caeb4d49c39fd0779086c03a3738cbb389',
-  'laravel/laravel' => 'dev-master@b9d9d42414c36d37a254051c007619e785a7d865',
+  'laravel/laravel' => 'dev-master@b68f247c2315e2ee457bcbff5201bc717c338e8f',
 );
 
     private function __construct()

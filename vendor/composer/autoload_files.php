@@ -71,4 +71,5 @@ return array(
     '4a1f389d6ce373bda9e57857d3b61c84' => $vendorDir . '/barryvdh/laravel-debugbar/src/helpers.php',
     '38ea50801e981fa2297115e1c44a148b' => $vendorDir . '/mckenziearts/laravel-notify/src/helpers.php',
     '9cf90fe04e875b390427268b191a95f0' => $vendorDir . '/pragmarx/countries/src/package/Support/helpers.php',
+    '0c3c22e27afa83be19b4c938f4c6e9ea' => $vendorDir . '/spatie/laravel-backup/src/Helpers/functions.php',
 );

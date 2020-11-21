@@ -8,9 +8,6 @@ use App, Session, DB;
 use App\User;
 use App\Categorie;
 
-use Mail;
-
-
 class MainController extends Controller
 {
     //father of all the controlers (everything goes from here to the core)
@@ -18,12 +15,6 @@ class MainController extends Controller
     public static $dtv = ['page_title' => 'Idfgear -'];
 
     public function __construct(){
-
-        if(!DB::connection()->getDatabaseName()){
-            Session::flash('em', "Bad connection");
-            dd('bad connection');
-        }
-        
 
         self::$dtv['menu'] = Menu::all();
         self::$dtv['categories'] = Categorie::all();
