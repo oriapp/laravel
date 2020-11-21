@@ -14,7 +14,7 @@ class MainController extends Controller
 
     public static $dtv = ['page_title' => 'Idfgear -'];
 
-    public function __construct(){
+    public function __construct(){ 
 
         self::$dtv['menu'] = Menu::all();
         self::$dtv['categories'] = Categorie::all();
