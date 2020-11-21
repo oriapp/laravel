@@ -8,12 +8,12 @@ use App\Http\Controllers\SearchController;
 Main to do list
 ==================
 
-Make an newletter once someone subscribing to product notflications 
-~~Add size and color to the card for check out.~~
-Try to reduce requests to the database with sessions and chace 
+(Not sure) Make an newletter once someone subscribing to product notflications 
+~~Add size and color to the card for check out.~~ aka done
+Try to reduce requests to the database with sessions and chace (later for sure)
 Put into the dashboard beyond page more things. of things that people updated and orders
 
-Make the product title a bit smaller in the products page
+Make the product title a bit smaller in the products page (done?)
 */
 
 
