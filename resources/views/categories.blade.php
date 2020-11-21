@@ -12,7 +12,7 @@
                   <div class="content">
                       <h2>Categories</h2>
                       <ul>
-  <li><a href="http://soag.dvirsabag.com">Home</a></li>
+  <li><a href="{{url('')}}">Home</a></li>
   <li><a href="javascript:void(0)">Categories</a></li>
 </ul>
                   </div>
@@ -34,7 +34,7 @@
         
                     <div class="col-sm-12">
           <div class="products">
-          <figure><img src="{{asset('images/' . $category->image)}}"alt="" /></figure>
+          <figure><img src="{{asset('images/' . $category->image)}}" alt="" /></figure>
               <div class="contents">
               <h3>{{$category->title}}</h3>
                   <br>
