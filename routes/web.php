@@ -103,7 +103,7 @@ Route::middleware(['cmsguard'])->group(function(){
 
 
 
-# Shop
+# Shop 
 Route::prefix('shop')->group(function(){
     Route::middleware('page-cache')->get('/', 'ShopController@categories');
     Route::get('checkout', 'ShopController@checkOut');
