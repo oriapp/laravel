@@ -13,6 +13,7 @@ use App\Product;
 class ShopController extends MainController
 {
     // shop manager controller
+    // AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH HAHAHAHAHAHAHHAH HELP ME DADDDY
 
     public function categories(){
         self::$dtv['page_title'] .= 'Categories Page';
@@ -132,3 +133,4 @@ class ShopController extends MainController
 
 
 }
+ 

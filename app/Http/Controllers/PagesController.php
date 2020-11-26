@@ -5,8 +5,8 @@
 TO DO LIST FUCK MYYY LIFEEEE
 _______________________________
 
-1. get author ip
-2. location (countery)
+1. get author ip BC I LIKE STALKING PPLS
+2. location (countery) TODOOOOOO YOU LASSST ASSHOLE
 3. send trans* for the same location (en, he)
 
 */
