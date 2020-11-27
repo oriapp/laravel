@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB, Session, Hash;
-
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
+
 
 class User extends Model
 {
