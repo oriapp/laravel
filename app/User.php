@@ -7,7 +7,6 @@ use DB, Session, Hash;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
 
-
 class User extends Model
 {
     static public function saveNew($request){
