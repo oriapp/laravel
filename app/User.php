@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use DB, Session, Hash;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
+use Stevebauman\Location\Facades\Location;
 
 class User extends Model
 {
@@ -63,6 +64,7 @@ class User extends Model
         $user = self::find(Session::get('user_id'));
         $user->last_visit = date('l jS \of F Y h:i:s A');
         $user->ip = \Request::getClientIp();
+        $user->ipInfo = (Location::get(\Request::getClientIp()));
         $user->save();
     }
 
@@ -74,7 +76,7 @@ class User extends Model
         ->update(['ip' => \Request::getClientIp(), 'date' => date('l jS \of F Y h:i:s A'), 'blacklist' => 0]);
         } else {
             DB::table('visitors')
-            ->update(['date' => date('l jS \of F Y h:i:s A')]);
+            ->update(['date' => date('l jS \of F Y h:i:s A'), 'ipInfo' => Location::get(\Request::getClientIp()) ]);
         }
     }
 

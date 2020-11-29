@@ -26,7 +26,7 @@ use Stevebauman\Location\Facades\Location;
 
 class PagesController extends MainController
 {
-    public function home(SeoService $seo){
+    public function home(Request $request, SeoService $seo){
         self::$dtv['page_title'] .= "Home Page";
         self::$dtv['caregories'] = Categorie::all();
         self::$dtv['last_view'] = Session::get('product_view');

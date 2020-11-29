@@ -5,8 +5,6 @@
 @extends('master')
 @section('content')
 
-{{dd($location)}}
-
 <section class="slider-area">
 
   <div class="container-fluid">
@@ -19,7 +17,7 @@
                           <div class="row">
                               <div class="col-sm-12">
                                   <div class="contents text-center">
-                                      <h2 class="wow animated fadeInUp" data-wow-duration="1s" itemscope>Idfgear.org</h2>
+                                      <h2 class="wow animated fadeInUp" data-wow-duration="1s">Idfgear.org</h2>
                                       <p class="mr-lu mr-ru wow animated fadeInDown" data-wow-duration="1.5s">Online tactical shop. </p>
                                       <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
                                       <a href="{{url('shop')}}" class="btn1">buy now</a>

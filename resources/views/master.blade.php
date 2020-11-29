@@ -17,9 +17,7 @@
     <meta property="og:description" content="Pi9, 5.11, nitecore, fab, masada, lalo and more!">
     <meta property="og:image" content="{{asset('css/images/lol.png')}}">
     <meta property="og:url" content="{{url('')}}">
-    
-    <meta name="twitter:card" content="{{seo()->twitter('card', 'Idfgear')}}" />
-    <meta name="twitter:creator" content="{{seo()->twitter('creator', '@oriapp')}}" />
+    <meta name="twitter:card" content="summary_large_image">
 
 
 
