@@ -19,11 +19,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b68f247c2315e2ee457bcbff5201bc717c338e8f',
+    'reference' => 'e74958cd07d527c69180a46a726f48ac0265b316',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'artesaos/seotools' => 
+    array (
+      'pretty_version' => 'v0.19.1',
+      'version' => '0.19.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'bad3f025748dde06e6e0730190b280e4d8bc0ab3',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => '1.3.0',
@@ -95,6 +104,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '86136a74726d48ec60285d5b8585d62e0645b56c',
+    ),
+    'composer/ca-bundle' => 
+    array (
+      'pretty_version' => '1.2.8',
+      'version' => '1.2.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8a7ecad675253e4654ea05505233285377405215',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -253,6 +271,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'fc10d778e4b84d5bd315dad194661e091d307c6f',
+    ),
+    'geoip2/geoip2' => 
+    array (
+      'pretty_version' => 'v2.8.0',
+      'version' => '2.8.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '63b0d87d47ee8c9431bff70244401db5ced82bd9',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -588,7 +615,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b68f247c2315e2ee457bcbff5201bc717c338e8f',
+      'reference' => 'e74958cd07d527c69180a46a726f48ac0265b316',
     ),
     'laravel/tinker' => 
     array (
@@ -697,6 +724,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '1a1605b8e9bacb34cc0c6278206d699772e1d372',
+    ),
+    'maxmind-db/reader' => 
+    array (
+      'pretty_version' => 'v1.8.0',
+      'version' => '1.8.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b566d429ac9aec10594b0935be8ff38302f8d5c8',
+    ),
+    'maxmind/web-service-common' => 
+    array (
+      'pretty_version' => 'v0.8.1',
+      'version' => '0.8.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '32f274051c543fc865e5a84d3a2c703913641ea8',
     ),
     'mckenziearts/laravel-notify' => 
     array (
@@ -1405,6 +1450,15 @@ private static $installed = array (
       ),
       'reference' => '360faaec4b563958b673fb52bbe94e37f14bc686',
     ),
+    'romanzipp/laravel-seo' => 
+    array (
+      'pretty_version' => '2.1.5',
+      'version' => '2.1.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3f658d979d9fb4adaa64680b28b1e212722c9d68',
+    ),
     'scrivo/highlight.php' => 
     array (
       'pretty_version' => 'v9.18.1.4',
@@ -1567,15 +1621,6 @@ private static $installed = array (
       ),
       'reference' => '3e55eaf5ab8cee65d1661a567e89b3374afb9116',
     ),
-    'spatie/db-dumper' => 
-    array (
-      'pretty_version' => '2.18.0',
-      'version' => '2.18.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'eddb2b7c6877817d97bbdc1c60d1a800bf5a267a',
-    ),
     'spatie/image' => 
     array (
       'pretty_version' => '1.9.0',
@@ -1594,14 +1639,14 @@ private static $installed = array (
       ),
       'reference' => 'f87f8328ca5bfabb3811241f5d35f17e146f7f83',
     ),
-    'spatie/laravel-backup' => 
+    'spatie/schema-org' => 
     array (
-      'pretty_version' => '6.11.1',
-      'version' => '6.11.1.0',
+      'pretty_version' => '2.8.0',
+      'version' => '2.8.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '3ede36961b79b6ea4a6b5f708f2cc60fee74ad6c',
+      'reference' => '747df590839f94262c87181b492ede02ca0fe9b2',
     ),
     'spatie/temporary-directory' => 
     array (
@@ -1620,6 +1665,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0c2ae237577f62396d474674cb40f82825a41ffb',
+    ),
+    'stevebauman/location' => 
+    array (
+      'pretty_version' => 'v5.2.0',
+      'version' => '5.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7be60fd319fe5e62a13b6d427a16f6b1ff2daf0b',
     ),
     'stichoza/google-translate-php' => 
     array (

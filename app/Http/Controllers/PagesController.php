@@ -19,12 +19,23 @@ use App\Content;
 use App\Categorie;
 use App\User;
 
+use romanzipp\Seo\Facades\Seo;
+use romanzipp\Seo\Services\SeoService;
+
+use Stevebauman\Location\Facades\Location;
+
 class PagesController extends MainController
 {
-    public function home(){
+    public function home(SeoService $seo){
         self::$dtv['page_title'] .= "Home Page";
         self::$dtv['caregories'] = Categorie::all();
         self::$dtv['last_view'] = Session::get('product_view');
+        $seo = seo();
+
+        $seo = app(SeoService::class);
+
+        self::$dtv['seo'] = Seo::make();
+        self::$dtv['location'] = Location::get('82.166.219.117');
         return view('home', self::$dtv);
     }
 
