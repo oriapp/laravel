@@ -5,6 +5,7 @@
 @extends('master')
 @section('content')
 
+
 <section class="slider-area">
 
   <div class="container-fluid">
