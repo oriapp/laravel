@@ -6,12 +6,16 @@ use Illuminate\Support\Facades\Route;
 use App\User,
 App\Order;
 
-Route::get('/api', function() {
-    return 'Works';
+Route::get('/', function() {
+    //return redirect('/');
+    return ["return" => 'What are you looking for?'];
 });
 
 Route::get('/status', function () {
-    return ["users" => User::count(), "orders" => Order::count()];
+    if(User::count())
+        return ["users" => User::count(), "orders" => Order::count()];
+    else
+        return (http_response_code(404) + 200);
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
