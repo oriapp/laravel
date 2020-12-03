@@ -47,7 +47,7 @@ class MainController extends Controller
             if(!Session::get('locale'))
                 session(['locale' => 'en']);
 
-            // #
+            // ^^ Just to make sure that the user won't get any error message and have a locale set.
             
             return $next($request);
         });
