@@ -22,25 +22,32 @@ class MainController extends Controller
         // access for using sessions on construct;
         
         $this->middleware(function ($request, $next){
-            if(Session::get('language')){
+
+            // #
+
+            if(Session::get('language'))
             App::setLocale(Session::get('language'));
-            // Cache::put('key', 'value');
-            // dd(Cache::pull('key'));
-            } else {
+            else 
                 App::setLocale('en');
                 session(['locale' => 'en']);
-            }
 
+            // #
 
             if(Session::get('user_id')){
                 if(User::isBlackListed(Session::get('user_id'))[1] == true){
-                    //dd(User::isBlackListed(Session::get('user_id')));
                     redirect('black');
                 };
                 User::saveVisitDate();
             } else {
                 User::saveVisit();
             }
+
+            // #
+
+            if(!Session::get('locale'))
+                session(['locale' => 'en']);
+
+            // #
             
             return $next($request);
         });

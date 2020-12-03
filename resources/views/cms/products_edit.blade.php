@@ -169,7 +169,7 @@
 
 
         <h6>Created: {{RealTime::parse($item->created_at)->locale(Session::get('locale'))->diffForHumans()}} <br>
-        Update: {{RealTime::parse($item->updated_at)->diffForHumans()}}</h6>
+        Update: {{RealTime::parse($item->updated_at)->locale(Session::get('locale'))->diffForHumans()}}</h6>
 
 
 

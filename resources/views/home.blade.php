@@ -37,8 +37,8 @@
                                       <h2 class="wow animated fadeInDown" data-wow-duration="1s">Best Quality</h2>
                                       <p class="mr-lu mr-ru wow animated fadeInUp" data-wow-duration="1.5s">Our products are the you could get online for good prices! </p>
                                       <div class="buttons wow animated fadeInUp" data-wow-duration="2s">
-                                          <a href{{url('shop')}}" class="btn1">buy now</a>
-                                          <a href{{url('shop')}}" class="btn2">read more</a>
+                                          <a href="{{url('shop')}}" class="btn1">buy now</a>
+                                          <a href="{{url('shop')}}" class="btn2">read more</a>
                                       </div>
                                   </div>
                               </div>
