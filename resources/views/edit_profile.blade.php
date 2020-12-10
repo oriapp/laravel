@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="content">
-                        <h2>Checkout</h2>
+                        <h2>Personal Settings</h2>
                         <ul>
                             <li><a href="{{url('')}}">Home</a></li>
                             <li><a href="javascript:void(0)">User</a></li>
