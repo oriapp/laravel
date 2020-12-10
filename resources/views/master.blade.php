@@ -22,6 +22,7 @@
 
 
   <title>{{$page_title ?? ''}}</title>
+  @notifyCss
   <script>let BASE_URL = "{{ url('') }}/";</script>
 
   {{-- {{dd(Cart::getTotalQuantity())}} --}}
@@ -65,7 +66,6 @@ content: "{{Cart::getTotalQuantity()}}";
 
     @include('notify::messages')
         @notifyJs
-        @notifyCss
 
     {{-- <div id="preloader">
     <div id="status"><img src="{{asset('css/images/bx_loader.gif')}}" id="preloader_image" alt="loader">
@@ -125,6 +125,9 @@ content: "{{Cart::getTotalQuantity()}}";
                                   </li>
 
                                   <li><a href="{{url('content')}}">Contact</a></li>
+                                  @if (Session::has('user_id') && Session::has('wishlist') && Session::get('wishlist') != 0)
+                                  <li><a href="{{url('user/profile')}}">wishlist</a></li>
+                                  @endif
                               </ul>
                           </nav>
                       </div>
@@ -224,39 +227,7 @@ content: "{{Cart::getTotalQuantity()}}";
                       </div>
                   </div>
                   <div class="col-md-4 col-sm-6">
-                      {{-- <h2>latest News</h2>
-                      <div class="foo-news">
-                          <div class="newslists">
-                              <div class="dbox">
-                                  <div class="dleft">
-                                      <figure><img src="assets/images/blog/sm-1.jpg" alt="" /></figure>
-                                  </div>
-                                  <div class="dright">
-                                      <div class="content">
-                                          <h4><a href="#">Weapons 2020</a></h4>
-                                          <p>Weaponts can apprecie
-                                              <br> our broad services.</p>
-                                          <span><i class="fas fa-calendar"></i> 12 Jan 2020</span>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="newslists">
-                              <div class="dbox">
-                                  <div class="dleft">
-                                      <figure><img src="assets/images/blog/sm-2.jpg" alt="" /></figure>
-                                  </div>
-                                  <div class="dright">
-                                      <div class="content">
-                                          <h4><a href="#">Weapons 2020</a></h4>
-                                          <p>Weaponts can apprecie
-                                              <br> our broad services.</p>
-                                          <span><i class="fas fa-calendar"></i> 12 Jan 2020</span>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div> --}}
+
                   </div>
                   <div class="col-md-4 col-sm-6">
                     @if(Product::newItems() )

@@ -1,46 +1,104 @@
-@php
-    if($user->language == 'he'){
-      $user->language = 'Hebrew';
-    } else if ($user->language = 'en'){
-      $user->language = 'English';
-    }
-@endphp
-
 @extends('master')
 @section('content')
-<div class="container">
-    @component('components.page_hader')
-    @slot('title') {{__('text.editp_title')}} @endslot
-    @slot('description') {{__('text.home_description')}} @endslot
-    @endcomponent
-</div>
 
-<h1 align="center">edit this profile</h1>
+<style>
+    .about {
+    min-height: 750px;
+}
+</style>
 
-{{-- {{dd($user)}} --}}
+<section class="breadcumb-area jarallax bg-img af about">
+    <div class="breadcumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="content">
+                        <h2>Checkout</h2>
+                        <ul>
+                            <li><a href="{{url('')}}">Home</a></li>
+                            <li><a href="javascript:void(0)">User</a></li>
+                            <li><a href="javascript:void(0)">Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="container">    
-    <div class="jumbotron">
-      <div class="row">
-          <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-              <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
-          </div>
-          <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
-              <div class="container" style="border-bottom:1px solid black">
-                <h2>{{$user->name}}</h2>
-              </div>
-                <hr>
-              <ul class="container details">
-                <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone: {{$user->phone ?? 'Could not find'}}</p></li>
-                <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>Email: {{$user->email}}</p></li>
-              
-              <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Primary Language: {{$user->language}}</p></li>
-              <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Created: {{RealTime::parse($user->created_at)->locale(Session::get('locale'))->diffForHumans()}}</p></li>
-              </ul>
-          </div>
-      </div>
+    <div class="container mt-5 about-area section bg-img about jarallax">
+        @if (!Session::has('wishlist') || Session::get('wishlist') == 0)
+
+        <div class="about">
+        <br>
+        <div class="text-center col-md-12 col-sm-12 ">
+            <div class="section-heading">
+                <h2> Cart empty </h2>
+            </div>
+        </div>
+
+        <div class="text-center"><b>Cart Is Empty</b></div>
+
     </div>
 
+    @else
+<!--Products area start here-->
+<section class="shop-page section">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3">
+              <div class="sibebar">
+                  <div class="wighet search">
+                      <form>
+                          <input disabled type="search" placeholder="Search here (disabled)">
+                          <button class="search" type="submit"><i class="fa fa-search"></i></button>
+                      </form>
+                  </div>
+                  
+                  
+              </div>
+          </div>
+          <div class="col-sm-9 pd-0">
+              <div class="col-sm-12">
 
+                <div class="section-heading">
+                  <h2> {{Session::get('user_name')}}'s wishlist ⭐ </h2>
+              </div>
+              
+              </div>
 
+              
+              <div class="card-group h-400 w-260">
+                @foreach (Session::get('wishlist') as $ses)
+
+                @foreach (Product::getProductByID($ses) as $product)
+
+                <div class="col-sm-4 products">
+                  <figure><img src="{{asset('images/'.$product->pimage)}}" alt="" /></figure>
+                  <div class="contents">
+                  <h3 style="font-size: 20px !important">{{mb_strimwidth($product->ptitle, 0, 15, '...')}}</h3>
+                      {{-- {{mb_strimwidth($product->in_short, 0, 10, '...')}} <br> --}}
+                      <span>${{$product->price}}</span>
+                      <a href="{{url('shop/'.$product->url.'/'.$product->purl)}}" class="btn1">Add To Cart</a>
+                      @if (Session::has('user_id'))
+                      <button data-pid="{{$product->id}}" data-uid="{{Session::get('user_id')}}" class="wishlist float-left"><i class="float-left fas fa-star"></i></button>
+                      @endif
+                  </div>
+              </div>
+
+                @endforeach
+                @endforeach
+
+              </div>
+              
+          </div>
+      </div>
+  </div>
+</section>
+<!--Products area end here-->
+    @endif
+       
+    </div>
+
+</div>
 @endsection

@@ -52,6 +52,15 @@ class Product extends Model
         ->paginate(9);
     }
 
+
+    static public function getProductByID($item_id){
+        return DB::table('products as p')
+        ->join('categories as c', 'c.id', '=', 'p.categorie_id')
+        ->select('p.*', 'c.*')
+        ->where('p.id', '=', $item_id)
+        ->get();
+    }
+
     static public function addToCart($pid, $pcolor, $psize){
         if(is_numeric($pid) && $product = self::find($pid)){
             if(!Cart::get($pid)){

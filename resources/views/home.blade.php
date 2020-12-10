@@ -136,58 +136,6 @@
                   </div>
               </div>
           </div>
-          
-          {{-- <div class="col-md-5 col-sm-12 ">
-              <div class="about-cata">
-                  <div class="cata-list list-t1">
-                      <div class="dbox">
-                          <div class="dleft">
-                              <div class="content">
-                                  <h4>Hunting</h4>
-                                  <a href="#" class="btn3">Read More<i class="fas fa-arrow-right"></i></a>
-                              </div>
-                          </div>
-                          <div class="dright">
-                              <div class="cate-ico">
-                                  <img src="assets/images/icons/01.png" alt="" />
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="cata-list list-t2">
-                      <div class="dbox">
-                          <div class="dleft">
-                              <div class="content">
-                                  <h4>Trainning</h4>
-                                  <a href="#" class="btn3">Read More<i class="fas fa-arrow-right"></i></a>
-                              </div>
-                          </div>
-                          <div class="dright">
-                              <div class="cate-ico">
-                                  <img src="assets/images/icons/02.png" alt="" />
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="cata-list list-t1">
-                      <div class="dbox">
-                          <div class="dleft">
-                              <div class="content">
-                                  <h4>Shoot Range</h4>
-                                  <a href="#" class="btn3">Read More<i class="fas fa-arrow-right"></i></a>
-                              </div>
-                          </div>
-                          <div class="dright">
-                              <div class="cate-ico">
-                                  <img src="assets/images/icons/03.png" alt="" />
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div> --}}
 
 </section>
 
@@ -225,28 +173,6 @@
 </section>
 @endif
 <!--Banner area end here-->
-
-{{-- <!--Videos area start here-->
-<section class="banner-area2 bg-img jarallax af">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="videos-area text-center">
-                    <div class="video-popups">
-                        <a href="https://www.youtube.com/watch?v=PZxHwbxI3TU" class="video-play-icon"><i class="fas fa-play"></i></a>
-                    </div>
-                    <div class="section-heading mr-0">
-                        <h2 class="mr-0">New MC7 Carbine Gun</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="lg-text">
-        <h1>Coming Soon</h1>
-    </div>
-</section>
-<!--Videos area end here--> --}}
 
 <!--Products area start here-->
 <section class="products-area section bg-img jarallax">
@@ -470,67 +396,6 @@
     </div>
 </section>
 <!--Gallery area end here-->
-{{-- <!--Trainning area Start here-->
-<section class="training-area section bg-img jarallax af">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <div class="training-forms">
-                    <form>
-                        <fieldset>
-                            <input type="text" placeholder="Full Name">
-                        </fieldset>
-                        <fieldset>
-                            <input type="email" placeholder="Email Address">
-                        </fieldset>
-                        <fieldset>
-                            <input type="text" placeholder="Phone No.">
-                        </fieldset>
-                        <fieldset>
-                            <select>
-                                <option>Weapon / Plans</option>
-                                <option>Weapon / Plans</option>
-                                <option>Weapon / Plans</option>
-                                <option>Weapon / Plans</option>
-                            </select>
-                        </fieldset>
-                        <fieldset class="arrows">
-                            <div class="col-md-5 col-sm-6 pd-0">
-                                <select>
-                                    <option>Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            </div>
-                            <div class="col-md-7 col-sm-6 pd-r0">
-                                <input type="number" placeholder="Age">
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <textarea placeholder="Message"></textarea>
-                        </fieldset>
-                        <button type="submit" class="btn1">Send Now</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <div class="training-con pd-t60">
-                    <h2>Weapon Trainings</h2>
-                    <p>With state-of-the-art indoor training facilities and full service custom shop on lion, we can accommodate most requests.</p>
-                    <h1>P. +972 52-826-2490</h1>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem is bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh idlit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.</p>
-                    <ul>
-                        <li><i class="fas fa-long-arrow-alt-right"></i>Trainning x2 Hand Gun Full Pack</li>
-                        <li><i class="fas fa-long-arrow-alt-right"></i>Machine Gun CS5 4141 Full Pack </li>
-                        <li><i class="fas fa-long-arrow-alt-right"></i>Custom Shooting Range For Trainning</li>
-                        <li><i class="fas fa-long-arrow-alt-right"></i>Outfitters hunting and tactical shooting</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Trainning area End here--> --}}
 
 <!--Banner area start here-->
 <section class="banner-area3 section af bg-img jarallax">

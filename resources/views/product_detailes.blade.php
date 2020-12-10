@@ -33,47 +33,15 @@
                       <div role="tabpanel" class="tab-pane active" id="img1">
                           <img src="{{asset('images/'.$product->pimage)}}" alt="" />
                       </div>
-                      {{-- <div role="tabpanel" class="tab-pane" id="img2">
-                          <img src="assets/images/products/2.jpg" alt="" />
-                      </div>
-                      <div role="tabpanel" class="tab-pane" id="img3">
-                          <img src="assets/images/products/3.jpg" alt="" />
-                      </div>
-                      <div role="tabpanel" class="tab-pane" id="img4">
-                          <img src="assets/images/products/4.jpg" alt="" />
-                      </div> --}}
+
                   </div>
-                  <!-- Nav tabs -->
-                  {{-- <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active">
-                          <a href="#img1" role="tab" data-toggle="tab"><img src="{{asset('images/'.$product->pimage)}}" alt="" /></a>
-                      </li>
-                      <li role="presentation">
-                          <a href="#img2" role="tab" data-toggle="tab"><img src="assets/images/products/2.jpg" alt="" /></a>
-                      </li>
-                      <li role="presentation">
-                          <a href="#img3" role="tab" data-toggle="tab"><img src="assets/images/products/3.jpg" alt="" /></a>
-                      </li>
-                      <li role="presentation">
-                          <a href="#img4" role="tab" data-toggle="tab"><img src="assets/images/products/4.jpg" alt="" /></a>
-                      </li>
-                  </ul> --}}
+
               </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <div class="single-product-content">
                   <h2>{{$product->ptitle}}</h2>
-                  {{-- <div class="product-review">
-                      <ul>
-                          <li><i class="fa fa-star"></i></li>
-                          <li><i class="fa fa-star"></i></li>
-                          <li><i class="fa fa-star"></i></li>
-                          <li><i class="fa fa-star"></i></li>
-                          <li><i class="fa fa-star"></i></li>
-                      </ul>
-                      <span>10 Reviews</span>
-                      <a href="#"> Add Your Review</a>
-                  </div> --}}
+
                   <div class="con">
                     {!! $product->in_short !!}
                     <br><br>
@@ -103,7 +71,9 @@
                     <button data-pid="{{$product->id}}" type="submit" class="btn1 add-to-cart-btn"><i class="flaticon-trolley"></i> {{__('text.add_to_cart')}}</button>
 
                       <a href="#" class="btn4">Buy now!</a>
-                      <a href="#" class="heart"><i class="fa fa-heart"></i></a>
+                      @if (Session::get('user_id'))
+                      <a title="add to wishlist" data-pid="{{$product->id}}" data-uid="{{Session::get('user_id')}}" class="wishlist heart"><i class="fa fa-heart"></i></a>
+                      @endif
                   </div>
               </div>
           </div>
@@ -116,9 +86,7 @@
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs" role="tablist">
                       <li role="presentation" class="active"><a href="#con1" role="tab" data-toggle="tab">Description</a></li>
-                      {{-- <li role="presentation"><a href="#con2" role="tab" data-toggle="tab">Specification</a></li>
-                      <li role="presentation"><a href="#con3" role="tab" data-toggle="tab">Reviews   </a></li>
-                      <li role="presentation"><a href="#con4" role="tab" data-toggle="tab"> Faq.</a></li> --}}
+
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">

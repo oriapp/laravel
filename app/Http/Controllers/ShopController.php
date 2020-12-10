@@ -8,7 +8,8 @@ use DB, Cart, Session;
 use App\Order;
 use App\Http\Requests\CheckOutRequest;
 
-use App\Product;
+use App\Product,
+App\Wishlist;
 
 class ShopController extends MainController
 {
@@ -102,6 +103,13 @@ class ShopController extends MainController
         // ->all();
 
         // Session::flash('amount', $amount);
+
+    }
+
+
+    public function wishlist(Request $request){
+        
+        Wishlist::updates($request->uid, $request->pid);
 
     }
 

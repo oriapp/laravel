@@ -36,7 +36,7 @@
               <div class="sibebar">
                   <div class="wighet search">
                       <form>
-                          <input type="search" placeholder="Search here">
+                          <input disabled type="search" placeholder="Search here (disabled)">
                           <button type="submit"><i class="fa fa-search"></i></button>
                       </form>
                   </div>
@@ -59,7 +59,7 @@
                               <input type="text" id="price" class="price-box" readonly/>
 
                           </div>
-                          <button type="submit" class="btn1">FILTER</button>
+                          <button disabled="disabled" type="submit" class="btn1">FILTER</button>
                       </div>
                   </div>
               </div>
@@ -67,7 +67,7 @@
           <div class="col-sm-9 pd-0">
               <div class="col-sm-12">
                   <div class="filter-area">
-                      <select>
+                      <select disabled>
                           <option>short by</option>
                           <option>Lower To Height</option>
                           <option>Height To Lower</option>
@@ -88,40 +88,26 @@
               
               <div class="card-group h-400 w-260">
                 @foreach ($products as $product)
-                @php
-                    $num += 1;
-                @endphp
+
                 <div class="col-sm-4 products">
                   <figure><img src="{{asset('images/'.$product->pimage)}}" alt="" /></figure>
                   <div class="contents">
                   <h3 style="font-size: 20px !important">{{mb_strimwidth($product->ptitle, 0, 15, '...')}}</h3>
                       {{-- {{mb_strimwidth($product->in_short, 0, 10, '...')}} <br> --}}
-                      <span>$1,499.00</span>
-                      <a href="{{url('shop/'.$product->url.'/'.$product->purl)}}" class="btn4">Add To Cart</a>
+                      <span>${{$product->price}}</span>
+                      <a href="{{url('shop/'.$product->url.'/'.$product->purl)}}" class="btn1">Add To Cart</a>
+                      @if (Session::has('user_id'))
+                      <button data-pid="{{$product->id}}" data-uid="{{Session::get('user_id')}}" class="wishlist float-left"><i class="float-left fas fa-star"></i></button>
+                      @endif
                   </div>
               </div>
-              @if ($num == 6)
-                    <h1 style="visibility: hidden;">ad</h1>
-                    @php
-                        $num = 0;
-                    @endphp
-                @endif
+
                 @endforeach
 
               </div>
               <div class="col-sm-12">
                   <div class="">
-                      {{-- <ul>
-                          <li><a href="#"><span>Pervious</span></a></li>
-                          <li><a href="#" class="active">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">5</a></li>
-                          <li><a href="#">.....</a></li>
-                          <li><a href="#">10</a></li>
-                          <li><a href="#"><span>next</span></a></li>
-                      </ul> --}}
+
                       {{$products->appends(['sort' => 'title'])->render()}}
                   </div>
               </div>
@@ -155,7 +141,6 @@
 </section>
 <!--Subscribe area End here-->
 
-  {{-- {{$products->appends(['sort' => 'title'])->render()}} --}}
 
 
 @endsection

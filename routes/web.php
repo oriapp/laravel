@@ -110,15 +110,17 @@ Route::prefix('shop')->group(function(){
     Route::get('add-to-cart', 'ShopController@addToCart');
     Route::get('clear-cart', 'ShopController@clearCart');
     Route::get('update-cart', 'ShopController@updateCart');
-    Route::middleware('page-cache')->get('cart', 'ShopController@cart');
+    Route::get('cart', 'ShopController@cart');
 
     Route::get('check-out', 'ShopController@checkOut');
     Route::post('check-out', 'ShopController@checkOutPost');
 
+    Route::get('wishlist', 'ShopController@wishlist');
+
     //Route::get('check-out', 'CheckOutSysController@index');
     //Route::post('cart', 'CheckOutSysController@post');
-    Route::middleware('page-cache')->get('{curl}', 'ShopController@products');
-    Route::middleware('page-cache')->get('{curl}/{purl}', 'ShopController@productDetailes');
+    Route::get('{curl}', 'ShopController@products');
+    Route::get('{curl}/{purl}', 'ShopController@productDetailes');
 });
 
 

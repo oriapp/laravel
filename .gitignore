@@ -1,3 +1,5 @@
 
 vendor/nexmo/laravel/
 *.zip
+.env
+.env

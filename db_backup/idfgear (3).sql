@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 07:54 PM
+-- Generation Time: Dec 10, 2020 at 08:49 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -259,7 +259,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `language`, `last_visit`
 (10, 'nulll', 'nulll@gmail.com', '$2y$10$qw3H1NKHAbdiKXZMG3mPZu9L0npjr2YS4loUBpWh6dMDV045.iIti', 'en', '2020-08-13 18:27:47', '', '7', NULL, '2020-07-14 18:14:29', '2020-07-14 18:14:29', ''),
 (11, 'olive', 'olive@gmail.com', '$2y$10$8FrbVu6qy0W1f3D6GI2IT..eh4MlgT8n32IF37x7glSdy5T8JCNe.', 'en', '2020-08-13 18:27:47', '', '6', NULL, '2020-07-15 14:00:33', '2020-07-15 14:00:33', ''),
 (12, 'shimi', 'shimi@gmail.com', '$2y$10$9mpqthnRTNA/bdiGWEFIfe4vSok.moh0O0z7Cly/9LO6rWkyGKEu.', 'en', '2020-08-13 18:27:47', '', '5', NULL, '2020-07-15 14:07:58', '2020-07-15 14:07:58', ''),
-(13, 'Dvir', 'admin@gmail.com', '$2y$10$/AW7Jw2RRM.lxxgf8R.73.49V4Equ4lR/gMYdv.9WBpv7iAMArCMO', 'en', 'Sunday 29th of November 2020 06:53:33 PM', '127.0.0.1', '1233', '0', '2020-11-29 18:53:34', '2020-07-15 19:58:08', '1'),
+(13, 'Dvir', 'admin@gmail.com', '$2y$10$/AW7Jw2RRM.lxxgf8R.73.49V4Equ4lR/gMYdv.9WBpv7iAMArCMO', 'en', 'Thursday 10th of December 2020 07:47:55 PM', '127.0.0.1', '1233', '0', '2020-12-10 19:47:56', '2020-07-15 19:58:08', '1'),
 (16, 'Ori apple', 'plbwymw1@gmail.com', '$2y$10$hD.R76GD4C7yfSOLo3MNJOXFjyWhxTM4WgNkiOrFNXxvrmZZRcKna', 'en', '2020-08-13 18:27:47', '', '4', NULL, '2020-07-28 19:38:31', '2020-07-28 19:38:31', ''),
 (17, 'ori', 'test@gmail.com', '$2y$10$l.H7sOUxSjSWOAiIGzY4zep/c1qxcJIeCHJZjC3Hq7qK66BWI2rJS', 'en', '2020-08-13 18:27:47', '', '3', NULL, '2020-07-29 22:10:39', '2020-07-29 22:10:39', ''),
 (18, 'Test Bot', 'botti@gmail.com', '$2y$10$HHT4jA.K6wCGUV9YYLu7VeQM3O3QeZAbMzZVaNG83.MQwhy2kfa3W', 'he', '2020-08-13 18:27:47', '', '2', NULL, '2020-07-30 09:46:20', '2020-07-29 22:19:44', ''),
@@ -267,7 +267,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `language`, `last_visit`
 (20, 'TEST YOU', 'hehe@gmail.com', '$2y$10$H0/fpJksK23ZPGMS6aeBxOVbKlnCJWtxwwzXaAwJ9d5wOYcQUg4zG', 'he', 'Friday 14th of August 2020 05:23:18 PM', '127.0.0.1', '1', NULL, '2020-08-14 17:23:18', '2020-08-14 17:19:41', ''),
 (24, 'It\'s me', 'plbwymw@gmail.com', '$2y$10$X9LS28c4eVuJb/7ALeWFP.uNrzOIwumpEfDPsvYkXB5Y7.STcdSD2', 'he', 'Sunday 16th of August 2020 02:40:29 PM', '127.0.0.1', 'a', NULL, '2020-08-16 14:40:29', '2020-08-15 23:04:07', '0'),
 (25, 'ADMIN PASS', 'admin2@gmail.com', '$2y$10$lC8iOfDhHYVqxDVm/EA3K.ZOwflwoHJBfQ/1J8XmWkUjhFVf.3Hre', 'en', 'Tuesday 22nd of September 2020 08:10:33 PM', '127.0.0.1', NULL, NULL, '2020-09-22 20:10:33', '2020-09-22 20:10:33', '0'),
-(26, 'Ori app test', 'plbwymw2@gmail.com', '$2y$10$hQT4KzUc9n6tqbrxb0aZ4e6MBiw6IL1SnLcJ7.BPcoAByByT4eHm2', 'en', 'Monday 5th of October 2020 11:14:39 AM', '127.0.0.1', NULL, NULL, '2020-10-05 11:14:39', '2020-10-05 10:51:25', '0');
+(26, 'Ori app test', 'plbwymw2@gmail.com', '$2y$10$hQT4KzUc9n6tqbrxb0aZ4e6MBiw6IL1SnLcJ7.BPcoAByByT4eHm2', 'en', 'Monday 5th of October 2020 11:14:39 AM', '127.0.0.1', NULL, NULL, '2020-10-05 11:14:39', '2020-10-05 10:51:25', '0'),
+(27, 'asdasd', 'asdasd@12', '$2y$10$X0U41euDjvHWqH897G5e8O1.QCINDzk0hJQCXI0kAWyph5bUDN8su', 'en', 'Sunday 29th of November 2020 07:56:30 PM', '127.0.0.1', NULL, '0', '2020-11-29 19:56:31', '2020-11-29 19:55:34', '0');
 
 -- --------------------------------------------------------
 
@@ -310,7 +311,8 @@ INSERT INTO `user_roles` (`uid`, `rid`) VALUES
 (23, 6),
 (24, 6),
 (25, 6),
-(26, 6);
+(26, 6),
+(27, 6);
 
 -- --------------------------------------------------------
 
@@ -331,7 +333,29 @@ CREATE TABLE `visitors` (
 --
 
 INSERT INTO `visitors` (`ip`, `date`, `ipInfo`, `blacklist`, `os`) VALUES
-('127.0.0.1', 'Sunday 29th of November 2020 06:45:57 PM', '0', '0', NULL);
+('127.0.0.1', 'Thursday 10th of December 2020 07:46:16 PM', '0', '0', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlists`
+--
+
+CREATE TABLE `wishlists` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `session` longtext DEFAULT NULL,
+  `updated_at` tinytext DEFAULT NULL,
+  `created_at` tinytext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `wishlists`
+--
+
+INSERT INTO `wishlists` (`id`, `user_id`, `product_id`, `session`, `updated_at`, `created_at`) VALUES
+(82, 13, 9, 'a:7:{i:0;a:1:{i:0;s:2:\"60\";}i:1;a:1:{i:0;s:2:\"43\";}i:2;a:1:{i:0;s:2:\"28\";}i:3;a:1:{i:0;s:2:\"25\";}i:4;a:1:{i:0;s:2:\"27\";}i:5;a:1:{i:0;s:2:\"59\";}i:6;a:1:{i:0;s:1:\"9\";}}', '2020-12-10 19:47:55', '2020-12-10 19:28:43');
 
 --
 -- Indexes for dumped tables
@@ -387,6 +411,13 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `wishlists_ibfk_1` (`product_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -430,7 +461,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- Constraints for dumped tables

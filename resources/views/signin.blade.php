@@ -1,30 +1,6 @@
 @extends('master')
 @section('content')
 
-
-    {{-- <div class="row">
-        <div class="col-lg-6">
-            <form action="" method="POST" novalidate="novalidate" autocomplete="off">
-                @csrf
-                <div class="form-group">
-                    <label for="email"><code>*</code> {{__('text.email')}}</label>
-                    <input type="email" name="email" id="email" class="form-control">
-                    <span class="text-danger"> {{$errors->first('email')}} </span>
-                </div>
-                <div class="form-group">
-                    <label for="password"><code>*</code> {{__('text.password')}}</label>
-                    <input type="password" name="password" id="password" class="form-control">
-                    <span class="text-danger"> {{$errors->first('password')}} </span>
-                </div>
-                <button type="submit" class="btn btn-primary">{{__('text.signin')}}</button>
-                @if(!empty($verify_error))
-            <span class="text-danger">{{$verify_error}}</span>
-            @endif
-            </form>
-        </div>
-    </div>
-</div> --}}
-
     <!--Header area end here-->
     <!--Breadcumb area start here-->
     <section class="breadcumb-area jarallax bg-img af">
@@ -90,15 +66,7 @@
                                     <span class="text-danger"> {{$errors->first('password')}} </span>
 								</div>
 							</div>
-							{{-- <div class="login_remember_box">
-								<label class="control control--checkbox">Remember me
-									<input type="checkbox">
-									<span class="control__indicator"></span>
-								</label>
-								<a href="#" class="forget_password">
-									Forgot Password
-								</a>
-							</div> --}}
+
 							<div class="login_btn_wrapper">
                                 <a class="btn btn-primary login_btn"> <button style="background-color: transparent" type="submit"> {{__('text.signin')}} </button> </a>
 							</div>

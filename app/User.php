@@ -7,6 +7,7 @@ use DB, Session, Hash;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
 use Stevebauman\Location\Facades\Location;
+use App\Wishlist;
 
 class User extends Model
 {
@@ -88,6 +89,17 @@ class User extends Model
         ->select('u.id', 'u.name', 'u.email', 'u.password', 'ur.rid', 'u.language')
         ->where('u.email', '=', $email)
         ->first();
+
+        if(Wishlist::hasList($user->id)){
+            $data = Wishlist::hasList($user->id);
+            if($data->session){
+                //$wishlistSession = unserialize($data->session);
+                Session::put([
+                    'wishlist' => unserialize($data->session),
+                    'wishlistID' => $data->id,
+                ]);
+            }
+        }
 
         if($user){
             if(Hash::check($password, $user->password)){

@@ -1,1 +1,1 @@
-Docker login localhost:8080
+docker build -t idf/staging .

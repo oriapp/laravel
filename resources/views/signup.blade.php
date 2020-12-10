@@ -1,52 +1,5 @@
 @extends('master')
 @section('content')
-{{--<div class="container">
-
-     <div class="alert alert-danger" role="alert">
-        {!!__('text.signup_warning')!!}
-      </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <form action="" method="POST" novalidate="novalidate" autocomplete="off">
-                @csrf
-                <div class="form-group">
-                    <label for="name"><code>*</code> {{__('text.name')}}</label>
-                    <input value="{{old('name')}}" type="text" name="name" id="name" class="form-control">
-                    <span class="text-danger"> {{$errors->first('name')}} </span>
-                </div>
-                <div class="form-group">
-                    <label for="email"><code>*</code> {{__('text.email')}}</label>
-                    <input value="{{old('')}}" type="email" name="email" id="email" class="form-control">
-                    <span class="text-danger"> {{$errors->first('email')}} </span>
-                </div>
-                <div class="form-group">
-                    <label for="password"><code>*</code> {{__('text.password')}}</label>
-                    <input type="password" name="password" id="password" class="form-control">
-                    <span class="text-danger"> {{$errors->first('password')}} </span>
-                </div>
-
-                <div class="form-group">
-                <label for="phone"><code>*</code> {{__('text.phone')}}</label>
-                    <input value="{{old('phone')}}" type="text" name="phone" id="phone" class="form-control">
-                    <span class="text-danger"> {{$errors->first('phone')}} </span>
-                </div>
-
-
-                <div class="form-group">
-                    <label for="language"><code>*</code> {{__('text.select_language')}}</label>
-                    <select class="form-control" name="Language" id="language">
-                      <option value="en" name="en" id="en">English</option>
-                      <option value="he" name="he" id="he">Hebrew</option>
-                    </select>
-                    <span class="text-danger">{{$errors->first('language')}}</span>
-                  </div>
-                  
-
-                <button type="submit" class="mb-3 btn btn-primary">{{__('text.signup')}}</button>
-            </form>
-        </div>
-    </div>
-</div> --}}
 
 
 <!--Breadcumb area start here-->
@@ -110,36 +63,6 @@
                                         <input type="text" name="password" value="" id="password" placeholder="{{__('sign.password')}}*">
                                         <span class="text-danger"> {{$errors->first('password')}} </span>
                                     </div>
-                                    {{-- <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-
-                                        <input type="password" name="field-name" value="" placeholder="re-enter password*">
-                                    </div>
-
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-
-                                        <input type="text" name="field-name" value="" placeholder="phone">
-                                    </div>
-
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-
-                                        <input type="text" name="field-name" value="" placeholder="company name">
-
-                                    </div>
-
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-
-                                        <input type="text" name="field-name" value="" placeholder="website">
-
-                                    </div>
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-
-                                        <input type="text" name="field-name" value="" placeholder="address line">
-                                    </div> --}}
 
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="check-box text-center">

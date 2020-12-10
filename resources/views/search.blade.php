@@ -56,12 +56,6 @@
           <div class="col-sm-9 pd-0">
               <div class="col-sm-12">
                   <div class="filter-area">
-                      {{-- <select>
-                          <option>short by</option>
-                          <option>Laptop</option>
-                          <option>Ram</option>
-                          <option>cpu</option>
-                      </select> --}}
 
                       <div class="showpro">
                           <p><span>{{$res->total()}} Results found</span></p>
@@ -95,17 +89,7 @@
               </div>
               <div class="col-sm-12">
                   <div class="">
-                      {{-- <ul>
-                          <li><a href="#"><span>Pervious</span></a></li>
-                          <li><a href="#" class="active">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">5</a></li>
-                          <li><a href="#">.....</a></li>
-                          <li><a href="#">10</a></li>
-                          <li><a href="#"><span>next</span></a></li>
-                      </ul> --}}
+
                       {{$res->appends(['sort' => 'title'])->render()}}
                   </div>
               </div>
@@ -154,7 +138,6 @@
 </section>
 <!--Subscribe area End here-->
 
-  {{-- {{$products->appends(['sort' => 'title'])->render()}} --}}
 
 
 @endsection
