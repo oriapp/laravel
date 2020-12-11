@@ -73,7 +73,7 @@
 
                 @foreach (Product::getProductByID($ses) as $product)
 
-                <div class="col-sm-4 products">
+                <div class="col-sm-4 products" style="border: 5px !important">
                   <figure><img src="{{asset('images/'.$product->pimage)}}" alt="" /></figure>
                   <div class="contents">
                   <h3 style="font-size: 20px !important">{{mb_strimwidth($product->ptitle, 0, 15, '...')}}</h3>
@@ -83,6 +83,11 @@
                       @if (Session::has('user_id'))
                       <button data-pid="{{$product->id}}" data-uid="{{Session::get('user_id')}}" class="wishlist float-left"><i class="float-left fas fa-star"></i></button>
                       @endif
+
+                      <br>
+              <br>
+              
+              <br>
                   </div>
               </div>
 
