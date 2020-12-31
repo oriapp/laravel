@@ -108,7 +108,7 @@
                             </div>
                         </div>
                     </a>
-                    @endforeach 
+                    @endforeach
                     
 
                   </div>
@@ -140,7 +140,6 @@
 </section>
 
 
-
   <!--About area end here-->
   <!--Banner area start here-->
   @if(Product::newItems(1) )
@@ -151,11 +150,6 @@
   <section class="banner-area section bg-img af jarallax">
     <div class="container">
         <div class="row">
-            {{-- <div class="col-md-6 col-sm-12 hidden-sm hidden-xs">
-                <div class="banner-img">
-                    <figure><img src="{{asset('images/' . $item->pimage)}}" alt="" /></figure>
-                </div>
-            </div> --}}
             <div class="col-md-6 col-sm-12">
                 <div class="banner-con sm-t-center">
                     <h2>New {{$item->ptitle}}</h2>
