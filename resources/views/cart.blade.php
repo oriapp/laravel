@@ -63,7 +63,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- {{dd($cart[0]['attributes']['color'])}} --}}
                     @foreach ($cart as $item)
 
                     @php
