@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class CheckOutSysController extends MainController
 {
+
+    // DELETE?
+
     // public function index(Request $request){
     //     self::$dtv['page_title'] .= "Check Out";
     //     dd($request);
