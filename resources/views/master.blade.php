@@ -313,6 +313,7 @@ content: "{{Cart::getTotalQuantity()}}";
   <script src="{{asset('js/script.js')}}"></script>
 
   <script>
+      // Yes JS
       function initMap() {
           var uluru = {
               lat: -36.742775,
