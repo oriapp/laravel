@@ -93,7 +93,6 @@
                   <figure><img src="{{asset('images/'.$product->pimage)}}" alt="" /></figure>
                   <div class="contents">
                   <h3 style="font-size: 20px !important">{{mb_strimwidth($product->ptitle, 0, 15, '...')}}</h3>
-                      {{-- {{mb_strimwidth($product->in_short, 0, 10, '...')}} <br> --}}
                       <span>${{$product->price}}</span>
                       <a href="{{url('shop/'.$product->url.'/'.$product->purl)}}" class="btn1">Add To Cart</a>
                       @if (Session::has('user_id'))
