@@ -1,20 +1,10 @@
-# 1. laravel-shop
- V1 (DO NOT SELFRUN WITHOUT MY PERMISSION)
+An online shop made with Laravel (PHP) and sql.
+react included but not working properly at this moment.
 
-- [1. laravel-shop](#1-laravel-shop)
+- Do NOT commercially use
+- Do NOT local host this
+- READ LICENCE
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    ORI-->D;
-    ACDC-->D;
-    C-->D;
-```
+Copyrights - Ori Appelbaum
 
-```php
-<?php
-echo "Hello";
-?>
-```
+plbwymw@gmail.com
